@@ -1,0 +1,38 @@
+/* =Entries
+----------------------------------------------- */
+
+.hentry {
+	margin-bottom: 3em;
+}
+.entry-title {
+	margin: 0 0 0.2em;
+}
+.entry-title a {
+	color: darken($bodytextcolor, 5%);
+	text-decoration: none;
+}
+.entry-header {
+	margin-bottom: 1.5em;
+}
+.page-links {
+	padding: 1.5em 0;
+	clear: both;
+}
+.page-links,
+.entry-meta {
+	@include font-size($bodyfontsize * 0.875); // 14px
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.entry-content blockquote :last-child {
+	margin-bottom: 0;
+}
+.entry-content blockquote cite {
+	display: block;
+	text-align: right;
+	margin-top: 1em;
+	@include font-size($bodyfontsize * 0.875); // 14px
+}

@@ -1,0 +1,91 @@
+/* =Navigation
+----------------------------------------------- */
+
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+.main-navigation li {
+	display: inline-block;
+	position: relative;
+	margin-right: 2em;
+	@include font-size($bodyfontsize * 0.875); // 14px
+}
+.main-navigation li li {
+	margin-right: 0;
+}
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	padding: 0.75em 0;
+	line-height: 1;
+}
+.main-navigation ul ul {
+	display: none;
+	float: left;
+	position: absolute;
+	top: 2.5em;
+	left: 0;
+	z-index: 99999;
+	text-align: left;
+	padding-top: 5px;
+}
+.main-navigation ul ul ul {
+	left: 100%;
+	top: 0;
+	padding-top: 0;
+}
+.main-navigation ul ul a {
+	width: 200px;
+	padding: 0.75em;
+}
+.main-navigation ul ul li {
+	margin-right: 0;
+}
+.main-navigation li:hover > a {
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+}
+.main-navigation ul li:hover > ul {
+	display: block;
+}
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a {
+}
+
+/* Small menu */
+.menu-toggle {
+	cursor: pointer;
+}
+.main-small-navigation .menu {
+	display: none;
+}
+
+/* Post navigation */
+.post-navigation,
+.paging-navigation {
+	margin: 0 0 2em;
+	overflow: hidden;
+	@include font-size($bodyfontsize * 0.875); // 14px
+	
+	.nav-previous {
+		float: left;
+		width: 50%;
+		padding-right: 0.5em;
+		@include box-sizing(border-box);
+	}
+	.nav-next {
+		float: right;
+		width: 50%;
+		padding-left: 0.5em;
+		text-align: right;
+		@include box-sizing(border-box);
+	}
+	a {
+		text-decoration: none;
+	}
+}

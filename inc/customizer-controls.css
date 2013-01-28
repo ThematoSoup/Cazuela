@@ -1,0 +1,24 @@
+.image-radio {
+	opacity: 0;
+	width: 0;
+	height: 0;
+	display: block;
+	float: left;
+}
+.image-radio + label {
+	display: block;
+	float: left;
+}
+.image-radio + label img {
+	border: 2px solid #f3f3f3;
+	margin: 0 6px 6px 0;
+	display: block;
+}
+.image-radio:checked + label img {
+	border-color: #333;
+	opacity: 1;
+	
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}

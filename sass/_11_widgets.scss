@@ -1,0 +1,18 @@
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+	margin: 0 0 1.5em;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+.widget:last-child,
+.widget :last-child {
+	margin-bottom: 0;
+}
+/* Search widget */
+#searchsubmit {
+	display: none;
+}

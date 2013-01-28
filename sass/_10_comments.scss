@@ -1,0 +1,53 @@
+/* =Comments
+----------------------------------------------- */
+
+.commentlist {
+	margin-left: 0;
+
+	li .children {
+		margin-left: 0;
+	}
+	li {
+		list-style: none;
+		margin-bottom: 1.25em;
+	}
+	li li {
+		margin: 0.5em 0 0;
+	}
+	li.comment {
+		min-height: 64px;
+		padding-left: 72px;
+		position: relative;
+	}
+	li.comment .avatar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include border-radius(50%);
+	}
+	li.comment article {
+		padding: 1em;
+		background: #fff;
+	}
+	li.pingback,
+	li.trackback {
+		padding-left: 72px;
+	}
+	li.bypostauthor {
+
+	}
+	li :last-child {
+		margin-bottom: 0;
+	}
+	.comment-content {
+		margin-bottom: 1em;
+	}
+	header,
+	footer,
+	.reply {
+		@include font-size($bodyfontsize * 0.875); // 14px
+	}
+	header {
+		margin-bottom: 1em;
+	}
+}

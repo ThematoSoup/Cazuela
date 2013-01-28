@@ -1,0 +1,17 @@
+// Variables
+
+$baselineheight: 1.6;
+$bodyfontsize: 16;
+$bodytextcolor: #4b4b4b;
+
+
+// Mixins
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/box-sizing";
+@import "compass/css3/images";
+@mixin font-size( $font-size: 16 ) {
+	font-size: #{$font-size}px;
+	font-size: #{$font-size / 10}rem;
+}

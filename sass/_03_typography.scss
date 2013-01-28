@@ -1,0 +1,278 @@
+/* =Typography
+----------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $bodytextcolor;
+	@include font-size($bodyfontsize);
+	line-height: $baselineheight;
+}
+.widget {
+	@include font-size($bodyfontsize * 0.875); // 14px
+}
+.body-arial {
+	font-family: Arial, sans-serif;
+	button,
+	input,
+	select,
+	textarea,
+	.site-description {
+		@extend .body-arial;
+	}
+}
+.body-helvetica {
+	font-family: Helvetica, sans-serif;
+	font-weight: 300;
+	button,
+	input,
+	select,
+	textarea,
+	.site-description {
+		@extend .body-helvetica;
+	}
+}
+.body-open-sans {
+	font-family: "Open Sans", sans-serif;
+	button,
+	input,
+	select,
+	textarea,
+	.site-description {
+		@extend .body-lato;
+	}
+}
+.body-lato {
+	font-family: Lato, sans-serif;
+	button,
+	input,
+	select,
+	textarea,
+	.site-description {
+		@extend .body-lato;
+	}
+}
+.body-pt-sans {
+	font-family: "PT Sans", sans-serif;
+	button,
+	input,
+	select,
+	textarea,
+	.site-description {
+		@extend .body-pt-sans;
+	}
+}
+.body-gudea {
+	font-family: Gudea, sans-serif;
+	button,
+	input,
+	select,
+	textarea,
+	.site-description {
+		@extend .body-gudea;
+	}
+}
+.body-lora {
+	font-family: Lora, serif;
+	button,
+	input,
+	select,
+	textarea,
+	.site-description {
+		@extend .body-lora;
+	}
+}
+.body-istok-web {
+	font-family: "Istok Web", serif;
+	button,
+	input,
+	select,
+	textarea,
+	.site-description {
+		@extend .body-istok-web;
+	}
+}
+
+/* Selected text background color */
+::-moz-selection {
+	background-color: #222;
+	color: #fff;
+}
+::selection {
+	background-color: #222;
+	color: #fff;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	line-height: $baselineheight * 0.75;
+	margin: 1.5em 0 0.5em;
+	color: darken($bodytextcolor, 5%);
+	font-weight: bold;
+}
+.heading-georgia {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: Georgia, serif;
+	}
+}
+.heading-open-sans {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: "Open Sans", sans-serif;
+	}
+}
+.heading-lato {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: Lato, sans-serif;
+	}
+}
+.heading-oswald {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: Oswald, sans-serif;
+	}
+}
+.heading-bitter {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: Bitter, serif;
+	}
+}
+.heading-merriweather {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: Merriweather, serif;
+	}
+}
+.heading-droid-serif {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: "Droid Serif", serif;
+	}
+}
+
+/* No need for top margin if :first-child */
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0;
+}
+h1 {
+	@include font-size(36);
+}
+h2 {
+	@include font-size(28);
+}
+h3 {
+	@include font-size(24);
+}
+h4,
+.widget-title {
+	@include font-size(20);
+}
+h5 {
+	@include font-size(20);
+	font-weight: normal;
+}
+h6 {
+	@include font-size(16);
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/* Text elements */
+p {
+	margin: 0 0 1.5em;
+}
+ul, ol {
+	margin: 0 0 1.5em 2em;
+	padding: 0;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-bottom: 0;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1.5em;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre {
+	background: #eee;
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	@include font-size(16);
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	overflow: auto;
+	max-width: 100%;
+}
+code, kbd, tt, var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+th {
+	font-weight: bold;
+}
+blockquote {
+	background: #fff;
+	padding: 1.5em;
+	margin-bottom: 3em;
+}

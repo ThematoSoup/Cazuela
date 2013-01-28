@@ -1,0 +1,50 @@
+/*
+Theme Name: Cazuela
+Theme URI: http://thematosoup.com
+Author: ThematoSoup
+Author URI: http://thematosoup.com
+Description: Cazuela WordPress theme, developed by ThematoSoup
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+// Reset
+@import "01_reset";
+
+// Setup, Sass variables and mixins
+@import "02_setup";
+
+// Typography
+@import "03_typography";
+
+// Colors
+@import "04_colors";
+
+// Layout
+@import "05_layout";
+
+// Navigation
+@import "06_navigation";
+
+// Entries
+@import "07_entries";
+
+// Media
+@import "08_media";
+
+// Forms
+@import "09_forms";
+
+// Comments
+@import "10_comments";
+
+// Widgets
+@import "11_widgets";
+
+// Media Queries
+@import "12_media_queries";

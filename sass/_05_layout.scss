@@ -1,0 +1,242 @@
+/* =Layout
+----------------------------------------------- */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+
+#page {
+	overflow: hidden;
+}
+.inner,
+.layout-boxed #page {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1000px;
+	padding: 0;
+	@include box-sizing(border-box);
+}
+.layout-boxed #page {
+	@include box-shadow(rgba(0,0,0,0.5) 0 0 1em);
+	
+	.inner {
+		padding: 0 20px;
+	}
+}
+#main {
+	padding: 2em 0;
+}
+#before-header {
+	padding-bottom: 1.5em;
+}
+#masthead {
+	padding: 1.5em 0 0;
+	
+	hgroup {
+		margin-bottom: 1em;
+	}
+	.site-title {
+		margin: 0 0 0.25em;	
+	}
+	.site-description {
+		margin: 0;
+		@include font-size($bodyfontsize); // 16px
+	}
+	.site-title a {
+		text-decoration: none;
+	}
+}
+#after-header {
+	padding: 1.5em 0;
+}
+#colophon {
+	padding-top: 1.5em;
+	
+	#footer-sidebars,
+	#after-footer {
+		padding-bottom: 1.5em;
+	}
+}
+#before-footer {
+	padding: 1.5em 0;
+}
+
+
+/*
+	Responsive grid layouts
+	Widths are in percentages
+	Based on 1000px wide layout
+---------------------------------------------------- */
+
+/* Layout: Full width */
+
+/* Layout: Content - Primary Sidebar */
+.layout-cp {
+	.content-area {
+		float: left;
+		margin: 0 -34% 0 0;
+		width: 100%;
+	}
+	#content {
+		margin: 0 34% 0 0;
+	}
+	#secondary {
+		float: right;
+		width: 30%;
+	}	
+}
+
+/* Layout: Content - Primary Sidebar - Secondary Sidebar */
+.layout-cps {
+	.content-area {
+		float: left;
+		width: 100%;
+	}
+	#content {
+		margin: 0 44% 0 0;
+	}
+	#main .widget-area {
+		float: left;
+	}
+	#secondary {
+		width: 22%;
+		margin: 0 0 0 -40%;
+	}
+	#tertiary {
+		width: 16%;
+		margin: 0 0 0 -16%;
+	}
+}
+
+/* Layout: Primary Sidebar - Content - Secondary Sidebar */
+.layout-pcs {
+	.content-area {
+		float: left;
+		width: 100%;
+	}
+	#content {
+		margin-left: 26%;
+		margin-right: 20%;
+	}
+	#main .widget-area {
+		float: left;
+	}
+	#secondary {
+		width: 22%;
+		margin: 0 0 0 -100%;
+	}
+	#tertiary {
+		width: 16%;
+		margin: 0 0 0 -16%;
+	}
+}
+
+/* Layout: Primary Sidebar - Content */
+.layout-pc {
+	.content-area {
+		float: right;
+		margin: 0 0 0 -34%;
+		width: 100%;
+	}
+	#content {
+		margin: 0 0 0 34%;
+	}
+	#secondary {
+		float: left;
+		width: 30%;
+	}
+}
+
+/* Layout: Primary Sidebar - Secondary Sidebar - Content */
+.layout-psc {
+	.content-area {
+		float: right;
+		margin: 0 0 0 -44%;
+		width: 100%;
+	}
+	#content {
+		margin: 0 0 0 44%;
+	}
+	#main .widget-area {
+		float: left;
+	}
+	#secondary {
+		width: 22%;
+}
+	#tertiary {
+		width: 16%;
+		margin-left: 2%;
+	}
+}
+
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+
+/* Archives with templates on the left side */
+.no-sidebars .post-thumbnail {
+	float: left;
+	width: 14.5299%; // 170/1170
+}
+.no-sidebars.left-thumbnails .hentry {
+	margin-left: 17.0940%; // 200/1170
+}
+.one-sidebar .post-thumbnail {
+	float: left;
+	width: 22.0779%; // 170/770
+}
+.one-sidebar.left-thumbnails .hentry {
+	margin-left: 25.9740%; // 200/770
+}
+.two-sidebars .post-thumbnail {
+	float: left;
+	width: 25.3731%; // 170/670
+}
+.two-sidebars.left-thumbnails .hentry {
+	margin-left: 29.8507%; // 200/670
+}
+.single .hentry {
+	margin-left: 0;
+}
+.post-thumbnail img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Footer widgets */
+.footer-sidebar {
+	@include box-sizing(border-box);
+	padding: 0 1em;
+}
+.footer-sidebar:first-child {
+	padding-left: 0;
+}
+.footer-sidebar:last-child {
+	padding-right: 0;
+}
+#footer-sidebars.active-2 .sidebar {
+	float: left;
+	width: 50%;
+}
+#footer-sidebars.active-3 .footer-sidebar {
+	float: left;
+	width: 33.3%;
+}
+#footer-sidebars.active-4 .footer-sidebar {
+	float: left;
+	width: 25%;
+}
