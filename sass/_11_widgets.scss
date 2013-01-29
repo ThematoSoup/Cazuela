@@ -2,11 +2,23 @@
 ----------------------------------------------- */
 
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 2em;
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	hyphens: auto;
+	@include font-size($bodyfontsize * 0.875); // 14px
+	
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+	* {
+		max-width: 100%;
+	}
+	li {
+		margin-bottom: 0.5em;
+	}
 }
 .widget:last-child,
 .widget :last-child {
@@ -15,4 +27,26 @@
 /* Search widget */
 #searchsubmit {
 	display: none;
+}
+#s {
+	@include box-sizing(border-box);
+	width: 100%;
+	display: block;
+	border-radius: 0;
+	border: none;
+}
+/* Calendar widget */
+#wp-calendar {
+	width: 100%;
+	
+	caption, td, th {
+		text-align: center;
+		padding: 2px;
+	}
+	#prev {
+		text-align: left;
+	}
+	#next {
+		text-align: right;
+	}
 }

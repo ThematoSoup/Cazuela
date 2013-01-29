@@ -88,7 +88,8 @@ function thsp_theme_setup() {
 		'quote',
 		'chat',
 		'image',
-		'video'
+		'video',
+		'audio'
 	) );
 	
 }

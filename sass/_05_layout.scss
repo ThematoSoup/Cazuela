@@ -20,20 +20,18 @@
 #page {
 	overflow: hidden;
 }
+.inner {
+	padding: 0 20px;
+}
 .inner,
 .layout-boxed #page {
 	margin: 0 auto;
 	width: 100%;
-	max-width: 1000px;
-	padding: 0;
+	max-width: 1040px;
 	@include box-sizing(border-box);
 }
 .layout-boxed #page {
 	@include box-shadow(rgba(0,0,0,0.5) 0 0 1em);
-	
-	.inner {
-		padding: 0 20px;
-	}
 }
 #main {
 	padding: 2em 0;

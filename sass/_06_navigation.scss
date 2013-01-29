@@ -68,7 +68,7 @@
 /* Post navigation */
 .post-navigation,
 .paging-navigation {
-	margin: 0 0 2em;
+	margin: 0 0 1.5em;
 	overflow: hidden;
 	@include font-size($bodyfontsize * 0.875); // 14px
 	
@@ -87,5 +87,6 @@
 	}
 	a {
 		text-decoration: none;
+		color: $bodytextcolor;
 	}
 }

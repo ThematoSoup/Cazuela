@@ -29,15 +29,15 @@ img.size-full {
 }
 
 /* Post images and captions */
-.aligncenter {
+.entry-content .aligncenter {
 	margin: 1.5em auto;
 	display: block
 }
-.alignleft {
+.entry-content .alignleft {
 	float: left;
 	margin: 0.1em 1.5em 0.75em 0;
 }
-.alignright {
+.entry-content .alignright {
 	float: right;
 	margin: 0.1em 0 0.75em 1.5em;
 }
@@ -45,9 +45,6 @@ img.size-full {
 	border: 1px solid #ddd;
 	background: #fff;
 	padding: 5px;
-	display: block;
-	max-width: 100%;
-	margin: 0 auto;
 	max-width: 100%;
 	@include box-shadow(0 0 2px 0 #ccc);
 	@include box-shadow(0 0 2px 0 rgba(0,0,0,0.1));
@@ -58,7 +55,7 @@ img.size-full {
 }
 .wp-caption-text {
 	text-align: center;
-	margin: 5px 0 2px;
+	margin: 0 0 2px;
 	@include font-size($bodyfontsize * 0.75); // 12px
 	line-height: 1.4;
 }

@@ -10,9 +10,6 @@ textarea {
 	@include font-size($bodyfontsize);
 	line-height: $baselineheight;
 }
-.widget {
-	@include font-size($bodyfontsize * 0.875); // 14px
-}
 .body-arial {
 	font-family: Arial, sans-serif;
 	button,
