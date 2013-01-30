@@ -59,6 +59,13 @@ function thsp_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	/**
+	 * Enable support for Post Thumbnails
+	 *
+	 * @since Cazuela 1.0
+	 */
+	add_image_size( 'lead-image', 660, 9999, false );
+
+	/**
 	 * Enable Custom Backgrounds
 	 *
 	 * @since Cazuela 1.0

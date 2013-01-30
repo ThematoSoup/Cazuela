@@ -1214,6 +1214,13 @@ blockquote {
 
 /* =Entries
 ----------------------------------------------- */
+/* Lead image */
+.hentry-lead img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .page-title {
   font-size: 24px;
   font-size: 2.4rem;
@@ -1222,71 +1229,61 @@ blockquote {
 
 .hentry {
   margin-bottom: 20px;
-  position: relative;
   background: #fff;
-  border: 1px solid #eeeeee;
-  padding: 19px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.hentry-inner {
+  position: relative;
+  padding: 20px;
 }
 
 /* Post format icons */
-.hentry:before {
-  display: block;
-  position: absolute;
-  top: 1.25em;
-  margin-top: -4px;
-  left: -52px;
-  width: 52px;
-  height: 52px;
-  content: " ";
-  background: url(images/post-format-icons.png);
+/*
+.hentry-inner:before {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -26px;
+	width: 26px;
+	height: 26px;
+	content: " ";
+	background: url(images/post-format-icons-small.png);
 }
-
-.layout-boxed .hentry:before {
-  display: none;
+.layout-boxed .hentry-inner:before {
+	display: none;
 }
-
-.layout-pc .hentry:before {
-  left: auto;
-  right: -52px;
+.layout-pc .hentry-inner:before {
+	right: -52px;
 }
-
-.hentry.format-status:before {
-  background-position: -52px 0;
-}
-
-.hentry.format-quote:before {
-  background-position: -104px 0;
-}
-
-.hentry.format-link:before {
-  background-position: -156px 0;
-  margin-top: -14px;
-}
-
-.hentry.format-aside:before {
-  background-position: -208px 0;
-}
-
-.hentry.format-image:before {
-  background-position: -260px 0;
-}
-
-.hentry.format-gallery:before {
-  background-position: -312px 0;
-}
-
-.hentry.format-video:before {
-  background-position: -364px 0;
-}
-
-.hentry.format-audio:before {
-  background-position: -416px 0;
-}
-
-.hentry.format-chat:before {
-  background-position: -468px 0;
-}
-
+	.format-status .hentry-inner:before {
+		background-position: -26px 0;
+	}
+	.format-quote .hentry-inner:before {
+		background-position: -52px 0;
+	}
+	.format-link .hentry-inner:before {
+		background-position: -78px 0;
+	}
+	.format-aside .hentry-inner:before {
+		background-position: -104px 0;
+	}
+	.format-image .hentry-inner:before {
+		background-position: -130px 0;
+	}
+	.format-gallery .hentry-inner:before {
+		background-position: -156px 0;
+	}
+	.format-video .hentry-inner:before {
+		background-position: -182px 0;
+	}
+	.format-audio .hentry-inner:before {
+		background-position: -208px 0;
+	}
+	.format-chat .hentry-inner:before {
+		background-position: -234px 0;
+	}
+*/
 .entry-title {
   margin: 0 0 0.2em;
 }
