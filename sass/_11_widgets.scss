@@ -18,6 +18,10 @@
 	}
 	li {
 		margin-bottom: 0.5em;
+		
+		ul {
+			margin-left: 1em;
+		}
 	}
 }
 .widget:last-child,
@@ -41,7 +45,11 @@
 	
 	caption, td, th {
 		text-align: center;
-		padding: 2px;
+		padding: 3px;
+	}
+	tfoot td,
+	tfoot th {
+		border-bottom: none;
 	}
 	#prev {
 		text-align: left;

@@ -8,8 +8,8 @@
 function thsp_theme_documentation_page() {
 
 	add_theme_page(
-		'Theme Documentation',
-		'Theme Documentation',
+		'Documentation',
+		'Documentation',
 		'read',
 		'thsp_theme_documentation',
 		'thsp_theme_documentation_cb'
@@ -68,7 +68,6 @@ function thsp_theme_documentation_cb() { ?>
 					
 					<h4>Sub-heading in tab 1</h4>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum elit, semper vitae adipiscing vitae, semper in turpis. Nunc fringilla volutpat ornare. Fusce tincidunt, lectus in gravida ullamcorper, nisl lorem luctus nisl, id molestie nunc tortor quis magna. Mauris posuere, arcu vel pharetra feugiat, justo tortor hendrerit felis, dignissim malesuada augue nibh euismod est. Integer laoreet lacus a tortor ornare cursus. Fusce ac sapien at magna porta viverra. Integer ullamcorper turpis et nisi aliquam et sollicitudin mauris sagittis.</p>
-					<iframe width="853" height="480" src="http://www.youtube.com/embed/a1tO8WE7tdk" frameborder="0" allowfullscreen></iframe>
 					<?php break;
 
 				case 'tab2' : ?>

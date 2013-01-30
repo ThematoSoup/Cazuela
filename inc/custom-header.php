@@ -29,8 +29,9 @@ function thsp_custom_header_setup() {
 		'default-image'          => '',
 		'default-text-color'     => '000',
 		'width'                  => 300,
-		'height'                 => 200,
+		'height'                 => 180,
 		'flex-height'            => true,
+		'flex-width'	         => true,
 		'admin-head-callback'    => 'thsp_admin_header_style',
 		'admin-preview-callback' => 'thsp_admin_header_image',
 	);

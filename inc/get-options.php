@@ -72,6 +72,13 @@ function thsp_get_theme_options_fields() {
 					'type'			=> 'checkbox',
 					'since'			=> '1.0',
 					'default'		=> false
+				),
+				'links_color' => array(
+					'title'			=> __( 'Links color', 'cazuela' ),
+					'description'	=> __( 'Color of links in content area', 'cazuela' ),
+					'type'			=> 'color',
+					'since'			=> '1.0',
+					'default'		=> '#1e559b'
 				)
 			)
 		),
@@ -129,28 +136,6 @@ function thsp_get_theme_options_fields() {
 					),
 					'since'			=> '1.0',
 					'default'		=> 'layout-cp'
-				),
-				
-				'archives_layout' => array(
-					'title'			=> __( 'Archives Layout', 'cazuela' ),
-					'description'	=> __( 'Select archives layout', 'cazuela' ),
-					'type'			=> 'select',
-					'choices'		=> array(
-						'archives-standard' => array(
-							'title'			=> __( 'Standard', 'cazuela' ),
-							'description'	=> __( 'Standard layout', 'cazuela' )
-						),
-						'archives-thumbs' => array(
-							'title'			=> __( 'Post thumbnails on left side', 'cazuela' ),
-							'description'	=> __( 'Only excerpts shown', 'cazuela' )
-						),
-						'archives-bricks' => array(
-							'title'			=> __( 'Pinterest-ish', 'cazuela' ),
-							'description'	=> __( 'No sidebar', 'cazuela' )
-						)
-					),
-					'since'			=> '1.0',
-					'default'		=> 'archives-thumbs'
 				)
 			)
 		),

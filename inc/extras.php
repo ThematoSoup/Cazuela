@@ -48,29 +48,11 @@ function thsp_body_classes( $classes ) {
 	foreach ( $thsp_current_layout as $thsp_current_layout_value ) {
 		$thsp_body_classes[] = $thsp_current_layout_value;
 	}
-	
-	/*
-	if( is_singular( 'thsp-portfolio' ) || in_array( $theme_options['default_layout'], array( 'layout-cp', 'layout-pc' ) ) ) {
-		// If displaying single portfolio piece set the class to 'one-sidebar', also check if it's a one sidebar layout
-		$layout_classes[] = 'one-sidebar';
-	} elseif( in_array( $theme_options['default_layout'], array( 'layout-cps', 'layout-psc', 'layout-pcs' ) ) ) {
-		// Check if there are two sidebars
-		$layout_classes[] = 'two-sidebars';
-	} else {
-		// Otherwise no sidebars
-		$layout_classes[] = 'no-sidebars';
-	}
-	*/
 
 	$thsp_body_classes[] = 'body-' . $theme_options['body_font'];
 	$thsp_body_classes[] = 'heading-' . $theme_options['heading_font'];
 	$thsp_body_classes[] = $theme_options['color_scheme'];
 	
-	// Archives layout class not to be applied in singular pages
-	if( !is_singular() ) {
-		$thsp_body_classes[] = $theme_options['archives_layout'];
-	}
-
 	// See if header gradient is needed
 	if( $theme_options['header_gradient'] ) {
 		$thsp_body_classes[] = 'header-gradient';
@@ -159,49 +141,3 @@ function thsp_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'thsp_wp_title', 10, 2 );
-
-
-/**
- * Return array of footer sidebars
- *
- * @return	Array	Footer sidebars
- * @since Cazuela 1.0
- */
-function thsp_get_footer_sidebars() {
-
-	$footer_sidebars = array(
-		__( 'Footer Sidebar 1', 'cazuela' ) => 'footer-sidebar-1',
-		__( 'Footer Sidebar 2', 'cazuela' ) => 'footer-sidebar-2',
-		__( 'Footer Sidebar 3', 'cazuela' ) => 'footer-sidebar-3',
-		__( 'Footer Sidebar 4', 'cazuela' ) => 'footer-sidebar-4'
-	);
-	
-	return $footer_sidebars;
-	
-}
-
-
-/**
- * Return number of active footer sidebars
- *
- * @return	Number of active footer sidebars
- * @since Cazuela 1.0
- */
-function thsp_count_footer_sidebars() {
-
-	$count = 0;
-	
-	$footer_sidebars = array(
-		'footer-sidebar-1',
-		'footer-sidebar-2',
-		'footer-sidebar-3',
-		'footer-sidebar-4'
-	);
-	
-	foreach( $footer_sidebars as $footer_sidebar ) {
-		if( is_active_sidebar( $footer_sidebar ) ) $count++;
-	}
-	
-	return $count;
-	
-}

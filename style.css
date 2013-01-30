@@ -7,7 +7,7 @@ Description: Cazuela WordPress theme, developed by ThematoSoup
 Version: 1.0
 License: GNU General Public License
 License URI: license.txt
-Tags:
+Tags: one-column, two-columns, three-columns, flexible-width, custom-header, post-formats, custom-menu, theme-options
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -415,12 +415,14 @@ blockquote {
 }
 
 #colophon h1, #colophon h2, #colophon h3, #colophon h4, #colophon h5, #colophon h6,
+#colophon a,
 #before-footer h1,
 #before-footer h2,
 #before-footer h3,
 #before-footer h4,
 #before-footer h5,
-#before-footer h6 {
+#before-footer h6,
+#before-footer a {
   color: #ccc;
 }
 
@@ -919,21 +921,23 @@ blockquote {
 }
 
 #main {
-  padding: 2em 0;
+  padding: 30px 0;
 }
 
 #before-header {
-  padding-bottom: 1.5em;
+  padding-bottom: 20px;
 }
 
 #masthead {
-  padding: 1.5em 0 0;
+  padding: 20px 0 0;
 }
 #masthead hgroup {
-  margin-bottom: 1em;
+  margin-bottom: 15px;
 }
-#masthead .site-title {
-  margin: 0 0 0.25em;
+#masthead .site-title,
+#masthead .header-image {
+  margin: 0 0 10px;
+  display: inline-block;
 }
 #masthead .site-description {
   margin: 0;
@@ -945,19 +949,26 @@ blockquote {
 }
 
 #after-header {
-  padding: 1.5em 0;
+  padding: 20px 0;
 }
 
 #colophon {
-  padding-top: 1.5em;
+  padding-top: 20px;
 }
-#colophon #footer-sidebars,
+#colophon #footer-sidebars {
+  padding-bottom: 30px;
+}
 #colophon #after-footer {
-  padding-bottom: 1.5em;
+  padding-bottom: 20px;
 }
 
 #before-footer {
-  padding: 1.5em 0;
+  padding: 20px 0;
+}
+
+#before-content,
+#after-content {
+  margin-bottom: 30px;
 }
 
 /*
@@ -1060,73 +1071,45 @@ blockquote {
   width: 100%;
 }
 
-/* Archives with templates on the left side */
-.no-sidebars .post-thumbnail {
-  float: left;
-  width: 14.5299%;
-}
-
-.no-sidebars.left-thumbnails .hentry {
-  margin-left: 17.0940%;
-}
-
-.one-sidebar .post-thumbnail {
-  float: left;
-  width: 22.0779%;
-}
-
-.one-sidebar.left-thumbnails .hentry {
-  margin-left: 25.9740%;
-}
-
-.two-sidebars .post-thumbnail {
-  float: left;
-  width: 25.3731%;
-}
-
-.two-sidebars.left-thumbnails .hentry {
-  margin-left: 29.8507%;
-}
-
-.single .hentry {
-  margin-left: 0;
-}
-
-.post-thumbnail img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 /* Footer widgets */
-.footer-sidebar {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0 1em;
+#footer-widget-area {
+  margin-bottom: 20px;
 }
 
-.footer-sidebar:first-child {
-  padding-left: 0;
-}
-
-.footer-sidebar:last-child {
-  padding-right: 0;
-}
-
-#footer-sidebars.active-2 .sidebar {
+#footer-widget-area.widget-count-2 .widget {
   float: left;
   width: 50%;
 }
 
-#footer-sidebars.active-3 .footer-sidebar {
+#footer-widget-area.widget-count-3 .widget {
   float: left;
-  width: 33.3%;
+  width: 33.333%;
 }
 
-#footer-sidebars.active-4 .footer-sidebar {
+#footer-widget-area.widget-count-4 .widget,
+#footer-widget-area.widget-count-4-plus .widget {
   float: left;
   width: 25%;
+}
+
+#footer-widget-area .widget {
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#footer-widget-area .widget:first-child {
+  padding-left: 0;
+}
+
+#footer-widget-area .widget:last-child {
+  padding-right: 0;
+}
+
+#footer-widget-area .widget:nth-child(4n+1) {
+  clear: left;
+  padding-left: 0;
 }
 
 /* =Navigation
@@ -1197,15 +1180,15 @@ blockquote {
 }
 
 /* Post navigation */
-.post-navigation,
-.paging-navigation {
+#main .post-navigation,
+#main .paging-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
   font-size: 14px;
   font-size: 1.4rem;
 }
-.post-navigation .nav-previous,
-.paging-navigation .nav-previous {
+#main .post-navigation .nav-previous,
+#main .paging-navigation .nav-previous {
   float: left;
   width: 50%;
   padding-right: 0.5em;
@@ -1213,8 +1196,8 @@ blockquote {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.post-navigation .nav-next,
-.paging-navigation .nav-next {
+#main .post-navigation .nav-next,
+#main .paging-navigation .nav-next {
   float: right;
   width: 50%;
   padding-left: 0.5em;
@@ -1223,8 +1206,8 @@ blockquote {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.post-navigation a,
-.paging-navigation a {
+#main .post-navigation a,
+#main .paging-navigation a {
   text-decoration: none;
   color: #4b4b4b;
 }
@@ -1238,11 +1221,11 @@ blockquote {
 }
 
 .hentry {
-  margin-bottom: 1.5em;
+  margin-bottom: 20px;
   position: relative;
   background: #fff;
   border: 1px solid #eeeeee;
-  padding: 1.25em;
+  padding: 19px;
 }
 
 /* Post format icons */
@@ -1260,6 +1243,11 @@ blockquote {
 
 .layout-boxed .hentry:before {
   display: none;
+}
+
+.layout-pc .hentry:before {
+  left: auto;
+  right: -52px;
 }
 
 .hentry.format-status:before {
@@ -1303,7 +1291,7 @@ blockquote {
   margin: 0 0 0.2em;
 }
 
-.entry-title a {
+#main .entry-title a {
   color: #3e3e3e;
   text-decoration: none;
 }
@@ -1391,16 +1379,12 @@ img.size-full {
 }
 
 .entry-content img {
-  border: 1px solid #dddddd;
+  border: 1px solid #eeeeee;
   background: #fff;
   padding: 5px;
   max-width: 100%;
-  -webkit-box-shadow: 0 0 2px 0 #cccccc;
-  -moz-box-shadow: 0 0 2px 0 #cccccc;
-  box-shadow: 0 0 2px 0 #cccccc;
-  -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-bottom: 0.5em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1408,6 +1392,7 @@ img.size-full {
 
 .wp-caption {
   margin-bottom: 1.5em;
+  max-width: 100%;
 }
 
 .wp-caption-text {
@@ -1426,14 +1411,12 @@ img.size-full {
   margin: 0 0 1.5em !important;
 }
 
-.gallery-icon {
-  margin-bottom: 0.5em;
-}
-
 #content .gallery a img {
   border: none;
   height: auto;
-  max-width: 90%;
+  max-width: 100%;
+  display: inline-block;
+  margin-bottom: 0.25em;
 }
 
 #content .gallery dd {
@@ -1623,19 +1606,11 @@ textarea {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
 }
 .commentlist li.comment article {
   padding: 1em;
   background: #fff;
-}
-.commentlist li.pingback,
-.commentlist li.trackback {
-  padding-left: 72px;
+  border: 1px solid #eeeeee;
 }
 .commentlist li :last-child {
   margin-bottom: 0;
@@ -1643,11 +1618,13 @@ textarea {
 .commentlist .comment-content {
   margin-bottom: 1em;
 }
-.commentlist header,
+.commentlist header {
+  font-weight: bold;
+}
 .commentlist footer,
 .commentlist .reply {
-  font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 12px;
+  font-size: 1.2rem;
 }
 .commentlist header {
   margin-bottom: 1em;
@@ -1673,6 +1650,9 @@ textarea {
 }
 .widget li {
   margin-bottom: 0.5em;
+}
+.widget li ul {
+  margin-left: 1em;
 }
 
 .widget:last-child,
@@ -1701,7 +1681,11 @@ textarea {
 }
 #wp-calendar caption, #wp-calendar td, #wp-calendar th {
   text-align: center;
-  padding: 2px;
+  padding: 3px;
+}
+#wp-calendar tfoot td,
+#wp-calendar tfoot th {
+  border-bottom: none;
 }
 #wp-calendar #prev {
   text-align: left;

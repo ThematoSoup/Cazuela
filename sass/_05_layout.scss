@@ -34,19 +34,21 @@
 	@include box-shadow(rgba(0,0,0,0.5) 0 0 1em);
 }
 #main {
-	padding: 2em 0;
+	padding: 30px 0;
 }
 #before-header {
-	padding-bottom: 1.5em;
+	padding-bottom: 20px;
 }
 #masthead {
-	padding: 1.5em 0 0;
+	padding: 20px 0 0;
 	
 	hgroup {
-		margin-bottom: 1em;
+		margin-bottom: 15px;
 	}
-	.site-title {
-		margin: 0 0 0.25em;	
+	.site-title,
+	.header-image {
+		margin: 0 0 10px;
+		display: inline-block;	
 	}
 	.site-description {
 		margin: 0;
@@ -57,18 +59,24 @@
 	}
 }
 #after-header {
-	padding: 1.5em 0;
+	padding: 20px 0;
 }
 #colophon {
-	padding-top: 1.5em;
+	padding-top: 20px;
 	
-	#footer-sidebars,
+	#footer-sidebars {
+		padding-bottom: 30px;
+	}
 	#after-footer {
-		padding-bottom: 1.5em;
+		padding-bottom: 20px;
 	}
 }
 #before-footer {
-	padding: 1.5em 0;
+	padding: 20px 0;
+}
+#before-content,
+#after-content {
+	margin-bottom: 30px;
 }
 
 
@@ -183,58 +191,34 @@
 	clear: both;
 	width: 100%;
 }
-
-/* Archives with templates on the left side */
-.no-sidebars .post-thumbnail {
-	float: left;
-	width: 14.5299%; // 170/1170
-}
-.no-sidebars.left-thumbnails .hentry {
-	margin-left: 17.0940%; // 200/1170
-}
-.one-sidebar .post-thumbnail {
-	float: left;
-	width: 22.0779%; // 170/770
-}
-.one-sidebar.left-thumbnails .hentry {
-	margin-left: 25.9740%; // 200/770
-}
-.two-sidebars .post-thumbnail {
-	float: left;
-	width: 25.3731%; // 170/670
-}
-.two-sidebars.left-thumbnails .hentry {
-	margin-left: 29.8507%; // 200/670
-}
-.single .hentry {
-	margin-left: 0;
-}
-.post-thumbnail img {
-	display: block;
-	max-width: 100%;
-	height: auto;
-}
-
 /* Footer widgets */
-.footer-sidebar {
-	@include box-sizing(border-box);
-	padding: 0 1em;
+#footer-widget-area {
+	margin-bottom: 20px;
 }
-.footer-sidebar:first-child {
-	padding-left: 0;
-}
-.footer-sidebar:last-child {
-	padding-right: 0;
-}
-#footer-sidebars.active-2 .sidebar {
+#footer-widget-area.widget-count-2 .widget {
 	float: left;
 	width: 50%;
 }
-#footer-sidebars.active-3 .footer-sidebar {
+#footer-widget-area.widget-count-3 .widget {
 	float: left;
-	width: 33.3%;
+	width: 33.333%;
 }
-#footer-sidebars.active-4 .footer-sidebar {
+#footer-widget-area.widget-count-4 .widget,
+#footer-widget-area.widget-count-4-plus .widget {
 	float: left;
 	width: 25%;
+}
+#footer-widget-area .widget {
+	padding: 0 10px;
+	@include box-sizing(border-box);
+}
+#footer-widget-area .widget:first-child {
+	padding-left: 0;
+}
+#footer-widget-area .widget:last-child {
+	padding-right: 0;
+}
+#footer-widget-area .widget:nth-child(4n+1) {
+	clear: left;
+	padding-left: 0;
 }

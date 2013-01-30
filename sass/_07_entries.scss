@@ -6,11 +6,11 @@
 	margin-bottom: 1em;
 }
 .hentry {
-	margin-bottom: 1.5em;
+	margin-bottom: 20px;
 	position: relative;
 	background: #fff;
 	border: 1px solid #eee;
-	padding: 1.25em;
+	padding: 19px;
 }
 /* Post format icons */
 .hentry:before {
@@ -26,6 +26,10 @@
 }
 .layout-boxed .hentry:before {
 	display: none;
+}
+.layout-pc .hentry:before {
+	left: auto;
+	right: -52px;
 }
 	.hentry.format-status:before {
 		background-position: -52px 0;
@@ -60,7 +64,7 @@
 .entry-title {
 	margin: 0 0 0.2em;
 }
-.entry-title a {
+#main .entry-title a {
 	color: darken($bodytextcolor, 5%);
 	text-decoration: none;
 }

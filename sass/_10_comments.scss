@@ -23,15 +23,11 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		@include border-radius(50%);
 	}
 	li.comment article {
 		padding: 1em;
 		background: #fff;
-	}
-	li.pingback,
-	li.trackback {
-		padding-left: 72px;
+		border: 1px solid #eee;
 	}
 	li.bypostauthor {
 
@@ -42,10 +38,12 @@
 	.comment-content {
 		margin-bottom: 1em;
 	}
-	header,
+	header {
+		font-weight: bold;
+	}
 	footer,
 	.reply {
-		@include font-size($bodyfontsize * 0.875); // 14px
+		@include font-size($bodyfontsize * 0.75); // 12px
 	}
 	header {
 		margin-bottom: 1em;

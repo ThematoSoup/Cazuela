@@ -91,6 +91,22 @@ function thsp_theme_setup() {
 		'video',
 		'audio'
 	) );
+
+	/**
+	 * Adds the Customize page to the WordPress admin area
+	 */
+	add_action( 'admin_menu', 'thsp_customizer_menu' );
+	function thsp_customizer_menu() {
+	
+	    add_theme_page(
+	    	'Customization',
+	    	'Customization',
+	    	'edit_theme_options',
+	    	'customize.php'
+	    );
+	    
+	}
+
 	
 }
 endif; // thsp_setup
@@ -120,19 +136,15 @@ function thsp_widgets_init() {
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>',
 	) );
+	register_sidebar( array(
+		'name' => __( 'Footer Widget Area', 'thsp_cazuela' ),
+		'id' => 'footer-widget-area',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
 
-	$footer_sidebars = thsp_get_footer_sidebars();
-	foreach( $footer_sidebars as $name => $id ) {
-		register_sidebar( array(
-			'name' => $name,
-			'id' => $id,
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h1 class="widget-title">',
-			'after_title' => '</h1>',
-		) );
-	}
-	
 	register_sidebar( array(
 		'name' => __( 'Before Header', 'thsp_cazuela' ),
 		'id' => 'before-header-sidebar',
@@ -309,6 +321,24 @@ function thsp_theme_scripts() {
 	
 }
 add_action( 'wp_enqueue_scripts', 'thsp_theme_scripts' );
+
+
+/**
+ * Dynamically generated CSS (link color)
+ *
+ * @since Cazuela 1.0
+ */
+function thsp_dynamic_css() {
+
+	$theme_options = thsp_get_theme_options();
+	$links_color = $theme_options['links_color']; ?>
+	
+	<style type="text/css">
+		#main a { color: <?php echo $links_color; ?> }
+	</style>
+
+<?php }
+add_action( 'wp_head', 'thsp_dynamic_css' );
 
 
 /**
