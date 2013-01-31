@@ -2,7 +2,7 @@
 ----------------------------------------------- */
 
 /* Lead image */
-.hentry-lead img {
+.entry-lead img {
 	display: block;
 	width: 100%;
 	height: auto;
@@ -14,58 +14,25 @@
 .hentry {
 	margin-bottom: 20px;
 	background: #fff;
-	box-shadow: 0 0 2px rgba(0,0,0,0.1);
+	box-shadow: 0 0 2px rgba(0,0,0,0.15);
+	
+	.entry-content {
+		padding: 0 20px 20px;
+		
+		> :last-child {
+			margin-bottom: 0;
+		}
+	}
+	header,
+	footer {
+		padding: 20px;
+	}
+
+	footer {
+		border-top: 1px solid #f6f6f6;
+	}
 }
-.hentry-inner {
-	position: relative;
-	padding: 20px;
-}
-/* Post format icons */
-/*
-.hentry-inner:before {
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -26px;
-	width: 26px;
-	height: 26px;
-	content: " ";
-	background: url(images/post-format-icons-small.png);
-}
-.layout-boxed .hentry-inner:before {
-	display: none;
-}
-.layout-pc .hentry-inner:before {
-	right: -52px;
-}
-	.format-status .hentry-inner:before {
-		background-position: -26px 0;
-	}
-	.format-quote .hentry-inner:before {
-		background-position: -52px 0;
-	}
-	.format-link .hentry-inner:before {
-		background-position: -78px 0;
-	}
-	.format-aside .hentry-inner:before {
-		background-position: -104px 0;
-	}
-	.format-image .hentry-inner:before {
-		background-position: -130px 0;
-	}
-	.format-gallery .hentry-inner:before {
-		background-position: -156px 0;
-	}
-	.format-video .hentry-inner:before {
-		background-position: -182px 0;
-	}
-	.format-audio .hentry-inner:before {
-		background-position: -208px 0;
-	}
-	.format-chat .hentry-inner:before {
-		background-position: -234px 0;
-	}
-*/
+/* Post formats */
 
 .entry-title {
 	margin: 0 0 0.2em;
@@ -74,28 +41,32 @@
 	color: darken($bodytextcolor, 5%);
 	text-decoration: none;
 }
-.entry-header {
-	margin-bottom: 1.5em;
-}
 .page-links {
-	padding: 0 0 1.5em;
+	margin: 0 0 20px;
 	clear: both;
 }
 .page-links,
 .entry-meta {
-	@include font-size($bodyfontsize * 0.875); // 14px
-
 	a {
 		text-decoration: none;
 	}
 }
-
-.entry-content blockquote :last-child {
-	margin-bottom: 0;
+.entry-meta {
+	@include font-size($bodyfontsize * 0.75); // 12px
 }
-.entry-content blockquote cite {
-	display: block;
-	text-align: right;
-	margin-top: 1em;
-	@include font-size($bodyfontsize * 0.875); // 14px
+
+.entry-content blockquote {
+	background: url(images/quote.png) top left no-repeat;
+	margin: 0 1em 2em;
+	padding-left: 2.5em;
+	
+	> :last-child {
+	margin-bottom: 0;
+	}
+	cite {
+		display: block;
+		text-align: right;
+		margin-top: 1em;
+		@include font-size($bodyfontsize * 0.875); // 14px
+	}
 }

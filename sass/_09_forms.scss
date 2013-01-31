@@ -50,7 +50,6 @@ input[type="submit"]:hover {
 	background: -o-linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* IE10+ */
 	background: linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#dcdcdc',GradientType=0 ); /* IE6-9 */
 	border-color: #bbb #bbb #aaa #bbb;
 }
 button:focus,
@@ -105,4 +104,41 @@ textarea {
 	padding-left: 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 98%;
+}
+
+/* Comment form */
+#commentform {
+	input[type=text],
+	input[type=email] {
+		width: 60%;
+	}
+	textarea {
+		width: 100%;
+	}
+	input[type=text],
+	input[type=email],
+	textarea {
+		display: block;
+		border: 0;
+		padding: 0.5em;
+		@include box-sizing(border-box);
+		@include border-radius(0);
+		@include box-shadow(0 0 2px rgba(0, 0, 0, 0.15));
+	}
+	.form-allowed-tags,
+	.form-allowed-tags code {
+		@include font-size($bodyfontsize * 0.75); // 12px
+	}
+}
+.commentlist #respond {
+	padding: 1em;
+	
+	p {
+		margin-bottom: 1em;
+	}
+	input[type=text],
+	input[type=email],
+	textarea {
+		padding: 0.3em;
+	}
 }
