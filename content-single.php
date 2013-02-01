@@ -6,12 +6,16 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php get_template_part( 'post', 'header' ); ?>
+	<?php get_template_part( 'post', 'lead' ); ?>
 
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'thsp_cazuela' ), 'after' => '</div>' ) ); ?>
-	</div><!-- .entry-content -->
+	<div class="entry-inner">
+		<?php get_template_part( 'post', 'header' ); ?>
+	
+		<div class="entry-content">
+			<?php the_content(); ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'thsp_cazuela' ), 'after' => '</div>' ) ); ?>
+		</div><!-- .entry-content -->
+	</div><!-- .entry-inner -->
 
 	<?php get_template_part( 'post', 'footer' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

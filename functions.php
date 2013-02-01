@@ -7,12 +7,33 @@
  */
 
 /**
- * Set the content width based on the theme's design and stylesheet.
+ * Set default content width based on the theme's design and stylesheet.
+ * Used in two-column layout
  *
  * @since Cazuela 1.0
  */
 if ( !isset( $content_width ) )
-	$content_width = 640; /* pixels */
+	$content_width = 620; /* pixels */
+
+
+/**
+ * Change content width, based on layout
+ */
+function thsp_content_width() {
+
+	$thsp_current_layout = thsp_get_current_layout();
+	global $content_width;
+	
+	if ( 'layout-c' == $thsp_current_layout ) {
+		$content_width = 960; /* pixels */
+	} elseif ( in_array( $thsp_current_layout, array( 'layout-cps', 'layout-psc', 'layout-pcs' ) ) ) {
+		$content_width = 520; /* pixels */		
+	}
+	
+}
+add_action( 'template_redirect', 'thsp_content_width' );
+
+
 
 if ( !function_exists( 'thsp_theme_setup' ) ) :
 /**
@@ -114,6 +135,10 @@ function thsp_theme_setup() {
 	    
 	}
 
+	/**
+	 * This theme styles the visual editor with editor-style.css to match the theme style
+	 */
+	add_editor_style();
 	
 }
 endif; // thsp_setup

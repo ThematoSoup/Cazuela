@@ -107,7 +107,12 @@ textarea {
 }
 
 /* Comment form */
-#commentform {
+#commentform,
+.wpcf7-form {
+	:focus {
+		outline: none;
+		background: #f9f9f9;
+	}
 	input[type=text],
 	input[type=email] {
 		width: 60%;
@@ -119,19 +124,27 @@ textarea {
 	input[type=email],
 	textarea {
 		display: block;
-		border: 0;
+		border: 1px solid #ececec;
 		padding: 0.5em;
 		@include box-sizing(border-box);
 		@include border-radius(0);
-		@include box-shadow(0 0 2px rgba(0, 0, 0, 0.15));
 	}
 	.form-allowed-tags,
 	.form-allowed-tags code {
 		@include font-size($bodyfontsize * 0.75); // 12px
 	}
+	#submit,
+	.wpcf7-submit {
+		border: none;
+		box-shadow: none;
+		font-weight: bold;
+		color: #fff;
+		text-shadow: none;
+		padding: 0.75em 1em;
+	}
 }
 .commentlist #respond {
-	padding: 1em;
+	margin-top: 20px;
 	
 	p {
 		margin-bottom: 1em;
@@ -140,5 +153,20 @@ textarea {
 	input[type=email],
 	textarea {
 		padding: 0.3em;
+	}
+}
+/* Password protected posts form */
+.hentry {
+	label {
+		display: block;
+	}
+	input[type=password] {
+		width: 60%;
+		display: block;
+		border: 1px solid #e6e6e6;
+		padding: 0.5em;
+		margin-bottom: 1em;
+		@include box-sizing(border-box);
+		@include border-radius(0);
 	}
 }

@@ -13,7 +13,14 @@ if ( ! function_exists( 'thsp_cazuela_content_nav' ) ) :
  * @since Cazuela 1.0
  */
 function thsp_content_nav( $nav_id ) {
+
 	global $wp_query, $post;
+
+	// Get current theme options
+	$theme_options = thsp_get_theme_options();
+	
+	// Check if navigation needs to be shown, based on theme options
+	if ( ( 'nav-above' == $nav_id && $theme_options['post_navigation_above'] ) || ( 'nav-below' == $nav_id && $theme_options['post_navigation_below'] ) ) {
 
 	// Don't print empty markup on single pages if there's nowhere to navigate.
 	if ( is_single() ) {
@@ -43,23 +50,33 @@ function thsp_content_nav( $nav_id ) {
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
-		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'thsp_cazuela' ) ); ?></div>
-		<?php endif; ?>
-
-		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'thsp_cazuela' ) ); ?></div>
-		<?php endif; ?>
+		<?php
+		// Add WP Pagenavi support
+		if ( function_exists( 'wp_pagenavi' ) ) {
+			wp_pagenavi();
+		} else {
+		?>
+			<?php if ( get_next_posts_link() ) : ?>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'thsp_cazuela' ) ); ?></div>
+			<?php endif; ?>
+	
+			<?php if ( get_previous_posts_link() ) : ?>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'thsp_cazuela' ) ); ?></div>
+			<?php endif; ?>
+		<?php } // end WP Pagenavi check ?>
 
 	<?php endif; ?>
 
 	</nav><!-- #<?php echo $nav_id; ?> -->
 	<?php
+	
+	} // End check if navigation needs to be shown
+	
 }
 endif; // thsp_content_nav
 
 
-if ( ! function_exists( 'thsp_cazuela_comment' ) ) :
+if ( ! function_exists( 'thsp_comment_cb' ) ) :
 /**
  * Template for comments and pingbacks.
  *
@@ -118,10 +135,10 @@ function thsp_comment_cb( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
-endif; // ends check for thsp_comment()
+endif; // ends check for thsp_comment_cb()
 
 
-if ( ! function_exists( 'thsp_cazuela_posted_on' ) ) :
+if ( ! function_exists( 'thsp_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
@@ -138,7 +155,7 @@ function thsp_posted_on() {
 		get_the_author()
 	);
 }
-endif;
+endif; // ends check for thsp_posted_on()
 
 
 /**

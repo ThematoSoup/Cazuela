@@ -64,14 +64,16 @@ function thsp_get_theme_options_fields() {
 						)
 					),
 					'since'			=> '1.0',
-					'default'		=> 'scheme-black'
+					'default'		=> 'scheme-black',
+					'priority'		=> 1
 				),
 				'header_gradient' => array(
 					'title'			=> __( 'Header gradient', 'cazuela' ),
 					'description'	=> __( 'Add subtle gradient to header', 'cazuela' ),
 					'type'			=> 'checkbox',
 					'since'			=> '1.0',
-					'default'		=> false
+					'default'		=> false,
+					'priority'		=> 2
 				),
 				'links_color' => array(
 					'title'			=> __( 'Links color', 'cazuela' ),
@@ -80,6 +82,26 @@ function thsp_get_theme_options_fields() {
 					'since'			=> '1.0',
 					'default'		=> '#1e559b'
 				)
+			)
+		),
+		
+		'nav' => array(
+			'existing_section' => true,
+			'fields' => array(
+				'post_navigation_above' => array(
+					'title'				=> __( 'Navigation above posts', 'cazuela' ),
+					'description'		=> __( 'Toggle display of post navigation above posts', 'cazuela' ),
+					'type'				=> 'checkbox',
+					'since'				=> '1.0',
+					'default'			=> true
+				),
+				'post_navigation_below' => array(
+					'title'				=> __( 'Navigation below posts', 'cazuela' ),
+					'description'		=> __( 'Toggle display of post navigation below posts', 'cazuela' ),
+					'type'				=> 'checkbox',
+					'since'				=> '1.0',
+					'default'			=> true
+				),
 			)
 		),
 		

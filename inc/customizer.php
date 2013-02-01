@@ -140,15 +140,19 @@ function thsp_customize_register( $wp_customize ) {
 				$wp_customize->add_setting(
 					"thsp_cazuela_options[$thsp_field_key]",
 					$setting_args
-				);
-		
+				);		
 				
 				$control_args = array(
-					'label'      => $thsp_field_value['title'],
-					'section'    => $thsp_section_key,
-					'settings'   => "thsp_cazuela_options[$thsp_field_key]",
-					'type'       => $thsp_field_value['type']
+					'label'		=> $thsp_field_value['title'],
+					'section'	=> $thsp_section_key,
+					'settings'	=> "thsp_cazuela_options[$thsp_field_key]",
+					'type'		=> $thsp_field_value['type']
 				);
+				
+				// Check if priority has been specified
+				if( isset( $thsp_field_value['priority'] ) ) {
+					$control_args['priority'] = $thsp_field_value['priority'];
+				}
 				
 				// Check if there's an array of possible values, add it to $args array
 				if( isset( $thsp_field_value['choices'] ) ) {

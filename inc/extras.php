@@ -22,6 +22,32 @@ add_filter( 'wp_page_menu_args', 'thsp_page_menu_args' );
 
 
 /**
+ * Adds parent class to navigation menus
+ *
+ * @since Cazuela 1.0
+ */
+function thsp_menu_parent_class( $items ) {
+	
+	$parents = array();
+	foreach ( $items as $item ) {
+		if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
+			$parents[] = $item->menu_item_parent;
+		}
+	}
+	
+	foreach ( $items as $item ) {
+		if ( in_array( $item->ID, $parents ) ) {
+			$item->classes[] = 'menu-parent-item'; 
+		}
+	}
+	
+	return $items;
+	 
+}
+add_filter( 'wp_nav_menu_objects', 'thsp_menu_parent_class' );
+
+
+/**
  * Adds custom classes to the array of body classes.
  *
  * @param	Array	$classes				Current body classes
@@ -45,9 +71,7 @@ function thsp_body_classes( $classes ) {
 	$thsp_body_classes = array();
 	
 	$thsp_current_layout = thsp_get_current_layout();
-	foreach ( $thsp_current_layout as $thsp_current_layout_value ) {
-		$thsp_body_classes[] = $thsp_current_layout_value;
-	}
+	$thsp_body_classes[] = $thsp_current_layout;
 
 	$thsp_body_classes[] = 'body-' . $theme_options['body_font'];
 	$thsp_body_classes[] = 'heading-' . $theme_options['heading_font'];
@@ -61,6 +85,7 @@ function thsp_body_classes( $classes ) {
 	$classes = array_merge( $classes, $thsp_body_classes );
 
 	return $classes;
+	
 }
 add_filter( 'body_class', 'thsp_body_classes' );
 
@@ -82,17 +107,11 @@ function thsp_get_current_layout() {
 	
 	// Check if in single post/page view and if layout custom field value exists
 	if( is_singular() && get_post_meta( $post->ID, '_thsp_post_layout', true ) ) {
-		$current_layout['default_layout'] = get_post_meta( $post->ID, '_thsp_post_layout', true );
+		$current_layout = get_post_meta( $post->ID, '_thsp_post_layout', true );
 	} else {
-		$current_layout['default_layout'] = $theme_options['default_layout'];
+		$current_layout = $theme_options['default_layout'];
 	}
-
-	if( is_singular() && get_post_meta( $post->ID, '_post_layout_type', true ) ) {
-		$current_layout['default_layout'] = get_post_meta( $post->ID, '_post_layout_type', true );
-	} else {
-		$current_layout['layout_type'] = $theme_options['layout_type'];
-	}
-	
+		
 	return $current_layout;
 
 }

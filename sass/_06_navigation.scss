@@ -9,7 +9,7 @@
 .main-navigation li {
 	display: inline-block;
 	position: relative;
-	margin-right: 2em;
+	margin-right: 0.75em;
 	@include font-size($bodyfontsize * 0.875); // 14px
 }
 .main-navigation li li {
@@ -19,8 +19,9 @@
 	display: block;
 	text-decoration: none;
 	color: #fff;
-	padding: 0.75em 0;
+	padding: 0.75em;
 	line-height: 1;
+	position: relative;
 }
 .main-navigation ul ul {
 	display: none;
@@ -40,6 +41,7 @@
 .main-navigation ul ul a {
 	width: 200px;
 	padding: 0.75em;
+	@include box-sizing(border-box);
 }
 .main-navigation ul ul li {
 	margin-right: 0;
@@ -56,6 +58,45 @@
 .main-navigation li.current_page_item a,
 .main-navigation li.current-menu-item a {
 }
+/* Parent item indicator */
+.main-navigation > ul > .menu-parent-item > a {
+	padding-left: 1.5em;
+}
+.main-navigation > ul > .menu-parent-item > a:before {
+	content: "";
+	display: inline-block;
+	margin-right: 0.4em;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 0;
+	height: 0;
+	margin-top: -2px;
+	margin-left: 0.6em;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent; 
+	border-top: 6px solid #fff;
+	opacity: 0.9;
+}
+.main-navigation .sub-menu .menu-parent-item > a {
+	padding-right: 1.5em;
+}
+.main-navigation .sub-menu .menu-parent-item > a:after {
+	content: "";
+	display: inline-block;
+	margin-left: 0.5em;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -4px;
+	margin-right: 0.6em;
+	width: 0;
+	height: 0;
+	border-top: 0.3em solid transparent;
+	border-bottom: 0.3em solid transparent; 
+	border-left: 0.5em solid #fff; 
+	opacity: 0.9;
+}
 
 /* Small menu */
 .menu-toggle {
@@ -67,18 +108,21 @@
 
 /* Post navigation */
 #main .post-navigation,
-#main .paging-navigation {
+#main .paging-navigation,
+#main #image-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 	@include font-size($bodyfontsize * 0.875); // 14px
 	
-	.nav-previous {
+	.nav-previous,
+	.previous-image {
 		float: left;
 		width: 50%;
 		padding-right: 0.5em;
 		@include box-sizing(border-box);
 	}
-	.nav-next {
+	.nav-next,
+	.next-image {
 		float: right;
 		width: 50%;
 		padding-left: 0.5em;
@@ -88,5 +132,17 @@
 	a {
 		text-decoration: none;
 		color: $bodytextcolor;
+	}
+	/* WP Pagenavi */
+	.wp-pagenavi {
+		text-align: center;
+		
+		a,
+		span {
+			border: none;
+		}
+		.pages {
+			margin-right: 1em;
+		}
 	}
 }
