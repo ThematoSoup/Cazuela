@@ -12,7 +12,7 @@ $thsp_current_layout = thsp_get_current_layout();
  * Check if primary sidebar is required
  * The only layout that doesn't need primary sidebar is 'layout-c' (Content only)
  */
-if( $thsp_current_layout != 'layout-c' ) { ?>
+if( $thsp_current_layout['default_layout'] != 'layout-c' ) { ?>
 <div id="secondary" class="widget-area" role="complementary">
 	<?php if ( ! dynamic_sidebar( 'primary-sidebar' ) ) : ?>
 
@@ -36,7 +36,7 @@ if( $thsp_current_layout != 'layout-c' ) { ?>
  * Check if currently set layout requires secondary sidebar
  */
 $secondary_sidebar_layouts = array(	'layout-cps', 'layout-pcs', 'layout-psc' );
-if( in_array( $thsp_current_layout, $secondary_sidebar_layouts ) ) { ?>
+if( in_array( $thsp_current_layout['default_layout'], $secondary_sidebar_layouts ) ) { ?>
 <div id="tertiary" class="widget-area" role="complementary">
 	<?php if ( ! dynamic_sidebar( 'secondary-sidebar' ) ) : ?>
 

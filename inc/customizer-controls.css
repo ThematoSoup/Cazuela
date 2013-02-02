@@ -22,3 +22,8 @@
 	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
+
+/* Append word Logo to Header image Customizer control */
+#customize-section-header_image .customize-control-title:after {
+	content: " (Logo)";
+}

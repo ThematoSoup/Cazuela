@@ -28,6 +28,13 @@
 add_action( 'customize_register', 'thsp_customize_register' );
 function thsp_customize_register( $wp_customize ) {
 
+	// Renaming "Header Image" section to "Logo"
+	$wp_customize->add_section( 'header_image', array(
+	     'title'          => __( 'Logo' ),
+	     'theme_supports' => 'custom-header',
+	     'priority'       => 60,
+	) );
+
 	/**
 	 * Creates Customizer control for textarea field
 	 *

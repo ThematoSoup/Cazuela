@@ -1029,21 +1029,26 @@ blockquote {
 
 #main {
   padding: 30px 0;
+  padding: 3rem 0;
 }
 
 #before-header {
   padding-bottom: 20px;
+  padding-bottom: 2rem;
 }
 
 #masthead {
   padding: 20px 0 0;
+  padding: 2rem 0 0;
 }
 #masthead hgroup {
   margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 }
 #masthead .site-title,
 #masthead .header-image {
   margin: 0 0 10px;
+  margin: 0 0 1rem;
   display: inline-block;
 }
 #masthead .site-description {
@@ -1057,25 +1062,31 @@ blockquote {
 
 #after-header {
   padding: 20px 0;
+  padding: 2rem 0;
 }
 
 #colophon {
   padding-top: 20px;
+  padding-top: 2rem;
 }
 #colophon #footer-sidebars {
   padding-bottom: 30px;
+  padding-bottom: 3rem;
 }
 #colophon #after-footer {
   padding-bottom: 20px;
+  padding-bottom: 2rem;
 }
 
 #before-footer {
   padding: 20px 0;
+  padding: 2rem 0;
 }
 
 #before-content,
 #after-content {
   margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 
 /*
@@ -1180,7 +1191,8 @@ blockquote {
 
 /* Footer widgets */
 #footer-widget-area {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 
 #footer-widget-area.widget-count-2 .widget {
@@ -1412,6 +1424,7 @@ blockquote {
 
 .hentry {
   margin-bottom: 30px;
+  margin-bottom: 3rem;
   background: #fff;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
   word-wrap: break-word;
@@ -1425,13 +1438,16 @@ blockquote {
 }
 .hentry .entry-inner {
   padding: 20px 20px 0;
+  padding: 2rem 2rem 0;
 }
 .hentry header,
 .hentry .entry-content {
   padding-bottom: 20px;
+  padding-bottom: 2rem;
 }
 .hentry footer {
   padding: 20px;
+  padding: 2rem;
   border-top: 1px solid #f6f6f6;
 }
 
@@ -1479,6 +1495,7 @@ blockquote {
 
 .page-links {
   margin: 0 0 20px;
+  margin: 0 0 2rem;
   clear: both;
 }
 
