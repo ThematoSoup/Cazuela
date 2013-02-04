@@ -1451,6 +1451,11 @@ blockquote {
   border-top: 1px solid #f6f6f6;
 }
 
+.single .hentry,
+.page .hentry {
+  margin-bottom: 0;
+}
+
 .entry-title {
   margin: 0 0 0.2em;
 }
