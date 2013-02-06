@@ -176,6 +176,15 @@ function thsp_widgets_init() {
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>',
 	) );
+	register_sidebar( array(
+		'name' => __( 'Homepage Widget Area', 'thsp_cazuela' ),
+		'description' => __( 'This widget area is used in "Widgetized Homepage" page template', 'thsp_cazuela' ),
+		'id' => 'homepage-widget-area',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="homepage-inner">',
+		'after_widget' => '</div></aside>',
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
 
 	register_sidebar( array(
 		'name' => __( 'Before Header', 'thsp_cazuela' ),
@@ -366,7 +375,10 @@ function thsp_dynamic_css() {
 	$links_color = $theme_options['links_color']; ?>
 	
 	<style type="text/css">
-		#main a { color: <?php echo $links_color; ?> }
+		#main a,
+		#after-header a,
+		#before-footer a,
+		#homepage-widget-area a:visited { color: <?php echo $links_color; ?> }
 	</style>
 
 <?php }

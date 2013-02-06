@@ -109,7 +109,9 @@ function thsp_get_current_layout() {
 	$theme_options = thsp_get_theme_options();
 
 	// Check if in single post/page view and if layout custom field value exists
-	if( is_singular() && get_post_meta( $post->ID, '_thsp_post_layout', true ) ) {
+	if ( is_page_template( 'page-templates/template-homepage.php' ) ) {
+		$current_layout['default_layout'] = 'layout-c';
+	} elseif ( is_singular() && get_post_meta( $post->ID, '_thsp_post_layout', true ) ) {
 		$current_layout['default_layout'] = get_post_meta( $post->ID, '_thsp_post_layout', true );
 	} else {
 		$current_layout['default_layout'] = $theme_options['default_layout'];

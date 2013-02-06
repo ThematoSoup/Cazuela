@@ -156,24 +156,24 @@ h6:first-child {
 	margin-top: 0;
 }
 h1 {
-	@include font-size(36);
+	@include font-size($bodyfontsize * 2.25); // 36
 }
 h2 {
-	@include font-size(28);
+	@include font-size($bodyfontsize * 1.75); // 28
 }
 h3 {
-	@include font-size(24);
+	@include font-size($bodyfontsize * 1.5); // 24
 }
 h4,
 .widget-title {
-	@include font-size(20);
+	@include font-size($bodyfontsize * 1.25); // 20
 }
 h5 {
-	@include font-size(20);
+	@include font-size($bodyfontsize * 1.25); // 20
 	font-weight: normal;
 }
 h6 {
-	@include font-size(16);
+	@include font-size($bodyfontsize);
 }
 hr {
 	background-color: #ccc;

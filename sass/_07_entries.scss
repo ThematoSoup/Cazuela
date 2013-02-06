@@ -39,10 +39,9 @@
 		padding: 2rem;
 		border-top: 1px solid #f6f6f6;
 	}
-}
-.single .hentry,
-.page .hentry {
-	margin-bottom: 0;
+	h1, h2, h3, h4, h5, h6 {
+		clear: none;
+	}
 }
 .entry-title {
 	margin: 0 0 0.2em;
@@ -111,6 +110,43 @@
 		display: block;
 		text-align: right;
 		margin-top: 1em;
+		@include font-size($bodyfontsize * 0.875); // 14px
+	}
+}
+
+/* Page templates */
+#authors-list {
+	list-style: none;
+	margin: 2em 0;
+
+	> li {
+		margin-bottom: 1.25em;
+		padding-bottom: 1.25em;
+		border-bottom: 1px solid #f6f6f6;
+		
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	.avatar {
+		float: left;
+		padding: 0;
+		border: none;
+	}
+	.author-text {
+		margin-left: 112px;
+	}
+	h2 {
+		clear: none;
+		margin-top: 0;
+		@include font-size(24);
+	}
+	h3 {
+		clear: none;
+		margin-top: 1em;
+		@include font-size(16);
+	}
+	.latest-by-author li {
 		@include font-size($bodyfontsize * 0.875); // 14px
 	}
 }

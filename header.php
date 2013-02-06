@@ -57,6 +57,16 @@
 		</div><!-- .inner -->
 	</header><!-- #masthead .site-header -->
 
+	<?php
+		/*
+		 * Add breadcrumbs
+		 * WordPress SEO plugin must be installed and breadcrumbs must be enabled
+		 */
+		if ( function_exists('yoast_breadcrumb') && ! is_front_page() && ! is_home() ) {
+			yoast_breadcrumb( '<div id="yoast-breadcrumbs"><div class="inner">', '</div></div>' );
+		}
+	?>
+
 	<?php do_action( 'thsp_after_header' ); ?>
 
 	<div id="main" class="site-main">

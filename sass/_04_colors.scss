@@ -21,7 +21,11 @@
 	}
 	
 }
-
+#after-header a:visited,
+#content a:visited,
+#before-footer a:visited {
+	color: lighten($bodytextcolor, 35%);
+}
 
 /* =Color Schemes
 ----------------------------------------------- */
@@ -35,7 +39,7 @@
 	}
 	#masthead {
 		background: #272727;
-		border-bottom: 5px solid #1f1f1f;
+		border-bottom: 5px solid $accent_color;
 	}
 	.main-navigation > ul > li > a:hover,
 	.main-navigation .sub-menu li,
@@ -65,6 +69,9 @@
 	}
 	#commentform #submit,
 	.wpcf7-submit {
+		background: $accent_color;
+	}
+	#yoast-breadcrumbs {
 		background: $accent_color;
 	}
 }
@@ -132,6 +139,9 @@
 	#after-footer {
 		background: #fff;
 	}
+	#yoast-breadcrumbs {
+		background: $accent_color;
+	}
 }
 .scheme-white.header-gradient #masthead {
 	@include background-image(
@@ -179,6 +189,9 @@
 	}
 	#commentform #submit,
 	.wpcf7-submit {
+		background: $accent_color;
+	}
+	#yoast-breadcrumbs {
 		background: $accent_color;
 	}
 }
@@ -230,6 +243,9 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
+	#yoast-breadcrumbs {
+		background: $accent_color;
+	}
 }
 .scheme-brown.header-gradient #masthead {
 	@include background-image(
@@ -279,6 +295,9 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
+	#yoast-breadcrumbs {
+		background: $accent_color;
+	}
 }
 .scheme-candy-red.header-gradient #masthead {
 	@include background-image(
@@ -326,6 +345,9 @@
 	}
 	#commentform #submit,
 	.wpcf7-submit {
+		background: $accent_color;
+	}
+	#yoast-breadcrumbs {
 		background: $accent_color;
 	}
 }
@@ -378,6 +400,9 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
+	#yoast-breadcrumbs {
+		background: $accent_color;
+	}
 }
 .scheme-grey.header-gradient #masthead {
 	@include background-image(
@@ -425,6 +450,9 @@
 	}
 	#commentform #submit,
 	.wpcf7-submit {
+		background: $accent_color;
+	}
+	#yoast-breadcrumbs {
 		background: $accent_color;
 	}
 }
@@ -476,6 +504,9 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
+	#yoast-breadcrumbs {
+		background: $accent_color;
+	}
 }
 .scheme-orange.header-gradient #masthead {
 	@include background-image(
@@ -525,6 +556,9 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
+	#yoast-breadcrumbs {
+		background: $accent_color;
+	}
 }
 .scheme-plum-purple.header-gradient #masthead {
 	@include background-image(
@@ -572,6 +606,9 @@
 	}
 	#commentform #submit,
 	.wpcf7-submit {
+		background: $accent_color;
+	}
+	#yoast-breadcrumbs {
 		background: $accent_color;
 	}
 }
