@@ -21,9 +21,7 @@
 	}
 	
 }
-#after-header a:visited,
-#content a:visited,
-#before-footer a:visited {
+#content a:visited {
 	color: lighten($bodytextcolor, 35%);
 }
 
@@ -32,16 +30,18 @@
 
 .scheme-black {
 	$accent_color: #1f1f1f;
+	$background_color: #fafafa;
 	
-	background-color: #fafafa;
 	#main {
-		background-color: #fafafa;
+		background-color: $background_color;
 	}
 	#masthead {
 		background: #272727;
 		border-bottom: 5px solid $accent_color;
 	}
-	.main-navigation > ul > li > a:hover,
+	.main-navigation > ul > li:hover > a {
+		text-shadow: 0 0 5px darken(#474747, 50%);
+	}
 	.main-navigation .sub-menu li,
 	.main-navigation .sub-menu .sub-menu li {
 		background: $accent_color;
@@ -50,8 +50,8 @@
 		background: darken($accent_color, 10%);
 	}
 	#after-header {
-		background: #f0f0f0;
-		border-bottom: 1px solid #e8e8e8;
+		background: darken($background_color, 5%);
+		border-bottom: 1px solid darken($background_color, 10%);
 	}
 	.sticky {
 		border-bottom: 3px solid $accent_color;
@@ -71,9 +71,6 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
-	#yoast-breadcrumbs {
-		background: $accent_color;
-	}
 }
 .scheme-black.header-gradient #masthead {
 	@include background-image(
@@ -84,10 +81,10 @@
 
 .scheme-white {
 	$accent_color: #ececec;
+	$background_color: #fcfcfc;
 	
-	background-color: #fcfcfc;
 	#main {
-		background-color: #fcfcfc;
+		background-color: $background_color;
 	}
 	#masthead {
 		background: #fff !important;
@@ -139,9 +136,6 @@
 	#after-footer {
 		background: #fff;
 	}
-	#yoast-breadcrumbs {
-		background: $accent_color;
-	}
 }
 .scheme-white.header-gradient #masthead {
 	@include background-image(
@@ -152,16 +146,18 @@
 
 .scheme-blue {
 	$accent_color: #193b69;
+	$background_color: #f5f7fa;
 	
-	background-color: #f5f7fa;
 	#main {
-		background-color: #f5f7fa;
+		background-color: $background_color;
 	}
 	#masthead {
 		background: #1d4e8e;
 		border-bottom: 5px solid $accent_color;
 	}
-	.main-navigation > ul > li:hover,
+	.main-navigation > ul > li:hover > a {
+		text-shadow: 0 0 5px darken(#474747, 50%);
+	}
 	.main-navigation .sub-menu li,
 	.main-navigation .sub-menu .sub-menu li {
 		background: $accent_color;
@@ -170,8 +166,8 @@
 		background: darken($accent_color, 10%);
 	}
 	#after-header {
-		background: #edeef0;
-		border-bottom: 1px solid #e6e7e8;
+		background: darken($background_color, 5%);
+		border-bottom: 1px solid darken($background_color, 10%);
 	}
 	.sticky {
 		border-bottom: 3px solid $accent_color;
@@ -191,9 +187,6 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
-	#yoast-breadcrumbs {
-		background: $accent_color;
-	}
 }
 .scheme-blue.header-gradient #masthead {
 	@include background-image(
@@ -204,16 +197,18 @@
 
 .scheme-brown {
 	$accent_color: #423c37;
+	$background_color: #faf7f5;
 	
-	background-color: #faf7f5;
 	#main {
-		background-color: #faf7f5;
+		background-color: $background_color;
 	}
 	#masthead {
 		background: #60554e;
 		border-bottom: 5px solid #423c37;
 	}
-	.main-navigation > ul > li:hover,
+	.main-navigation > ul > li:hover > a {
+		text-shadow: 0 0 5px darken(#474747, 50%);
+	}
 	.main-navigation .sub-menu li,
 	.main-navigation .sub-menu .sub-menu li {
 		background: $accent_color;
@@ -222,8 +217,8 @@
 		background: darken($accent_color, 10%);
 	}
 	#after-header {
-		background: #f0eeed;
-		border-bottom: 1px solid #e8e7e6;
+		background: darken($background_color, 5%);
+		border-bottom: 1px solid darken($background_color, 10%);
 	}
 	.sticky {
 		border-bottom: 3px solid $accent_color;
@@ -243,9 +238,6 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
-	#yoast-breadcrumbs {
-		background: $accent_color;
-	}
 }
 .scheme-brown.header-gradient #masthead {
 	@include background-image(
@@ -256,16 +248,18 @@
 
 .scheme-candy-red {
 	$accent_color: #61132e;
+	$background_color: #faf5f7;
 	
-	background-color: #faf5f7;
 	#main {
-		background-color: #faf5f7;
+		background-color: $background_color;
 	}
 	#masthead {
 		background: #8c163f;
 		border-bottom: 5px solid #61132e;
 	}
-	.main-navigation > ul > li:hover,
+	.main-navigation > ul > li:hover > a {
+		text-shadow: 0 0 5px darken(#474747, 50%);
+	}
 	.main-navigation .sub-menu li,
 	.main-navigation .sub-menu .sub-menu li {
 		background: $accent_color;
@@ -274,8 +268,8 @@
 		background: darken($accent_color, 10%);
 	}
 	#after-header {
-		background: #f0ebed;
-		border-bottom: 1px solid #ebe6e8;
+		background: darken($background_color, 5%);
+		border-bottom: 1px solid darken($background_color, 10%);
 	}
 	.sticky {
 		border-bottom: 3px solid $accent_color;
@@ -295,9 +289,6 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
-	#yoast-breadcrumbs {
-		background: $accent_color;
-	}
 }
 .scheme-candy-red.header-gradient #masthead {
 	@include background-image(
@@ -308,16 +299,18 @@
 
 .scheme-cobalt {
 	$accent_color: #363b42;
+	$background_color: #f5f7fa;
 	
-	background-color: #f5f7fa;
 	#main {
-		background-color: #f5f7fa;
+		background-color: $background_color;
 	}
 	#masthead {
 		background: #4b535d;
 		border-bottom: 5px solid #363b42;
 	}
-	.main-navigation > ul > li:hover,
+	.main-navigation > ul > li:hover > a {
+		text-shadow: 0 0 5px darken(#474747, 50%);
+	}
 	.main-navigation .sub-menu li,
 	.main-navigation .sub-menu .sub-menu li {
 		background: $accent_color;
@@ -326,8 +319,8 @@
 		background: darken($accent_color, 10%);
 	}
 	#after-header {
-		background: #edeef0;
-		border-bottom: 1px solid #e6e7e8;
+		background: darken($background_color, 5%);
+		border-bottom: 1px solid darken($background_color, 10%);
 	}
 	.sticky {
 		border-bottom: 3px solid $accent_color;
@@ -347,9 +340,6 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
-	#yoast-breadcrumbs {
-		background: $accent_color;
-	}
 }
 .scheme-cobalt.header-gradient #masthead {
 	@include background-image(
@@ -361,16 +351,18 @@
 
 .scheme-grey {
 	$accent_color: #474747;
+	$background_color: #fafafa;
 	
-	background-color: #fafafa;
 	#main {
-		background-color: #fafafa;
+		background-color: $background_color;
 	}
 	#masthead {
 		background: #656565;
 		border-bottom: 5px solid #474747;
 	}
-	.main-navigation > ul > li:hover,
+	.main-navigation > ul > li:hover > a {
+		text-shadow: 0 0 5px darken(#474747, 50%);
+	}
 	.main-navigation .sub-menu li,
 	.main-navigation .sub-menu .sub-menu li {
 		background: $accent_color;
@@ -379,8 +371,8 @@
 		background: darken($accent_color, 10%);
 	}
 	#after-header {
-		background: #f0f0f0;
-		border-bottom: 1px solid #e6e6e6;
+		background: darken($background_color, 5%);
+		border-bottom: 1px solid darken($background_color, 10%);
 	}
 	.sticky {
 		border-bottom: 3px solid $accent_color;
@@ -400,9 +392,6 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
-	#yoast-breadcrumbs {
-		background: $accent_color;
-	}
 }
 .scheme-grey.header-gradient #masthead {
 	@include background-image(
@@ -413,16 +402,18 @@
 
 .scheme-lime-green {
 	$accent_color: #426f15;
+	$background_color: #f7faf5;
 	
-	background-color: #f7faf5;
 	#main {
-		background-color: #f7faf5;
+		background-color: $background_color;
 	}
 	#masthead {
 		background: #579718;
 		border-bottom: 5px solid #426f15;
 	}
-	.main-navigation > ul > li:hover,
+	.main-navigation > ul > li:hover > a {
+		text-shadow: 0 0 5px darken(#474747, 50%);
+	}
 	.main-navigation .sub-menu li,
 	.main-navigation .sub-menu .sub-menu li {
 		background: $accent_color;
@@ -431,8 +422,8 @@
 		background: darken($accent_color, 10%);
 	}
 	#after-header {
-		background: #edf0eb;
-		border-bottom: 1px solid #e5e8e3;
+		background: darken($background_color, 5%);
+		border-bottom: 1px solid darken($background_color, 10%);
 	}
 	.sticky {
 		border-bottom: 3px solid $accent_color;
@@ -450,9 +441,6 @@
 	}
 	#commentform #submit,
 	.wpcf7-submit {
-		background: $accent_color;
-	}
-	#yoast-breadcrumbs {
 		background: $accent_color;
 	}
 }
@@ -465,16 +453,18 @@
 
 .scheme-orange {
 	$accent_color: #9b420e;
+	$background_color: #faf7f5;
 	
-	background-color: #faf7f5;
 	#main {
-		background-color: #faf7f5;
+		background-color: $background_color;
 	}
 	#masthead {
 		background: #e0580e;
 		border-bottom: 5px solid #9b420e;
 	}
-	.main-navigation > ul > li:hover,
+	.main-navigation > ul > li:hover > a {
+		text-shadow: 0 0 5px darken(#474747, 50%);
+	}
 	.main-navigation .sub-menu li,
 	.main-navigation .sub-menu .sub-menu li {
 		background: $accent_color;
@@ -483,8 +473,8 @@
 		background: darken($accent_color, 10%);
 	}
 	#after-header {
-		background: #f0eeed;
-		border-bottom: 1px solid #e8e7e6;
+		background: darken($background_color, 5%);
+		border-bottom: 1px solid darken($background_color, 10%);
 	}
 	.sticky {
 		border-bottom: 3px solid $accent_color;
@@ -504,9 +494,6 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
-	#yoast-breadcrumbs {
-		background: $accent_color;
-	}
 }
 .scheme-orange.header-gradient #masthead {
 	@include background-image(
@@ -517,16 +504,18 @@
 
 .scheme-plum-purple {
 	$accent_color: #322c3a;
+	$background_color: #f7f5fa;
 	
-	background-color: #f7f5fa;
 	#main {
-		background-color: #f7f5fa;
+		background-color: $background_color;
 	}
 	#masthead {
 		background: #41394d;
 		border-bottom: 5px solid #322c3a;
 	}
-	.main-navigation > ul > li:hover,
+	.main-navigation > ul > li:hover > a {
+		text-shadow: 0 0 5px darken(#474747, 50%);
+	}
 	.main-navigation .sub-menu li,
 	.main-navigation .sub-menu .sub-menu li {
 		background: $accent_color;
@@ -535,8 +524,8 @@
 		background: darken($accent_color, 10%);
 	}
 	#after-header {
-		background: #eeedf0;
-		border-bottom: 1px solid #e7e6e8;
+		background: darken($background_color, 5%);
+		border-bottom: 1px solid darken($background_color, 10%);
 	}
 	.sticky {
 		border-bottom: 3px solid $accent_color;
@@ -556,9 +545,6 @@
 	.wpcf7-submit {
 		background: $accent_color;
 	}
-	#yoast-breadcrumbs {
-		background: $accent_color;
-	}
 }
 .scheme-plum-purple.header-gradient #masthead {
 	@include background-image(
@@ -569,16 +555,18 @@
 
 .scheme-red {
 	$accent_color: #801c20;
+	$background_color: #faf5f5;
 	
-	background-color: #faf5f5;
 	#main {
-		background-color: #faf5f5;
+		background-color: $background_color;
 	}
 	#masthead {
 		background: #ac2026;
 		border-bottom: 5px solid #801c20;
 	}
-	.main-navigation > ul > li:hover,
+	.main-navigation > ul > li:hover > a {
+		text-shadow: 0 0 5px darken(#474747, 50%);
+	}
 	.main-navigation .sub-menu li,
 	.main-navigation .sub-menu .sub-menu li {
 		background: $accent_color;
@@ -587,8 +575,8 @@
 		background: darken($accent_color, 10%);
 	}
 	#after-header {
-		background: #f0ebeb;
-		border-bottom: 1px solid #e8e3e3;
+		background: darken($background_color, 5%);
+		border-bottom: 1px solid darken($background_color, 10%);
 	}
 	.sticky {
 		border-bottom: 3px solid $accent_color;
@@ -606,9 +594,6 @@
 	}
 	#commentform #submit,
 	.wpcf7-submit {
-		background: $accent_color;
-	}
-	#yoast-breadcrumbs {
 		background: $accent_color;
 	}
 }

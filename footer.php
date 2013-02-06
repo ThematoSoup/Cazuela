@@ -12,7 +12,18 @@
 		</div><!-- .inner -->
 	</div><!-- #main .site-main -->
 
-	<?php do_action( 'thsp_before_footer' ); ?>
+	<?php
+		/*
+		 * Prevents adding empty #before-header div
+		 */
+		if ( has_action( 'thsp_before_footer' ) ) { ?>
+		<div id="before-footer" class="clearfix">
+			<div class="inner clearfix">
+				<?php do_action( 'thsp_before_footer' ); ?>
+			</div>
+		</div><!-- #before-header -->
+		<?php }
+	?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="inner clearfix">
@@ -32,7 +43,18 @@
 			<?php endif; ?>
 		</div><!-- .inner -->
 
-		<?php do_action( 'thsp_after_footer' ); ?>
+		<?php
+			/*
+			 * Prevents adding empty #before-header div
+			 */
+			if ( has_action( 'thsp_after_footer' ) ) { ?>
+			<div id="after-footer" class="clearfix">
+				<div class="inner clearfix">
+					<?php do_action( 'thsp_after_footer' ); ?>
+				</div>
+			</div><!-- #before-header -->
+			<?php }
+		?>
 	</footer><!-- #colophon .site-footer -->
 
 </div><!-- #page .hfeed .site -->

@@ -11,7 +11,16 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
-			<?php do_action( 'thsp_before_content' ); ?>
+			<?php
+				/*
+				 * Prevents adding empty #before-content div
+				 */
+				if ( has_action( 'thsp_before_content' ) ) { ?>
+				<div id="before-content" class="clearfix">
+					<?php do_action( 'thsp_before_content' ); ?>
+				</div><!-- #before-content -->
+				<?php }
+			?>
 
 			<article id="post-0" class="post error404 not-found">
 				<header class="entry-header">
@@ -43,7 +52,16 @@ get_header(); ?>
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 .post .error404 .not-found -->
 
-			<?php do_action( 'thsp_after_content' ); ?>
+			<?php
+				/*
+				 * Prevents adding empty #after-content div
+				 */
+				if ( has_action( 'thsp_after_content' ) ) { ?>
+				<div id="after-content" class="clearfix">
+					<?php do_action( 'thsp_after_content' ); ?>
+				</div><!-- #after-content -->
+				<?php }
+			?>
 
 		</div><!-- #content .site-content -->
 	</div><!-- #primary .content-area -->

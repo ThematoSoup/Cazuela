@@ -426,17 +426,12 @@ blockquote {
   color: #ccc;
 }
 
-#after-header a:visited,
-#content a:visited,
-#before-footer a:visited {
+#content a:visited {
   color: #a4a4a4;
 }
 
 /* =Color Schemes
 ----------------------------------------------- */
-.scheme-black {
-  background-color: #fafafa;
-}
 .scheme-black #main {
   background-color: #fafafa;
 }
@@ -444,7 +439,9 @@ blockquote {
   background: #272727;
   border-bottom: 5px solid #1f1f1f;
 }
-.scheme-black .main-navigation > ul > li > a:hover,
+.scheme-black .main-navigation > ul > li:hover > a {
+  text-shadow: 0 0 5px black;
+}
 .scheme-black .main-navigation .sub-menu li,
 .scheme-black .main-navigation .sub-menu .sub-menu li {
   background: #1f1f1f;
@@ -453,8 +450,8 @@ blockquote {
   background: #050505;
 }
 .scheme-black #after-header {
-  background: #f0f0f0;
-  border-bottom: 1px solid #e8e8e8;
+  background: #ededed;
+  border-bottom: 1px solid #e1e1e1;
 }
 .scheme-black .sticky {
   border-bottom: 3px solid #1f1f1f;
@@ -474,9 +471,6 @@ blockquote {
 .scheme-black .wpcf7-submit {
   background: #1f1f1f;
 }
-.scheme-black #yoast-breadcrumbs {
-  background: #1f1f1f;
-}
 
 .scheme-black.header-gradient #masthead {
   background-image: url(images/grain.png), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1a1a1a), color-stop(100%, #272727));
@@ -486,9 +480,6 @@ blockquote {
   background-image: url(images/grain.png), linear-gradient(#1a1a1a, #272727);
 }
 
-.scheme-white {
-  background-color: #fcfcfc;
-}
 .scheme-white #main {
   background-color: #fcfcfc;
 }
@@ -542,9 +533,6 @@ blockquote {
 .scheme-white #after-footer {
   background: #fff;
 }
-.scheme-white #yoast-breadcrumbs {
-  background: #ececec;
-}
 
 .scheme-white.header-gradient #masthead {
   background-image: url(images/grain.png), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1a1a1a), color-stop(100%, #272727));
@@ -554,9 +542,6 @@ blockquote {
   background-image: url(images/grain.png), linear-gradient(#1a1a1a, #272727);
 }
 
-.scheme-blue {
-  background-color: #f5f7fa;
-}
 .scheme-blue #main {
   background-color: #f5f7fa;
 }
@@ -564,7 +549,9 @@ blockquote {
   background: #1d4e8e;
   border-bottom: 5px solid #193b69;
 }
-.scheme-blue .main-navigation > ul > li:hover,
+.scheme-blue .main-navigation > ul > li:hover > a {
+  text-shadow: 0 0 5px black;
+}
 .scheme-blue .main-navigation .sub-menu li,
 .scheme-blue .main-navigation .sub-menu .sub-menu li {
   background: #193b69;
@@ -573,8 +560,8 @@ blockquote {
   background: #0f2440;
 }
 .scheme-blue #after-header {
-  background: #edeef0;
-  border-bottom: 1px solid #e6e7e8;
+  background: #e4e9f2;
+  border-bottom: 1px solid #d3dce9;
 }
 .scheme-blue .sticky {
   border-bottom: 3px solid #193b69;
@@ -594,9 +581,6 @@ blockquote {
 .scheme-blue .wpcf7-submit {
   background: #193b69;
 }
-.scheme-blue #yoast-breadcrumbs {
-  background: #193b69;
-}
 
 .scheme-blue.header-gradient #masthead {
   background-image: url(images/grain.png), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #163a68), color-stop(100%, #1d4e8e));
@@ -606,9 +590,6 @@ blockquote {
   background-image: url(images/grain.png), linear-gradient(#163a68, #1d4e8e);
 }
 
-.scheme-brown {
-  background-color: #faf7f5;
-}
 .scheme-brown #main {
   background-color: #faf7f5;
 }
@@ -616,7 +597,9 @@ blockquote {
   background: #60554e;
   border-bottom: 5px solid #423c37;
 }
-.scheme-brown .main-navigation > ul > li:hover,
+.scheme-brown .main-navigation > ul > li:hover > a {
+  text-shadow: 0 0 5px black;
+}
 .scheme-brown .main-navigation .sub-menu li,
 .scheme-brown .main-navigation .sub-menu .sub-menu li {
   background: #423c37;
@@ -625,8 +608,8 @@ blockquote {
   background: #262320;
 }
 .scheme-brown #after-header {
-  background: #f0eeed;
-  border-bottom: 1px solid #e8e7e6;
+  background: #f2e9e4;
+  border-bottom: 1px solid #e9dcd3;
 }
 .scheme-brown .sticky {
   border-bottom: 3px solid #423c37;
@@ -646,9 +629,6 @@ blockquote {
 .scheme-brown .wpcf7-submit {
   background: #423c37;
 }
-.scheme-brown #yoast-breadcrumbs {
-  background: #423c37;
-}
 
 .scheme-brown.header-gradient #masthead {
   background-image: url(images/grain.png), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #423a35), color-stop(100%, #60554e));
@@ -658,9 +638,6 @@ blockquote {
   background-image: url(images/grain.png), linear-gradient(#423a35, #60554e);
 }
 
-.scheme-candy-red {
-  background-color: #faf5f7;
-}
 .scheme-candy-red #main {
   background-color: #faf5f7;
 }
@@ -668,7 +645,9 @@ blockquote {
   background: #8c163f;
   border-bottom: 5px solid #61132e;
 }
-.scheme-candy-red .main-navigation > ul > li:hover,
+.scheme-candy-red .main-navigation > ul > li:hover > a {
+  text-shadow: 0 0 5px black;
+}
 .scheme-candy-red .main-navigation .sub-menu li,
 .scheme-candy-red .main-navigation .sub-menu .sub-menu li {
   background: #61132e;
@@ -677,8 +656,8 @@ blockquote {
   background: #360b1a;
 }
 .scheme-candy-red #after-header {
-  background: #f0ebed;
-  border-bottom: 1px solid #ebe6e8;
+  background: #f2e4e9;
+  border-bottom: 1px solid #e9d3dc;
 }
 .scheme-candy-red .sticky {
   border-bottom: 3px solid #61132e;
@@ -698,9 +677,6 @@ blockquote {
 .scheme-candy-red .wpcf7-submit {
   background: #61132e;
 }
-.scheme-candy-red #yoast-breadcrumbs {
-  background: #61132e;
-}
 
 .scheme-candy-red.header-gradient #masthead {
   background-image: url(images/grain.png), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #600f2b), color-stop(100%, #8c163f));
@@ -710,9 +686,6 @@ blockquote {
   background-image: url(images/grain.png), linear-gradient(#600f2b, #8c163f);
 }
 
-.scheme-cobalt {
-  background-color: #f5f7fa;
-}
 .scheme-cobalt #main {
   background-color: #f5f7fa;
 }
@@ -720,7 +693,9 @@ blockquote {
   background: #4b535d;
   border-bottom: 5px solid #363b42;
 }
-.scheme-cobalt .main-navigation > ul > li:hover,
+.scheme-cobalt .main-navigation > ul > li:hover > a {
+  text-shadow: 0 0 5px black;
+}
 .scheme-cobalt .main-navigation .sub-menu li,
 .scheme-cobalt .main-navigation .sub-menu .sub-menu li {
   background: #363b42;
@@ -729,8 +704,8 @@ blockquote {
   background: #1f2226;
 }
 .scheme-cobalt #after-header {
-  background: #edeef0;
-  border-bottom: 1px solid #e6e7e8;
+  background: #e4e9f2;
+  border-bottom: 1px solid #d3dce9;
 }
 .scheme-cobalt .sticky {
   border-bottom: 3px solid #363b42;
@@ -750,9 +725,6 @@ blockquote {
 .scheme-cobalt .wpcf7-submit {
   background: #363b42;
 }
-.scheme-cobalt #yoast-breadcrumbs {
-  background: #363b42;
-}
 
 .scheme-cobalt.header-gradient #masthead {
   background-image: url(images/grain.png), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #32373d), color-stop(100%, #4b535d));
@@ -762,9 +734,6 @@ blockquote {
   background-image: url(images/grain.png), linear-gradient(#32373d, #4b535d);
 }
 
-.scheme-grey {
-  background-color: #fafafa;
-}
 .scheme-grey #main {
   background-color: #fafafa;
 }
@@ -772,7 +741,9 @@ blockquote {
   background: #656565;
   border-bottom: 5px solid #474747;
 }
-.scheme-grey .main-navigation > ul > li:hover,
+.scheme-grey .main-navigation > ul > li:hover > a {
+  text-shadow: 0 0 5px black;
+}
 .scheme-grey .main-navigation .sub-menu li,
 .scheme-grey .main-navigation .sub-menu .sub-menu li {
   background: #474747;
@@ -781,8 +752,8 @@ blockquote {
   background: #2e2e2e;
 }
 .scheme-grey #after-header {
-  background: #f0f0f0;
-  border-bottom: 1px solid #e6e6e6;
+  background: #ededed;
+  border-bottom: 1px solid #e1e1e1;
 }
 .scheme-grey .sticky {
   border-bottom: 3px solid #474747;
@@ -802,9 +773,6 @@ blockquote {
 .scheme-grey .wpcf7-submit {
   background: #474747;
 }
-.scheme-grey #yoast-breadcrumbs {
-  background: #474747;
-}
 
 .scheme-grey.header-gradient #masthead {
   background-image: url(images/grain.png), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #424242), color-stop(100%, #656565));
@@ -814,9 +782,6 @@ blockquote {
   background-image: url(images/grain.png), linear-gradient(#424242, #656565);
 }
 
-.scheme-lime-green {
-  background-color: #f7faf5;
-}
 .scheme-lime-green #main {
   background-color: #f7faf5;
 }
@@ -824,7 +789,9 @@ blockquote {
   background: #579718;
   border-bottom: 5px solid #426f15;
 }
-.scheme-lime-green .main-navigation > ul > li:hover,
+.scheme-lime-green .main-navigation > ul > li:hover > a {
+  text-shadow: 0 0 5px black;
+}
 .scheme-lime-green .main-navigation .sub-menu li,
 .scheme-lime-green .main-navigation .sub-menu .sub-menu li {
   background: #426f15;
@@ -833,8 +800,8 @@ blockquote {
   background: #29440d;
 }
 .scheme-lime-green #after-header {
-  background: #edf0eb;
-  border-bottom: 1px solid #e5e8e3;
+  background: #e9f2e4;
+  border-bottom: 1px solid #dce9d3;
 }
 .scheme-lime-green .sticky {
   border-bottom: 3px solid #426f15;
@@ -854,9 +821,6 @@ blockquote {
 .scheme-lime-green .wpcf7-submit {
   background: #426f15;
 }
-.scheme-lime-green #yoast-breadcrumbs {
-  background: #426f15;
-}
 
 .scheme-lime-green.header-gradient #masthead {
   background-image: url(images/grain.png), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3e6c11), color-stop(100%, #579718));
@@ -866,9 +830,6 @@ blockquote {
   background-image: url(images/grain.png), linear-gradient(#3e6c11, #579718);
 }
 
-.scheme-orange {
-  background-color: #faf7f5;
-}
 .scheme-orange #main {
   background-color: #faf7f5;
 }
@@ -876,7 +837,9 @@ blockquote {
   background: #e0580e;
   border-bottom: 5px solid #9b420e;
 }
-.scheme-orange .main-navigation > ul > li:hover,
+.scheme-orange .main-navigation > ul > li:hover > a {
+  text-shadow: 0 0 5px black;
+}
 .scheme-orange .main-navigation .sub-menu li,
 .scheme-orange .main-navigation .sub-menu .sub-menu li {
   background: #9b420e;
@@ -885,8 +848,8 @@ blockquote {
   background: #6c2e0a;
 }
 .scheme-orange #after-header {
-  background: #f0eeed;
-  border-bottom: 1px solid #e8e7e6;
+  background: #f2e9e4;
+  border-bottom: 1px solid #e9dcd3;
 }
 .scheme-orange .sticky {
   border-bottom: 3px solid #9b420e;
@@ -906,9 +869,6 @@ blockquote {
 .scheme-orange .wpcf7-submit {
   background: #9b420e;
 }
-.scheme-orange #yoast-breadcrumbs {
-  background: #9b420e;
-}
 
 .scheme-orange.header-gradient #masthead {
   background-image: url(images/grain.png), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #973c09), color-stop(100%, #e0580e));
@@ -918,9 +878,6 @@ blockquote {
   background-image: url(images/grain.png), linear-gradient(#973c09, #e0580e);
 }
 
-.scheme-plum-purple {
-  background-color: #f7f5fa;
-}
 .scheme-plum-purple #main {
   background-color: #f7f5fa;
 }
@@ -928,7 +885,9 @@ blockquote {
   background: #41394d;
   border-bottom: 5px solid #322c3a;
 }
-.scheme-plum-purple .main-navigation > ul > li:hover,
+.scheme-plum-purple .main-navigation > ul > li:hover > a {
+  text-shadow: 0 0 5px black;
+}
 .scheme-plum-purple .main-navigation .sub-menu li,
 .scheme-plum-purple .main-navigation .sub-menu .sub-menu li {
   background: #322c3a;
@@ -937,8 +896,8 @@ blockquote {
   background: #19161d;
 }
 .scheme-plum-purple #after-header {
-  background: #eeedf0;
-  border-bottom: 1px solid #e7e6e8;
+  background: #e9e4f2;
+  border-bottom: 1px solid #dcd3e9;
 }
 .scheme-plum-purple .sticky {
   border-bottom: 3px solid #322c3a;
@@ -958,9 +917,6 @@ blockquote {
 .scheme-plum-purple .wpcf7-submit {
   background: #322c3a;
 }
-.scheme-plum-purple #yoast-breadcrumbs {
-  background: #322c3a;
-}
 
 .scheme-plum-purple.header-gradient #masthead {
   background-image: url(images/grain.png), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2d2734), color-stop(100%, #41394d));
@@ -970,9 +926,6 @@ blockquote {
   background-image: url(images/grain.png), linear-gradient(#2d2734, #41394d);
 }
 
-.scheme-red {
-  background-color: #faf5f5;
-}
 .scheme-red #main {
   background-color: #faf5f5;
 }
@@ -980,7 +933,9 @@ blockquote {
   background: #ac2026;
   border-bottom: 5px solid #801c20;
 }
-.scheme-red .main-navigation > ul > li:hover,
+.scheme-red .main-navigation > ul > li:hover > a {
+  text-shadow: 0 0 5px black;
+}
 .scheme-red .main-navigation .sub-menu li,
 .scheme-red .main-navigation .sub-menu .sub-menu li {
   background: #801c20;
@@ -989,8 +944,8 @@ blockquote {
   background: #561316;
 }
 .scheme-red #after-header {
-  background: #f0ebeb;
-  border-bottom: 1px solid #e8e3e3;
+  background: #f2e4e4;
+  border-bottom: 1px solid #e9d3d3;
 }
 .scheme-red .sticky {
   border-bottom: 3px solid #801c20;
@@ -1008,9 +963,6 @@ blockquote {
 }
 .scheme-red #commentform #submit,
 .scheme-red .wpcf7-submit {
-  background: #801c20;
-}
-.scheme-red #yoast-breadcrumbs {
   background: #801c20;
 }
 
@@ -1076,6 +1028,13 @@ blockquote {
   padding-bottom: 20px;
   padding-bottom: 2rem;
 }
+#before-header .widget {
+  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+#before-header .widget:last-child {
+  margin-bottom: 0;
+}
 
 #masthead {
   padding: 20px 0 0;
@@ -1101,8 +1060,16 @@ blockquote {
 }
 
 #after-header {
-  padding: 20px 0;
-  padding: 2rem 0;
+  padding: 10px 0;
+  padding: 1rem 0;
+}
+#after-header .widget {
+  margin: 10px 0;
+  margin: 1rem 0;
+}
+#after-header #yoast-breadcrumbs + .widget {
+  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 #colophon {
@@ -1127,20 +1094,6 @@ blockquote {
 #after-content {
   margin-bottom: 30px;
   margin-bottom: 3rem;
-}
-
-#yoast-breadcrumbs {
-  font-size: 12px;
-  font-size: 1.2rem;
-  padding-bottom: 6px;
-  padding-top: 1px;
-  padding-bottom: 0.5rem;
-  line-height: 1;
-  color: #bbb;
-}
-#yoast-breadcrumbs a {
-  color: #eee;
-  text-decoration: none;
 }
 
 /* Widgetized homepage template */
@@ -1374,6 +1327,11 @@ blockquote {
   font-size: 1.4rem;
 }
 
+.main-navigation > ul > li {
+  margin-right: 30px;
+  margin-right: 3rem;
+}
+
 .main-navigation li li {
   margin-right: 0;
 }
@@ -1382,7 +1340,7 @@ blockquote {
   display: block;
   text-decoration: none;
   color: #fff;
-  padding: 0.75em;
+  padding: 0.75em 0;
   line-height: 1;
   position: relative;
 }
@@ -1422,7 +1380,7 @@ blockquote {
 
 /* Parent item indicator */
 .main-navigation > ul > .menu-parent-item > a {
-  padding-left: 1.5em;
+  padding-left: 1em;
 }
 
 .main-navigation > ul > .menu-parent-item > a:before {
@@ -1435,7 +1393,6 @@ blockquote {
   width: 0;
   height: 0;
   margin-top: -2px;
-  margin-left: 0.6em;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
   border-top: 6px solid white;
@@ -1532,6 +1489,18 @@ blockquote {
 #main .paging-navigation .wp-pagenavi .pages,
 #main #image-navigation .wp-pagenavi .pages {
   margin-right: 1em;
+}
+
+/* Yoast breadcrumbs */
+#yoast-breadcrumbs {
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+#yoast-breadcrumbs span a {
+  color: #4b4b4b;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 /* =Entries

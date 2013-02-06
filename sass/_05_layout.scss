@@ -41,6 +41,14 @@
 #before-header {
 	padding-bottom: 20px;
 	padding-bottom: 2rem;
+	
+	.widget {
+		margin-bottom: 20px;
+		margin-bottom: 2rem;
+	}
+	.widget:last-child {
+		margin-bottom: 0;
+	}
 }
 #masthead {
 	padding: 20px 0 0;
@@ -65,8 +73,17 @@
 	}
 }
 #after-header {
-	padding: 20px 0;
-	padding: 2rem 0;
+	padding: 10px 0;
+	padding: 1rem 0;
+	
+	.widget {
+		margin: 10px 0;
+		margin: 1rem 0;
+	}
+	#yoast-breadcrumbs + .widget {
+		margin-top: 20px;
+		margin-top: 2rem;
+	}
 }
 #colophon {
 	padding-top: 20px;
@@ -89,19 +106,6 @@
 #after-content {
 	margin-bottom: 30px;
 	margin-bottom: 3rem;
-}
-#yoast-breadcrumbs {
-	@include font-size($bodyfontsize * 0.75); // 12px
-	padding-bottom: 6px;
-	padding-top: 1px;
-	padding-bottom: 0.5rem;
-	line-height: 1;
-	
-	color: #bbb;
-	a {
-		color: #eee;
-		text-decoration: none;
-	}
 }
 
 /* Widgetized homepage template */

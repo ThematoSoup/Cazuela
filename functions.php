@@ -246,73 +246,47 @@ add_action( 'widgets_init', 'thsp_widgets_init' );
  *
  * @since Cazuela 1.0
  */
-add_action( 'thsp_before_header', 'thsp_attach_before_header_sidebar' );
-function thsp_attach_before_header_sidebar() {
-	if ( is_active_sidebar( 'before-header-sidebar' ) ) { ?>
-		<div id="before-header" class="clearfix">
-			<div class="inner">
-				<?php dynamic_sidebar( 'before-header-sidebar' ); ?>
-			</div>
-			<!-- .inner -->
-		</div>
-		<!-- #before-header -->
-	<?php }
+function thsp_before_header_sidebar() {
+	dynamic_sidebar( 'before-header-sidebar' );
 }
-add_action( 'thsp_after_header', 'thsp_attach_after_header_sidebar' );
-function thsp_attach_after_header_sidebar() {
-	if ( is_active_sidebar( 'after-header-sidebar' ) ) { ?>
-		<div id="after-header" class="clearfix">
-			<div class="inner">
-				<?php dynamic_sidebar( 'after-header-sidebar' ); ?>
-			</div>
-			<!-- .inner -->
-		</div>
-		<!-- #after-header -->
-	<?php }
-}
-add_action( 'thsp_before_content', 'thsp_attach_before_content_sidebar' );
-function thsp_attach_before_content_sidebar() {
-	if ( is_active_sidebar( 'before-content-sidebar' ) ) { ?>
-		<div id="before-content" class="clearfix">
-			<?php dynamic_sidebar( 'before-content-sidebar' ); ?>
-		</div>
-		<!-- #before-contet -->
-	<?php }
-}
-add_action( 'thsp_after_content', 'thsp_attach_after_content_sidebar' );
-function thsp_attach_after_content_sidebar() {
-	if ( is_active_sidebar( 'after-content-sidebar' ) ) { ?>
-		<div id="after-content" class="clearfix">
-			<?php dynamic_sidebar( 'after-content-sidebar' ); ?>
-		</div>
-		<!-- #after-content -->
-	<?php }
-}
-add_action( 'thsp_before_footer', 'thsp_attach_before_footer_sidebar' );
-function thsp_attach_before_footer_sidebar() {
-	if ( is_active_sidebar( 'before-footer-sidebar' ) ) { ?>
-		<div id="before-footer" class="clearfix">
-			<div class="inner">
-				<?php dynamic_sidebar( 'before-footer-sidebar' ); ?>
-			</div>
-			<!-- .inner -->
-		</div>
-		<!-- #before-footer -->
-	<?php }
-}
-add_action( 'thsp_after_footer', 'thsp_attach_after_footer_sidebar' );
-function thsp_attach_after_footer_sidebar() {
-	if ( is_active_sidebar( 'after-footer-sidebar' ) ) { ?>
-		<div id="after-footer" class="clearfix">
-			<div class="inner">
-				<?php dynamic_sidebar( 'after-footer-sidebar' ); ?>
-			</div>
-			<!-- .inner -->
-		</div>
-		<!-- #after-footer -->
-	<?php }
+if ( is_active_sidebar( 'before-header-sidebar' ) ) {
+	add_action( 'thsp_before_header', 'thsp_before_header_sidebar' );
 }
 
+function thsp_after_header_sidebar() {
+	dynamic_sidebar( 'after-header-sidebar' );
+}
+if ( is_active_sidebar( 'after-header-sidebar' ) ) {
+	add_action( 'thsp_after_header', 'thsp_after_header_sidebar' );
+}
+
+function thsp_attach_before_content_sidebar() {
+	dynamic_sidebar( 'before-content-sidebar' );
+}
+if ( is_active_sidebar( 'before-content-sidebar' ) ) {
+	add_action( 'thsp_before_content', 'thsp_attach_before_content_sidebar' );
+}
+
+function thsp_attach_after_content_sidebar() {
+	dynamic_sidebar( 'after-content-sidebar' );
+}
+if ( is_active_sidebar( 'after-content-sidebar' ) ) {
+	add_action( 'thsp_after_content', 'thsp_attach_after_content_sidebar' );
+}
+
+function thsp_attach_before_footer_sidebar() {
+	dynamic_sidebar( 'before-footer-sidebar' );
+}
+if ( is_active_sidebar( 'before-footer-sidebar' ) ) {
+	add_action( 'thsp_before_footer', 'thsp_attach_before_footer_sidebar' );
+}
+
+function thsp_attach_after_footer_sidebar() {
+	dynamic_sidebar( 'after-footer-sidebar' );
+}
+if ( is_active_sidebar( 'after-footer-sidebar' ) ) {
+	add_action( 'thsp_after_footer', 'thsp_attach_after_footer_sidebar' );
+}
 
 /**
  * Enqueue scripts and styles

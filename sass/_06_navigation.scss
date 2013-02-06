@@ -12,6 +12,10 @@
 	margin-right: 0.75em;
 	@include font-size($bodyfontsize * 0.875); // 14px
 }
+.main-navigation > ul > li {
+	margin-right: 30px;
+	margin-right: 3rem;
+}
 .main-navigation li li {
 	margin-right: 0;
 }
@@ -19,7 +23,7 @@
 	display: block;
 	text-decoration: none;
 	color: #fff;
-	padding: 0.75em;
+	padding: 0.75em 0;
 	line-height: 1;
 	position: relative;
 }
@@ -60,7 +64,7 @@
 }
 /* Parent item indicator */
 .main-navigation > ul > .menu-parent-item > a {
-	padding-left: 1.5em;
+	padding-left: 1em;
 }
 .main-navigation > ul > .menu-parent-item > a:before {
 	content: "";
@@ -72,7 +76,6 @@
 	width: 0;
 	height: 0;
 	margin-top: -2px;
-	margin-left: 0.6em;
 	border-left: 4px solid transparent;
 	border-right: 4px solid transparent; 
 	border-top: 6px solid #fff;
@@ -144,5 +147,17 @@
 		.pages {
 			margin-right: 1em;
 		}
+	}
+}
+
+/* Yoast breadcrumbs */
+#yoast-breadcrumbs {
+	@include font-size($bodyfontsize * 0.75); // 12px
+	line-height: 1;
+
+	span a {
+		color: $bodytextcolor;
+		font-weight: bold;
+		text-decoration: none;
 	}
 }

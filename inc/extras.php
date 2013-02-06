@@ -148,7 +148,7 @@ add_filter( 'attachment_link', 'thsp_enhanced_image_navigation', 10, 2 );
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  *
- * @since Cazuela 1.1
+ * @since Cazuela 1.0
  */
 function thsp_wp_title( $title, $sep ) {
 	global $page, $paged;
@@ -171,3 +171,22 @@ function thsp_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'thsp_wp_title', 10, 2 );
+
+
+/**
+ * Adds Yoast breadcrumbs to 'thsp_after_header' hook
+ *
+ * @since Cazuela 1.0
+ */
+function thsp_add_yoast_breadcrumbs() {
+
+	/*
+	 * Add breadcrumbs
+	 * WordPress SEO plugin must be installed and breadcrumbs must be enabled
+	 */
+	if ( function_exists('yoast_breadcrumb') && ! is_front_page() && ! is_home() ) {
+		yoast_breadcrumb( '<div id="yoast-breadcrumbs">', '</div>' );
+	}
+	
+}
+add_action( 'thsp_after_header', 'thsp_add_yoast_breadcrumbs', 1 );

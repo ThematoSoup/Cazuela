@@ -12,7 +12,16 @@ get_header();
 		<div id="primary" class="content-area image-attachment">
 			<div id="content" class="site-content" role="main">
 
-			<?php do_action( 'thsp_before_content' ); ?>
+			<?php
+				/*
+				 * Prevents adding empty #before-content div
+				 */
+				if ( has_action( 'thsp_before_content' ) ) { ?>
+				<div id="before-content" class="clearfix">
+					<?php do_action( 'thsp_before_content' ); ?>
+				</div><!-- #before-content -->
+				<?php }
+			?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -111,7 +120,16 @@ get_header();
 
 			<?php endwhile; // end of the loop. ?>
 
-			<?php do_action( 'thsp_after_content' ); ?>
+			<?php
+				/*
+				 * Prevents adding empty #after-content div
+				 */
+				if ( has_action( 'thsp_after_content' ) ) { ?>
+				<div id="after-content" class="clearfix">
+					<?php do_action( 'thsp_after_content' ); ?>
+				</div><!-- #after-content -->
+				<?php }
+			?>
 
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area .image-attachment -->

@@ -26,7 +26,18 @@
 <div id="page" class="hfeed site">
 
 	<header id="masthead" class="site-header" role="banner">
-		<?php do_action( 'thsp_before_header' ); ?>
+		<?php
+			/*
+			 * Prevents adding empty #before-header div
+			 */
+			if ( has_action( 'thsp_before_header' ) ) { ?>
+			<div id="before-header" class="clearfix">
+				<div class="inner clearfix">
+					<?php do_action( 'thsp_before_header' ); ?>
+				</div>
+			</div><!-- #before-header -->
+			<?php }
+		?>
 
 		<div class="inner clearfix">
 	
@@ -59,15 +70,16 @@
 
 	<?php
 		/*
-		 * Add breadcrumbs
-		 * WordPress SEO plugin must be installed and breadcrumbs must be enabled
+		 * Prevents adding empty #after-header div
 		 */
-		if ( function_exists('yoast_breadcrumb') && ! is_front_page() && ! is_home() ) {
-			yoast_breadcrumb( '<div id="yoast-breadcrumbs"><div class="inner">', '</div></div>' );
-		}
+		if ( has_action( 'thsp_after_header' ) ) { ?>
+		<div id="after-header">
+			<div class="inner clearfix">
+				<?php do_action( 'thsp_after_header' ); ?>
+			</div>
+		</div><!-- #after-header -->
+		<?php }
 	?>
-
-	<?php do_action( 'thsp_after_header' ); ?>
 
 	<div id="main" class="site-main">
 		<div class="inner clearfix">
