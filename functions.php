@@ -351,7 +351,6 @@ function thsp_dynamic_css() {
 	<style type="text/css">
 		#main a,
 		#after-header a,
-		#before-footer a,
 		#homepage-widget-area a:visited { color: <?php echo $links_color; ?> }
 	</style>
 

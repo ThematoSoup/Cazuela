@@ -151,6 +151,7 @@ add_filter( 'attachment_link', 'thsp_enhanced_image_navigation', 10, 2 );
  * @since Cazuela 1.0
  */
 function thsp_wp_title( $title, $sep ) {
+
 	global $page, $paged;
 
 	if ( is_feed() )
@@ -169,6 +170,7 @@ function thsp_wp_title( $title, $sep ) {
 		$title .= " $sep " . sprintf( __( 'Page %s', 'thsp_cazuela' ), max( $paged, $page ) );
 
 	return $title;
+	
 }
 add_filter( 'wp_title', 'thsp_wp_title', 10, 2 );
 
@@ -184,9 +186,9 @@ function thsp_add_yoast_breadcrumbs() {
 	 * Add breadcrumbs
 	 * WordPress SEO plugin must be installed and breadcrumbs must be enabled
 	 */
-	if ( function_exists('yoast_breadcrumb') && ! is_front_page() && ! is_home() ) {
-		yoast_breadcrumb( '<div id="yoast-breadcrumbs">', '</div>' );
-	}
+	yoast_breadcrumb( '<div id="yoast-breadcrumbs">', '</div>' );
 	
 }
-add_action( 'thsp_after_header', 'thsp_add_yoast_breadcrumbs', 1 );
+if ( function_exists( 'yoast_breadcrumb' ) && ! is_front_page() && ! is_home() ) {
+	add_action( 'thsp_after_header', 'thsp_add_yoast_breadcrumbs', 1 );
+}
