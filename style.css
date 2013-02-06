@@ -430,6 +430,10 @@ blockquote {
   color: #a4a4a4;
 }
 
+#content a:hover {
+  color: black;
+}
+
 /* =Color Schemes
 ----------------------------------------------- */
 .scheme-black #main {
@@ -1489,6 +1493,14 @@ blockquote {
 #main .paging-navigation .wp-pagenavi .pages,
 #main #image-navigation .wp-pagenavi .pages {
   margin-right: 1em;
+}
+
+/* Page links */
+.page-links {
+  font-weight: bold;
+}
+.page-links span {
+  font-weight: 300;
 }
 
 /* Yoast breadcrumbs */

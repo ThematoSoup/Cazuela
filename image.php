@@ -95,7 +95,7 @@ get_header();
 							</div><!-- .entry-attachment -->
 	
 							<?php the_content(); ?>
-							<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'thsp_cazuela' ), 'after' => '</div>' ) ); ?>
+							<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( '<span>Pages:</span>', 'thsp_cazuela' ), 'after' => '</div>' ) ); ?>
 	
 						</div><!-- .entry-content -->
 					</div><!-- .entry-inner -->

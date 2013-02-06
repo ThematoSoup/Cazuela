@@ -350,8 +350,12 @@ function thsp_dynamic_css() {
 	
 	<style type="text/css">
 		#main a,
+		#main .entry-meta a,
+		#main .page-links a,
 		#after-header a,
-		#homepage-widget-area a:visited { color: <?php echo $links_color; ?> }
+		#homepage-widget-area a:visited {
+			color: <?php echo $links_color; ?>
+		}
 	</style>
 
 <?php }

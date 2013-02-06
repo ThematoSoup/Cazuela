@@ -24,6 +24,9 @@
 #content a:visited {
 	color: lighten($bodytextcolor, 35%);
 }
+#content a:hover {
+	color: darken($bodytextcolor, 35%);
+}
 
 /* =Color Schemes
 ----------------------------------------------- */

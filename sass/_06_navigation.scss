@@ -150,6 +150,15 @@
 	}
 }
 
+/* Page links */
+.page-links {
+	font-weight: bold;
+	
+	span {
+		font-weight: 300;
+	}
+}
+
 /* Yoast breadcrumbs */
 #yoast-breadcrumbs {
 	@include font-size($bodyfontsize * 0.75); // 12px
