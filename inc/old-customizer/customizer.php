@@ -19,7 +19,7 @@
  *
  * @uses	thsp_get_theme_options_sections()	Defined in helpers.php
  * @uses	thsp_settings_page_capability()		Defined in helpers.php
- * @uses	thsp_get_theme_options_fields()		Defined in get-options.php
+ * @uses	thsp_get_theme_customizer_fields()		Defined in get-options.php
  *
  * @link	$wp_customize->add_section			http://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_section
  * @link	$wp_customize->add_setting			http://codex.wordpress.org/Class_Reference/WP_Customize_Manager/add_setting
@@ -107,7 +107,7 @@ function thsp_customize_register( $wp_customize ) {
 	/**
 	 * Adds Customizer sections
 	 */
-	$thsp_sections = thsp_get_theme_options_fields();
+	$thsp_sections = thsp_get_theme_customizer_fields();
 	foreach( $thsp_sections as $thsp_section_key => $thsp_section_value ) {
 		
 		/*

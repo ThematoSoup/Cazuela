@@ -17,7 +17,7 @@ function thsp_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
 	// Get current theme options
-	$theme_options = thsp_get_theme_options();
+	$theme_options = thsp_cbp_get_options_values();
 	
 	// Check if navigation needs to be shown, based on theme options
 	if ( ( 'nav-above' == $nav_id && $theme_options['post_navigation_above'] ) || ( 'nav-below' == $nav_id && $theme_options['post_navigation_below'] ) ) {

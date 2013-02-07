@@ -34,7 +34,7 @@ add_action( 'add_meta_boxes', 'thsp_layout_meta_box' );
  * Post layout meta box calllback
  *
  * @uses	thsp_get_theme_options()			Defined in /inc/get-options.php
- * @uses	thsp_get_theme_options_fields()		Defined in /inc/get-options.php
+ * @uses	thsp_get_theme_customizer_fields()		Defined in /inc/get-options.php
  * @since	Cazuela 1.0
  */
 function thsp_post_layout_meta_cb( $post ) {
@@ -53,7 +53,7 @@ function thsp_post_layout_meta_cb( $post ) {
 		<p>You can override layout set in theme settings</p>
 		
 		<?php
-		$thsp_theme_options_fields = thsp_get_theme_options_fields();
+		$thsp_theme_options_fields = thsp_get_theme_customizer_fields();
 		$layout_options = $thsp_theme_options_fields['thsp_layout_section']['fields']['default_layout']['choices'];
 		foreach( $layout_options as $layout_option_key => $layout_option_value ) { ?>
 	

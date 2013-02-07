@@ -17,7 +17,7 @@
  * @return	array	$options	Array of setting fields
  * @since Cazuela 1.0
  */
-function thsp_get_theme_options_fields() {
+function thsp_get_theme_customizer_fields() {
 
 	$options = array(
 
@@ -283,14 +283,14 @@ function thsp_get_theme_options() {
  * 
  * Returns an array that holds default values for all theme options.
  * 
- * @uses	thsp_get_theme_options_fields()		defined in /inc/theme-options/get-options.php
+ * @uses	thsp_get_theme_customizer_fields()		defined in /inc/theme-options/get-options.php
  * @return	array	$thsp_option_defaults		array of option defaults
  * @since Cazuela 1.0
  */
 function thsp_get_theme_option_defaults() {
 
 	// Get the array that holds all theme option fields
-	$thsp_sections = thsp_get_theme_options_fields();
+	$thsp_sections = thsp_get_theme_customizer_fields();
 	
 	// Initialize the array to hold the default values for all theme options
 	$thsp_option_defaults = array();

@@ -52,7 +52,7 @@ add_filter( 'wp_nav_menu_objects', 'thsp_menu_parent_class' );
  *
  * @param	Array	$classes				Current body classes
  * @uses	thsp_get_theme_options()		Defined in /inc/get-options.php
- * @uses	thsp_get_theme_options_fields()	Defined in /inc/extras.php
+ * @uses	thsp_get_theme_customizer_fields()	Defined in /inc/extras.php
  * @uses	thsp_get_current_layout()		Defined in /inc/extras.php
  * @return	Array	$classes				Updated body classes array
  * @since	Cazuela 1.0
@@ -67,7 +67,7 @@ function thsp_body_classes( $classes ) {
 	}
 
 	// Get current theme options
-	$theme_options = thsp_get_theme_options();
+	$theme_options = thsp_cbp_get_options_values();
 	$thsp_body_classes = array();
 	
 	// Get layout classes and add them to body_class array
@@ -106,7 +106,7 @@ function thsp_get_current_layout() {
 	global $post;
 
 	// Get current theme options values
-	$theme_options = thsp_get_theme_options();
+	$theme_options = thsp_cbp_get_options_values();
 
 	// Check if in single post/page view and if layout custom field value exists
 	if ( is_page_template( 'page-templates/template-homepage.php' ) ) {

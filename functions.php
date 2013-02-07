@@ -301,12 +301,15 @@ function thsp_theme_scripts() {
 	 * Check if fonts set in theme options require loading
 	 * of Google scripts
 	 */
-	$theme_options = thsp_get_theme_options();
-	$theme_options_fields = thsp_get_theme_options_fields();
+	$theme_options = thsp_cbp_get_options_values();
+	$theme_options_fields = thsp_cbp_get_fields();
+	
 	$body_font_value = $theme_options['body_font'];
 	$heading_font_value = $theme_options['heading_font'];
-	$body_font_options = $theme_options_fields['thsp_typography_section']['fields']['body_font']['choices'];
-	$heading_font_options = $theme_options_fields['thsp_typography_section']['fields']['heading_font']['choices'];
+	
+	$body_font_options = $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices_extended'];
+	$heading_font_options = $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices_extended'];
+
 	// Check if it's a Google Font
 	if( isset( $body_font_options[$body_font_value]['google_font'] ) ) {
 		wp_enqueue_style(
@@ -345,7 +348,7 @@ add_action( 'wp_enqueue_scripts', 'thsp_theme_scripts' );
  */
 function thsp_dynamic_css() {
 
-	$theme_options = thsp_get_theme_options();
+	$theme_options = thsp_cbp_get_options_values();
 	$links_color = $theme_options['links_color']; ?>
 	
 	<style type="text/css">
@@ -377,21 +380,9 @@ if( is_admin() ) {
 
 
 /**
- * Helper functions that return arrays of theme options,
- * theme option default values and all the fields
- */	
-require( get_template_directory() . '/inc/get-options.php' );
-
-
-/**
  * Customizer options
  */	
-global $wp_customize;
-if( isset( $wp_customize ) ) {
-
-	require( get_template_directory() . '/inc/customizer.php' );
-
-}
+require( get_template_directory() . '/inc/customizer/customizer.php' );
 
 
 /**
