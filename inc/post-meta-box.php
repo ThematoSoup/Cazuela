@@ -43,7 +43,7 @@ function thsp_post_layout_meta_cb( $post ) {
 		$current_layout = get_post_meta( $post->ID, '_thsp_post_layout', true );
 	} else {
 		// Get current theme options and all option fields
-		$theme_options = thsp_get_theme_options();
+		$theme_options = thsp_cbp_get_options_values();
 		$current_layout = $theme_options['default_layout'];
 	}
 
@@ -53,8 +53,8 @@ function thsp_post_layout_meta_cb( $post ) {
 		<p>You can override layout set in theme settings</p>
 		
 		<?php
-		$thsp_theme_options_fields = thsp_get_theme_customizer_fields();
-		$layout_options = $thsp_theme_options_fields['thsp_layout_section']['fields']['default_layout']['choices'];
+		$thsp_theme_options_fields = thsp_cbp_get_fields();
+		$layout_options = $thsp_theme_options_fields['thsp_layout_section']['fields']['default_layout']['control_args']['choices'];
 		foreach( $layout_options as $layout_option_key => $layout_option_value ) { ?>
 	
 			<input id="_thsp_post_layout_<?php echo esc_attr( $layout_option_key ); ?>" class="image-radio" type="radio" value="<?php echo esc_attr( $layout_option_key ); ?>" name="_thsp_post_layout" <?php checked( $layout_option_key, $current_layout ); ?> />
@@ -91,7 +91,7 @@ function thsp_save_post_layout( $postid ) {
 		return;
 		
 	// Get current theme options and all option fields
-	$theme_options = thsp_get_theme_options();
+	$theme_options = thsp_cbp_get_options_values();
 	if( isset( $_POST['_thsp_post_layout'] ) ) {
 		// Update the meta field if it's not the same as theme setting
 		if( $_POST['_thsp_post_layout'] != $theme_options['default_layout'] ) {

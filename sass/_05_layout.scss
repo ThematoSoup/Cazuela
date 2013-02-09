@@ -328,3 +328,33 @@
 		padding: 0 0 0 1rem;
 	}
 }
+
+
+/* Masonry layout template */
+#masonry-container {
+	margin: 0 auto;
+}
+.masonry-post {
+	width: 240px;
+	margin: 5px;
+	
+	.hentry {
+		margin-bottom: 0;
+	}
+	.entry-title {
+		@include font-size($bodyfontsize * 1.125); // 18
+	}
+	.entry-content {
+		@include font-size($bodyfontsize * 0.75); // 12
+	}
+	.masonry-link {
+		display: block;
+		text-decoration: none;
+		color: $bodytextcolor !important;
+	}
+	
+	.hentry:hover {
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		background: #fcfcfc;
+	}
+}

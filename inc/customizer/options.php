@@ -42,20 +42,20 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Color scheme', 'cazuela' ),
+						'label' => __( 'Color scheme', 'thsp_cazuela' ),
 						'type' => 'select', // Select control
 						'choices' => array(
-							'scheme-black' => __( 'Black', 'cazuela' ),
-							'scheme-white' => __( 'White', 'cazuela' ),
-							'scheme-blue' => __( 'Blue', 'cazuela' ),
-							'scheme-brown' => __( 'Brown', 'cazuela' ),
-							'scheme-candy-red' => __( 'Candy red', 'cazuela' ),
-							'scheme-cobalt' => __( 'Cobalt', 'cazuela' ),
-							'scheme-grey' => __( 'Grey', 'cazuela' ),
-							'scheme-lime-green' => __( 'Lime green', 'cazuela' ),
-							'scheme-orange' => __( 'Orange', 'cazuela' ),
-							'scheme-plum-purple' => __( 'Plum purple', 'cazuela' ),
-							'scheme-red' => __( 'Red', 'cazuela' )
+							'scheme-black' => __( 'Black', 'thsp_cazuela' ),
+							'scheme-white' => __( 'White', 'thsp_cazuela' ),
+							'scheme-blue' => __( 'Blue', 'thsp_cazuela' ),
+							'scheme-brown' => __( 'Brown', 'thsp_cazuela' ),
+							'scheme-candy-red' => __( 'Candy red', 'thsp_cazuela' ),
+							'scheme-cobalt' => __( 'Cobalt', 'thsp_cazuela' ),
+							'scheme-grey' => __( 'Grey', 'thsp_cazuela' ),
+							'scheme-lime-green' => __( 'Lime green', 'thsp_cazuela' ),
+							'scheme-orange' => __( 'Orange', 'thsp_cazuela' ),
+							'scheme-plum-purple' => __( 'Plum purple', 'thsp_cazuela' ),
+							'scheme-red' => __( 'Red', 'thsp_cazuela' )
 						),					
 						'priority' => 1
 					) // End control args
@@ -69,7 +69,7 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Header gradient', 'cazuela' ),
+						'label' => __( 'Header gradient', 'thsp_cazuela' ),
 						'type' => 'checkbox', // Checkbox field control
 						'priority' => 2
 					)
@@ -83,7 +83,7 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Links color', 'cazuela' ),
+						'label' => __( 'Links color', 'thsp_cazuela' ),
 						'type' => 'color', // Color picker field control
 						'priority' => 3
 					)
@@ -106,7 +106,7 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Navigation above posts', 'cazuela' ),
+						'label' => __( 'Navigation above posts', 'thsp_cazuela' ),
 						'type' => 'checkbox', // Checkbox field control
 						'priority' => 20
 					)
@@ -120,7 +120,7 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Navigation below posts', 'cazuela' ),
+						'label' => __( 'Navigation below posts', 'thsp_cazuela' ),
 						'type' => 'checkbox', // Checkbox field control
 						'priority' => 21
 					)
@@ -134,8 +134,8 @@ function thsp_cbp_get_fields() {
 
 			'existing_section' => false,
 			'args' => array(
-				'title' => __( 'Layout', 'cazuela' ),
-				'description' => __( 'Set default page layout', 'cazuela' ),
+				'title' => __( 'Layout', 'thsp_cazuela' ),
+				'description' => __( 'Set default page layout', 'thsp_cazuela' ),
 				'priority' => 10
 			),
 			'fields' => array(
@@ -148,11 +148,11 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Layout type', 'cazuela' ),
+						'label' => __( 'Layout type', 'thsp_cazuela' ),
 						'type' => 'select', // Select control
 						'choices' => array(
-							'layout-full-width' => __( 'Full width', 'cazuela' ),
-							'layout-boxed' => __( 'Boxed', 'cazuela' )
+							'layout-full-width' => __( 'Full width', 'thsp_cazuela' ),
+							'layout-boxed' => __( 'Boxed', 'thsp_cazuela' )
 						),					
 						'priority' => 1
 					) // End control args
@@ -166,15 +166,15 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Default layout', 'cazuela' ),
+						'label' => __( 'Default layout', 'thsp_cazuela' ),
 						'type' => 'select', // Select control
 						'choices' => array(
-							'layout-c' => __( 'Content', 'cazuela' ),
-							'layout-cp' =>  __( 'Content - Primary Sidebar', 'cazuela' ),
-							'layout-pc' => __( 'Primary Sidebar - Content', 'cazuela' ),
-							'layout-cps' => __( 'Content - Primary Sidebar - Secondary Sidebar', 'cazuela' ),
-							'layout-psc' => __( 'Primary Sidebar - Secondary Sidebar - Content', 'cazuela' ),
-							'layout-pcs' => __( 'Primary Sidebar - Content - Secondary Sidebar', 'cazuela' )
+							'layout-c' => __( 'Content', 'thsp_cazuela' ),
+							'layout-cp' =>  __( 'Content - Primary Sidebar', 'thsp_cazuela' ),
+							'layout-pc' => __( 'Primary Sidebar - Content', 'thsp_cazuela' ),
+							'layout-cps' => __( 'Content - Primary Sidebar - Secondary Sidebar', 'thsp_cazuela' ),
+							'layout-psc' => __( 'Primary Sidebar - Secondary Sidebar - Content', 'thsp_cazuela' ),
+							'layout-pcs' => __( 'Primary Sidebar - Content - Secondary Sidebar', 'thsp_cazuela' )
 						),					
 						'priority' => 2
 					) // End control args
@@ -188,8 +188,8 @@ function thsp_cbp_get_fields() {
 
 			'existing_section' => false,
 			'args' => array(
-				'title' => __( 'Typography', 'cazuela' ),
-				'description' => __( 'Select fonts', 'cazuela' ),
+				'title' => __( 'Typography', 'thsp_cazuela' ),
+				'description' => __( 'Select fonts', 'thsp_cazuela' ),
 				'priority' => 20
 			),
 			'fields' => array(
@@ -202,7 +202,7 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Body font', 'cazuela' ),
+						'label' => __( 'Body font', 'thsp_cazuela' ),
 						'type' => 'select', // Select control
 						'choices_extended' => array(
 							'arial' => array(
@@ -260,7 +260,7 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Heading font', 'cazuela' ),
+						'label' => __( 'Heading font', 'thsp_cazuela' ),
 						'type' => 'select', // Select control
 						'choices_extended' => array(
 							'georgia' => array(
