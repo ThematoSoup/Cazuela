@@ -1317,7 +1317,8 @@ blockquote {
 
 /* Masonry layout template */
 #masonry-container {
-  margin: 0 auto;
+  margin: 0 auto 30px;
+  margin: 0 auto 3rem;
 }
 
 .masonry-post {
@@ -1343,6 +1344,17 @@ blockquote {
 .masonry-post .hentry:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   background: #fcfcfc;
+}
+.masonry-post .hentry .entry-inner {
+  padding: 15px;
+  padding: 1.5rem;
+}
+.masonry-post .hentry .entry-content {
+  padding-bottom: 0;
+}
+.masonry-post .hentry header {
+  padding-bottom: 10px;
+  padding-bottom: 1rem;
 }
 
 /* =Navigation

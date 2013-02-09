@@ -23,32 +23,58 @@ get_header(); ?>
 			?>
 
 			<!-- Masonry posts -->
-			<div id="masonry-container">
 			<?php
+				$temp_query = $wp_query;
 				$masonry_args = array(
-					'posts_per_page' => 48,
+					'posts_per_page' => get_option( 'posts_per_page' ),
+					'post_type' => 'post',
 					'paged' => $paged
 				);
-				$masonry_query = new WP_Query( $masonry_args );
+				$wp_query = new WP_Query( $masonry_args );
 				
-				if ( $masonry_query->have_posts() ) :
+				if ( $wp_query->have_posts() ) :
+			?>
+
+			<div id="masonry-container">
 				
-				thsp_content_nav( 'nav-above' );
-				
-				while ( $masonry_query->have_posts() ) :
-				$masonry_query->the_post(); ?>
+				<?php
+				while ( $wp_query->have_posts() ) :
+				$wp_query->the_post(); ?>
 
 					<div class="masonry-post">
-						<?php get_template_part( 'content', 'masonry' ); ?>
-					</div><!-- .archive-post -->
+						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+							<?php get_template_part( 'post', 'lead' ); ?>
+							
+							<a class="masonry-link" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'thsp_cazuela' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+								<div class="entry-inner">
+									<header class="entry-header">
+										<h1 class="entry-title"><?php the_title(); ?></h1>
+									</header><!-- .entry-header -->		
+									
+									<?php if ( is_search() ) : // Only display Excerpts for Search ?>
+									<div class="entry-summary">
+										<?php the_excerpt(); ?>
+									</div><!-- .entry-summary -->
+									<?php else : ?>
+									<div class="entry-content">
+										<?php the_excerpt(); ?>
+									</div><!-- .entry-content -->
+									<?php endif; ?>
+								</div><!-- .entry-inner -->
+							</a>
+						</article><!-- #post-<?php the_ID(); ?> -->
+					</div><!-- .masonry-post -->
 
-				<?php endwhile;
-				
-				endif;
-				
-				wp_reset_postdata();
+				<?php endwhile;				
 			?>
 			</div><!-- #masonry-container -->
+
+			<?php
+				endif;
+				thsp_content_nav( 'nav-above' );			
+				wp_reset_postdata();
+				$wp_query = $temp_query;
+			?>
 			<!-- End Masonry posts -->
 
 			<?php
