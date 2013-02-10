@@ -6,7 +6,7 @@
  * @link	http://ottopress.com/2012/making-a-custom-control-for-the-theme-customizer/
  * @since	Theme_Customizer_Boilerplate 1.0
  */
-class Customizer_Textarea_Control extends WP_Customize_Control {
+class CBP_Customizer_Textarea_Control extends WP_Customize_Control {
 	public $type = 'textarea';
 	
 	public function render_content() {
@@ -24,7 +24,7 @@ class Customizer_Textarea_Control extends WP_Customize_Control {
  *
  * @since	Theme_Customizer_Boilerplate 1.0
  */
-class Customizer_Number_Control extends WP_Customize_Control {
+class CBP_Customizer_Number_Control extends WP_Customize_Control {
 	public $type = 'number';
 	
 	public function render_content() {

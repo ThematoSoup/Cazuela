@@ -64,20 +64,18 @@ function thsp_cbp_customize_register( $wp_customize ) {
 	 */	
 	require( dirname(__FILE__) . '/custom-controls.php' );
 
-	/**
-	 * Use this to extend Customizer Boilerplate
-	 */	
-	require( dirname(__FILE__) . '/extend.php' );
 
 	/*
 	 * Get all the fields using a helper function
 	 */
 	$thsp_sections = thsp_cbp_get_fields();
 
+
 	/*
 	 * Get name of DB entry under which options will be stored
 	 */
 	$thsp_cbp_option = thsp_cbp_option();
+
 
 	/**
 	 * Loop through the array and add Customizer sections
@@ -158,9 +156,27 @@ function thsp_cbp_customize_register( $wp_customize ) {
 				$thsp_field_value['control_args']['choices'] = $thsp_cbp_choices;		
 			}
 			
+			
+			// Check 
 			if ( 'color' == $thsp_field_value['control_args']['type'] ) {
 				$wp_customize->add_control(
 					new WP_Customize_Color_Control(
+						$wp_customize,
+						$setting_control_id,
+						$thsp_field_value['control_args']
+					)
+				);
+			} elseif ( 'number' == $thsp_field_value['control_args']['type'] ) { 
+				$wp_customize->add_control(
+					new CBP_Customizer_Number_Control(
+						$wp_customize,
+						$setting_control_id,
+						$thsp_field_value['control_args']
+					)
+				);
+			} elseif ( 'textarea' == $thsp_field_value['control_args']['type'] ) { 
+				$wp_customize->add_control(
+					new CBP_Customizer_Textarea_Control(
 						$wp_customize,
 						$setting_control_id,
 						$thsp_field_value['control_args']

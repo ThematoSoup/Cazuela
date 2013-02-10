@@ -355,7 +355,7 @@ function thsp_theme_scripts() {
 		'cazuela',
 		get_template_directory_uri() . '/js/cazuela.js',
 		array( 'jquery' ),
-		'20130209'
+		'20130210'
 	);
 	
 }
@@ -395,7 +395,7 @@ require( get_template_directory() . '/inc/custom-header.php' );
 /**
  * Add post meta box
  */
-if( is_admin() ) {
+if ( is_admin() ) {
 	 require( get_template_directory() . '/inc/post-meta-box.php' );
 }
 
@@ -403,13 +403,13 @@ if( is_admin() ) {
 /**
  * Customizer options
  */	
-require( get_template_directory() . '/inc/customizer/customizer.php' );
+require( get_template_directory() . '/inc/customizer-boilerplate/customizer.php' );
 
 
 /**
  * Theme documentation page
  */	
-if( is_admin() ) {
+if ( is_admin() ) {
 
 	require( get_template_directory() . '/inc/documentation-page.php' );
 
