@@ -166,6 +166,22 @@ function thsp_cbp_customize_register( $wp_customize ) {
 						$thsp_field_value['control_args']
 					)
 				);
+			} elseif ( 'image' == $thsp_field_value['control_args']['type'] ) { 
+				$wp_customize->add_control(
+					new WP_Customize_Image_Control(
+						$wp_customize,
+						$setting_control_id,
+						$thsp_field_value['control_args']
+					)
+				);
+			} elseif ( 'upload' == $thsp_field_value['control_args']['type'] ) { 
+				$wp_customize->add_control(
+					new WP_Customize_Upload_Control(
+						$wp_customize,
+						$setting_control_id,
+						$thsp_field_value['control_args']
+					)
+				);
 			} elseif ( 'number' == $thsp_field_value['control_args']['type'] ) { 
 				$wp_customize->add_control(
 					new CBP_Customizer_Number_Control(
@@ -182,6 +198,14 @@ function thsp_cbp_customize_register( $wp_customize ) {
 						$thsp_field_value['control_args']
 					)
 				);
+			} elseif ( 'images-radio' == $thsp_field_value['control_args']['type'] ) {
+				$wp_customize->add_control(
+					new CBP_Customizer_Images_Control(
+						$wp_customize,
+						$setting_control_id,
+						$thsp_field_value['control_args']
+					)
+				);
 			} else {
 				$wp_customize->add_control(
 					$setting_control_id,
@@ -191,7 +215,7 @@ function thsp_cbp_customize_register( $wp_customize ) {
 				
 		} // end foreach
 		
-	}
+	} // end foreach
 
 }
 add_action( 'customize_register', 'thsp_cbp_customize_register' );

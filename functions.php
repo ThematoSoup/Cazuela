@@ -99,8 +99,7 @@ function thsp_theme_setup() {
 	 * @since Cazuela 1.0
 	 */
 	register_nav_menus( array(
-		'main'		=> __( 'Main Menu', 'thsp_cazuela' ),
-		'footer'	=> __( 'Footer Menu', 'thsp_cazuela' ),
+		'main'		=> __( 'Main Menu', 'thsp_cazuela' )
 	) );
 
 	/**
@@ -413,4 +412,18 @@ if ( is_admin() ) {
 
 	require( get_template_directory() . '/inc/documentation-page.php' );
 
+}
+
+
+/**
+ * Hooking into Theme Customizer Boilerplate
+ * https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
+ *
+ * @since Cazuela 1.0
+ */
+add_filter( 'thsp_cbp_directory_uri', 'thsp_edit_cbp_directory_uri', 1 );
+function thsp_edit_cbp_directory_uri() {
+	
+	return get_template_directory_uri() . '/inc/customizer-boilerplate';
+	
 }

@@ -24,7 +24,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php $thumb_post_class = has_post_thumbnail() ? 'has-thumbnail' : ''; ?>
+			<?php $thumb_post_class = has_post_thumbnail() ? 'has-thumbnail clearfix' : 'clearfix'; ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class( $thumb_post_class ); ?>>
 				<?php if ( has_post_thumbnail() ) : ?>
 					<div id="homepage-lead-image">

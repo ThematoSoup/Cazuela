@@ -1,5 +1,20 @@
 <?php
 
+
+/**
+ * Customizer Directory
+ *
+ * @return	string	The directory in which Customizer Boilerplate is located, no trailing slash
+ */
+function thsp_cbp_directory_uri() {
+
+	$thsp_cbp_directory_uri = get_template_directory_uri() . '/customizer-boilerplate';
+	
+	return apply_filters( 'thsp_cbp_directory_uri', $thsp_cbp_directory_uri );
+
+}
+
+
 /**
  * Capability Required to Save Theme Options
  *
