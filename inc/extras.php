@@ -2,6 +2,18 @@
 /**
  * Custom functions that act independently of the theme templates
  *
+ * ========
+ * Contents
+ * ========
+ *
+ * - Add Home link to wp_page_menu()
+ * - Add parent class to menu items with children
+ * - Add custom body classes for layout and typography options
+ * - Get current layout
+ * - Enhanced image navigation
+ * - Custom wp_title, using filter hook
+ * - Add Yoast breadcrumbs, if WordPress SEO is active and breadcrumbs enabled
+ *
  * @package Cazuela
  * @since Cazuela 1.0
  */
@@ -50,11 +62,10 @@ add_filter( 'wp_nav_menu_objects', 'thsp_menu_parent_class' );
 /**
  * Adds custom classes to the array of body classes.
  *
- * @param	Array	$classes				Current body classes
- * @uses	thsp_get_theme_options()		Defined in /inc/get-options.php
- * @uses	thsp_get_theme_customizer_fields()	Defined in /inc/extras.php
- * @uses	thsp_get_current_layout()		Defined in /inc/extras.php
- * @return	Array	$classes				Updated body classes array
+ * @param	Array	$classes					Current body classes
+ * @uses	thsp_cbp_get_options_values()		Defined in /customizer-boilerplate/helpers.php
+ * @uses	thsp_get_current_layout()			Defined in /inc/extras.php
+ * @return	Array	$classes					Updated body classes array
  * @since	Cazuela 1.0
  */
 function thsp_body_classes( $classes ) {

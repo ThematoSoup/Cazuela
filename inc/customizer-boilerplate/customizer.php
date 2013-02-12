@@ -42,6 +42,22 @@ require( dirname(__FILE__) . '/helpers.php' );
 
 
 /**
+ * Adds the Customize page to the WordPress admin area
+ */
+add_action( 'admin_menu', 'thsp_cbp_customizer_menu' );
+function thsp_cbp_customizer_menu() {
+
+    add_theme_page(
+    	thsp_cbp_menu_link_text(),
+    	thsp_cbp_menu_link_text(),
+    	thsp_cbp_capability(),
+    	'customize.php'
+    );
+    
+}
+
+
+/**
  * Adds Customizer Sections, Settings and Controls
  *
  * - Require Custom Customizer Controls
@@ -204,6 +220,31 @@ function thsp_cbp_customize_register( $wp_customize ) {
 		} // end foreach
 		
 	} // end foreach
+	
+	
+	// Remove built-in Customizer sections
+	$thsp_cbp_remove_sections = apply_filters( 'tshp_cbp_remove_sections', array() );
+	if ( is_array( $thsp_cbp_remove_sections) ) {
+		foreach( $thsp_cbp_remove_sections as $thsp_cbp_remove_section ) {
+			$wp_customize->remove_section( $thsp_cbp_remove_section );
+		}
+	}
+
+	// Remove built-in Customizer settings
+	$thsp_cbp_remove_settings = apply_filters( 'tshp_cbp_remove_settings', array() );
+	if ( is_array( $thsp_cbp_remove_settings) ) {
+		foreach( $thsp_cbp_remove_settings as $thsp_cbp_remove_setting ) {
+			$wp_customize->remove_setting( $thsp_cbp_remove_setting );
+		}
+	}	
+
+	// Remove built-in Customizer controls
+	$thsp_cbp_remove_controls = apply_filters( 'tshp_cbp_remove_controls', array() );
+	if ( is_array( $thsp_cbp_remove_controls) ) {
+		foreach( $thsp_cbp_remove_controls as $thsp_cbp_remove_control ) {
+			$wp_customize->remove_control( $thsp_cbp_remove_control );
+		}
+	}	
 
 }
 add_action( 'customize_register', 'thsp_cbp_customize_register' );

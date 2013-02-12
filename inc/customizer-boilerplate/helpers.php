@@ -28,6 +28,22 @@ function thsp_cbp_capability() {
 
 
 /**
+ * Dashboard menu link text
+ *
+ * Hook into this to make the text translatable, for example you could
+ * return this
+ * __( 'Theme Customizer', 'my_theme_textdomain' )
+ *
+ * @return	string	Menu link text
+ */
+function thsp_cbp_menu_link_text() {
+
+	return apply_filters( 'thsp_cbp_menu_link_text', 'Theme Customizer' );
+
+}
+
+
+/**
  * Name of DB entry under which options are stored if 'type' => 'option'
  * is used for Theme Customizer settings
  *

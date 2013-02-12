@@ -1,6 +1,16 @@
 <?php
 /**
- * Custom template tags for this theme.
+ * Custom template tags for Cazuela theme.
+ *
+ * ========
+ * Contents
+ * ========
+ *
+ * - Content navigation
+ * - Comment callback
+ * - Posted on
+ * - Categorized blog check
+ * - Flush category transient
  *
  * @package Cazuela
  * @since Cazuela 1.0
@@ -138,13 +148,14 @@ function thsp_comment_cb( $comment, $args, $depth ) {
 endif; // ends check for thsp_comment_cb()
 
 
-if ( ! function_exists( 'thsp_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
  * @since Cazuela 1.0
  */
+if ( ! function_exists( 'thsp_posted_on' ) ) :
 function thsp_posted_on() {
+
 	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'thsp_cazuela' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
@@ -154,6 +165,7 @@ function thsp_posted_on() {
 		esc_attr( sprintf( __( 'View all posts by %s', 'thsp_cazuela' ), get_the_author() ) ),
 		get_the_author()
 	);
+	
 }
 endif; // ends check for thsp_posted_on()
 
@@ -164,6 +176,7 @@ endif; // ends check for thsp_posted_on()
  * @since Cazuela 1.0
  */
 function thsp_categorized_blog() {
+
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts
 		$all_the_cool_cats = get_categories( array(
@@ -183,6 +196,7 @@ function thsp_categorized_blog() {
 		// This blog has only 1 category so thsp_categorized_blog should return false
 		return false;
 	}
+	
 }
 
 

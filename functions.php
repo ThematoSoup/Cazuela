@@ -2,9 +2,36 @@
 /**
  * Cazuela functions and definitions
  *
+ * ========
+ * Contents
+ * ========
+ *
+ * - Content width
+ * - Theme setup
+ *   -- Template tags
+ *   -- Extras
+ *   -- Theme textdomain
+ *   -- Add theme support
+ *   -- Add custom image sizes
+ *   -- Register nav menus
+ *   -- Add editor style
+ * - Register sidebars
+ * - Attach sidebars to theme action hooks
+ * - Register scripts and styles
+ * - Dynamic CSS for links color
+ * - Custom header
+ * - Post metaboxes
+ * - Customizer Boilerplate (https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate)
+ * - Theme Documentation
+ * - Customizer Boilerplate hooks
+ *   -- Path
+ *   -- Menu link text
+ *   -- Options array
+ *
  * @package Cazuela
  * @since Cazuela 1.0
  */
+
 
 /**
  * Set default content width based on the theme's design and stylesheet.
@@ -12,12 +39,15 @@
  *
  * @since Cazuela 1.0
  */
-if ( !isset( $content_width ) )
+if ( !isset( $content_width ) ) {
 	$content_width = 620; /* pixels */
+}
 
 
 /**
  * Change content width, based on layout
+ *
+ * @since Cazuela 1.0
  */
 function thsp_content_width() {
 
@@ -71,35 +101,11 @@ function thsp_theme_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
-	 * Enable support for Post Thumbnails
-	 *
-	 * @since Cazuela 1.0
-	 */
-	add_theme_support( 'post-thumbnails' );
-
-	/**
-	 * Enable support for Post Thumbnails
-	 *
-	 * @since Cazuela 1.0
-	 */
-	add_image_size( 'lead-image', 660, 9999, false );
-	add_image_size( 'masonry-image', 240, 9999, false );
-
-	/**
 	 * Enable Custom Backgrounds
 	 *
 	 * @since Cazuela 1.0
 	 */
 	add_theme_support( 'custom-background' );
-
-	/**
-	 * This theme uses wp_nav_menu() in one location.
-	 *
-	 * @since Cazuela 1.0
-	 */
-	register_nav_menus( array(
-		'main'		=> __( 'Main Menu', 'thsp_cazuela' )
-	) );
 
 	/**
 	 * Add support for Post Formats
@@ -119,19 +125,28 @@ function thsp_theme_setup() {
 	) );
 
 	/**
-	 * Adds the Customize page to the WordPress admin area
+	 * Enable support for Post Thumbnails
+	 *
+	 * @since Cazuela 1.0
 	 */
-	add_action( 'admin_menu', 'thsp_customizer_menu' );
-	function thsp_customizer_menu() {
-	
-	    add_theme_page(
-	    	'Customization',
-	    	'Customization',
-	    	'edit_theme_options',
-	    	'customize.php'
-	    );
-	    
-	}
+	add_theme_support( 'post-thumbnails' );
+
+	/**
+	 * Enable support for Post Thumbnails
+	 *
+	 * @since Cazuela 1.0
+	 */
+	add_image_size( 'lead-image', 660, 9999, false );
+	add_image_size( 'masonry-image', 240, 9999, false );
+
+	/**
+	 * This theme uses wp_nav_menu() in one location.
+	 *
+	 * @since Cazuela 1.0
+	 */
+	register_nav_menus( array(
+		'main'		=> __( 'Main Menu', 'thsp_cazuela' )
+	) );
 
 	/**
 	 * This theme styles the visual editor with editor-style.css to match the theme style
@@ -415,7 +430,7 @@ if ( is_admin() ) {
 
 
 /**
- * Hooking into Theme Customizer Boilerplate
+ * Hooking into Theme Customizer Boilerplate to set Customizer location
  * https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
  *
  * @since Cazuela 1.0
@@ -424,6 +439,20 @@ add_filter( 'thsp_cbp_directory_uri', 'thsp_edit_cbp_directory_uri', 1 );
 function thsp_edit_cbp_directory_uri() {
 	
 	return get_template_directory_uri() . '/inc/customizer-boilerplate';
+	
+}
+
+
+/**
+ * Hooking into Theme Customizer Boilerplate to set Menu link text
+ * https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
+ *
+ * @since Cazuela 1.0
+ */
+add_filter( 'thsp_cbp_menu_link_text', 'thsp_customizer_menu_link_text', 1 );
+function thsp_customizer_menu_link_text() {
+	
+	return __( 'Theme Customizer', 'thsp_cazuela' );
 	
 }
 
@@ -536,33 +565,7 @@ function thsp_theme_options_array() {
 						'type' => 'color', // Color picker field control
 						'priority' => 3
 					)
-				),
-
-				'image_upload' => array(
-					'setting_args' => array(
-						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
-						'transport' => 'refresh',
-					),					
-					'control_args' => array(
-						'label' => __( 'Image upload', 'thsp_cazuela' ),
-						'type' => 'image', // Color picker field control
-						'priority' => 3
-					)
-				),
-
-				'file_upload' => array(
-					'setting_args' => array(
-						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
-						'transport' => 'refresh',
-					),					
-					'control_args' => array(
-						'label' => __( 'File upload', 'thsp_cazuela' ),
-						'type' => 'upload', // File upload field control
-						'priority' => 3
-					)
-				),
+				)
 				
 			) // End fields
 		),
@@ -789,4 +792,20 @@ function thsp_theme_options_array() {
 
 	return $options;
 	
+}
+
+
+/**
+ * Built-in sections to remove from Theme Customizer
+ * https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
+ *
+ * @since Cazuela 1.0
+ */
+add_filter( 'tshp_cbp_remove_controls', 'thsp_theme_options_remove_controls', 1 );
+function thsp_theme_options_remove_controls() {
+
+	$thsp_cbp_remove_controls = array( 'header_textcolor' );
+	
+	return $thsp_cbp_remove_controls;
+
 }
