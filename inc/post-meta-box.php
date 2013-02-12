@@ -50,7 +50,7 @@ function thsp_post_layout_meta_cb( $post ) {
 	wp_nonce_field( 'thsp_save_post_layout', 'thsp_layout_nonce' ); ?>
 	
 	<fieldset class="clearfix">
-		<p>You can override layout set in theme settings</p>
+		<p>You can override default layout set in theme settings</p>
 		
 		<?php
 		$thsp_theme_options_fields = thsp_cbp_get_fields();
@@ -60,7 +60,7 @@ function thsp_post_layout_meta_cb( $post ) {
 			<input id="_thsp_post_layout_<?php echo esc_attr( $layout_option_key ); ?>" class="image-radio" type="radio" value="<?php echo esc_attr( $layout_option_key ); ?>" name="_thsp_post_layout" <?php checked( $layout_option_key, $current_layout ); ?> />
 			
 			<label for="_thsp_post_layout_<?php echo esc_attr( $layout_option_key ); ?>">
-				<img src="<?php echo get_template_directory_uri() . '/inc/images/' . $layout_option_key . '.png' ?>" alt="<?php echo $layout_option_value['title']; ?>" width="64" height="42" />
+				<img src="<?php echo $layout_option_value['image_src']; ?>" alt="<?php echo $layout_option_value['label']; ?>" width="60" height="40" />
 			</label>
 			
 		<?php } // end foreach ?>
@@ -73,7 +73,7 @@ function thsp_post_layout_meta_cb( $post ) {
 /**
  * Saves post layout meta box
  *
- * @uses	thsp_get_theme_options()		Defined in /inc/get-options.php
+ * @uses	thsp_cbp_get_options_values()
  * @since	Cazuela 1.0
  */
 function thsp_save_post_layout( $postid ) {
@@ -93,6 +93,7 @@ function thsp_save_post_layout( $postid ) {
 	// Get current theme options and all option fields
 	$theme_options = thsp_cbp_get_options_values();
 	if( isset( $_POST['_thsp_post_layout'] ) ) {
+	
 		// Update the meta field if it's not the same as theme setting
 		if( $_POST['_thsp_post_layout'] != $theme_options['default_layout'] ) {
 			update_post_meta( $postid, '_thsp_post_layout', esc_attr( strip_tags( $_POST['_thsp_post_layout'] ) ) );
@@ -100,6 +101,7 @@ function thsp_save_post_layout( $postid ) {
 		} else {
 			delete_post_meta( $postid, '_thsp_post_layout' );
 		}
+		
 	}
 	
 }
@@ -115,7 +117,7 @@ function thsp_meta_box_style() {
 
 	wp_enqueue_style(
 		'thsp_meta_box_style',
-		get_template_directory_uri() . '/inc/customizer-controls.css'
+		thsp_cbp_directory_uri() . '/customizer-controls.css'
 	);
 
 }

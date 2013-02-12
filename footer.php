@@ -26,22 +26,22 @@
 	?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php if ( is_active_sidebar( 'footer-widget-area' ) ) : ?>
 		<div class="inner clearfix">
-			<?php if ( is_active_sidebar( 'footer-widget-area' ) ) : ?>
-				<?php
-					/* 
-					 * Count widgets in footer widget area
-					 * Used to set widget width based on total count
-					 */
-					$sidebars_widgets_count = wp_get_sidebars_widgets();
-					$footer_widgets_classes = isset( $sidebars_widgets_count['footer-widget-area'] ) ? 'clearfix widget-count-' . count( $sidebars_widgets_count['footer-widget-area'] ) : 'clearfix';
-				?>
-				
-				<section id="footer-widget-area" class="<?php echo $footer_widgets_classes; ?>">
-					<?php dynamic_sidebar( 'footer-widget-area' ); ?>
-				</section><!-- #footer-widgets -->
-			<?php endif; ?>
+			<?php
+				/* 
+				 * Count widgets in footer widget area
+				 * Used to set widget width based on total count
+				 */
+				$sidebars_widgets_count = wp_get_sidebars_widgets();
+				$footer_widgets_classes = isset( $sidebars_widgets_count['footer-widget-area'] ) ? 'clearfix widget-count-' . count( $sidebars_widgets_count['footer-widget-area'] ) : 'clearfix';
+			?>
+			
+			<section id="footer-widget-area" class="<?php echo $footer_widgets_classes; ?>">
+				<?php dynamic_sidebar( 'footer-widget-area' ); ?>
+			</section><!-- #footer-widgets -->
 		</div><!-- .inner -->
+		<?php endif; ?>
 
 		<?php
 			/*

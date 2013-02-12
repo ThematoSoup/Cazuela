@@ -11,7 +11,8 @@
 	@include font-size(24);
 	margin-bottom: 1em;
 }
-.hentry {
+.hentry,
+.not-found {
 	margin-bottom: 30px;
 	margin-bottom: 3rem;
 	background: #fff;
@@ -41,6 +42,14 @@
 	}
 	h1, h2, h3, h4, h5, h6 {
 		clear: none;
+	}
+}
+.not-found {
+	padding: 20px;
+	padding: 2rem;
+	
+	.widgettitle {
+		margin-top: 1.5em;
 	}
 }
 .entry-title {
@@ -114,7 +123,7 @@
 	}
 }
 
-/* Page templates */
+/* Authors page template */
 #authors-list {
 	list-style: none;
 	margin: 2em 0;
@@ -148,5 +157,44 @@
 	}
 	.latest-by-author li {
 		@include font-size($bodyfontsize * 0.875); // 14px
+	}
+}
+
+/* Masonry layout template */
+#masonry-container {
+	margin: 0 auto 30px;
+	margin: 0 auto 3rem;
+}
+.masonry-post {
+	width: 240px;
+	margin: 5px;
+	
+	.hentry {
+		margin-bottom: 0;
+	}
+	.entry-title {
+		@include font-size($bodyfontsize * 1.125); // 18
+	}
+	.entry-content {
+		@include font-size($bodyfontsize * 0.75); // 12
+	}
+	.masonry-link {
+		display: block;
+		text-decoration: none;
+		color: $bodytextcolor !important;
+	}
+	.hentry:hover {
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	}
+	.hentry .entry-inner {
+		padding: 15px;
+		padding: 1.5rem;
+	}
+	.hentry .entry-content {
+		padding-bottom: 0;
+	}
+	.hentry header {
+		padding-bottom: 10px;
+		padding-bottom: 1rem;
 	}
 }

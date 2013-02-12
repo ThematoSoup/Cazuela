@@ -134,23 +134,11 @@ function thsp_cbp_customize_register( $wp_customize ) {
 			$thsp_field_value['control_args']['section'] = $thsp_section_key;
 			
 			/*
-			 * Check if this control uses 'choices_extended'
 			 * $wp_customize->add_control method requires 'choices' to be a simple key => value pair
-			 *
-			 * 'choices_extended' can be used instead of 'choices' if additional data is required for each option
-			 * In this case 'label' should be used inside array for each option. Example:
-			 
-	 			'choices_extended' => array(
-					'open-sans' => array(
-						'label' => 'Open Sans',
-						'google_font' => 'Open+Sans:400italic,700italic,400,700'
-					)
-				)
-			
 			 */
-			if ( isset( $thsp_field_value['control_args']['choices_extended'] ) ) {
+			if ( isset( $thsp_field_value['control_args']['choices'] ) ) {
 				$thsp_cbp_choices = array();
-				foreach( $thsp_field_value['control_args']['choices_extended'] as $thsp_cbp_choice_key => $thsp_cbp_choice_value ) {
+				foreach( $thsp_field_value['control_args']['choices'] as $thsp_cbp_choice_key => $thsp_cbp_choice_value ) {
 					$thsp_cbp_choices[$thsp_cbp_choice_key] = $thsp_cbp_choice_value['label'];
 				}
 				$thsp_field_value['control_args']['choices'] = $thsp_cbp_choices;		
@@ -198,9 +186,9 @@ function thsp_cbp_customize_register( $wp_customize ) {
 						$thsp_field_value['control_args']
 					)
 				);
-			} elseif ( 'images-radio' == $thsp_field_value['control_args']['type'] ) {
+			} elseif ( 'images_radio' == $thsp_field_value['control_args']['type'] ) {
 				$wp_customize->add_control(
-					new CBP_Customizer_Images_Control(
+					new CBP_Customizer_Images_Radio_Control(
 						$wp_customize,
 						$setting_control_id,
 						$thsp_field_value['control_args']

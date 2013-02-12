@@ -46,9 +46,9 @@ class CBP_Customizer_Number_Control extends WP_Customize_Control {
 /**
  * Creates Customizer control for radio replacement images fields
  */
-class CBP_Customizer_Images_Control extends WP_Customize_Control {
+class CBP_Customizer_Images_Radio_Control extends WP_Customize_Control {
 
-	public $type = 'images';
+	public $type = 'images_radio';
 	
 	public function render_content() {
 		if ( empty( $this->choices ) )
@@ -57,7 +57,7 @@ class CBP_Customizer_Images_Control extends WP_Customize_Control {
 		$name = '_customize-image-radios-' . $this->id;
 		
 		/*
-		 * Get value of 'choices_extended' array from $options array
+		 * Get value of 'choices' array from $options array
 		 * This contains paths to images for each option
 		 */
 		$thsp_cbp_sections = thsp_cbp_get_fields();
@@ -66,7 +66,7 @@ class CBP_Customizer_Images_Control extends WP_Customize_Control {
 		
 		/* 
 		 * Going through all the fields in this section
-		 * and getting the correct one so we could grab its 'choices_extended'
+		 * and getting the correct one so we could grab its 'choices'
 		 */
 		foreach ( $thsp_cbp_current_section_fields as $thsp_cbp_current_section_field_key => $thsp_cbp_current_section_field_value ) {
 			
@@ -76,7 +76,7 @@ class CBP_Customizer_Images_Control extends WP_Customize_Control {
 			 * and next one has 'somethi'
 			 */
 			if ( strpos( $this->id, $thsp_cbp_current_section_field_key ) ) {
-				$thsp_cbp_current_control_choices = $thsp_cbp_current_section_fields[ $thsp_cbp_current_section_field_key ]['control_args']['choices_extended'];
+				$thsp_cbp_current_control_choices = $thsp_cbp_current_section_fields[ $thsp_cbp_current_section_field_key ]['control_args']['choices'];
 			}
 		}
 		?>

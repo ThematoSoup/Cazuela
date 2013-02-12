@@ -1,3 +1,12 @@
+<?php
+/**
+ * Template part for displaying post footer.
+ *
+ * @package Cazuela
+ * @since Cazuela 1.0
+ */
+?>
+
 <footer class="entry-meta">
 	<div class="entry-cats-tags">
 		<?php

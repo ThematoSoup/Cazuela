@@ -1,3 +1,12 @@
+<?php
+/**
+ * Template part for displaying post header.
+ *
+ * @package Cazuela
+ * @since Cazuela 1.0
+ */
+?>
+
 <header class="entry-header">
 	<?php if ( is_singular() ) { ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>

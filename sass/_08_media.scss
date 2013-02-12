@@ -49,6 +49,10 @@ img.size-full {
 	margin-bottom: 0.5em;
 	@include box-sizing(border-box);
 }
+.entry-content .wp-caption img,
+.attachment img {
+	margin: 0 auto 0.25em;
+}
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
