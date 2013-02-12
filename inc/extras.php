@@ -78,7 +78,7 @@ function thsp_body_classes( $classes ) {
 	}
 
 	// Get current theme options
-	$theme_options = thsp_cbp_get_options_values();
+	$thsp_theme_options = thsp_cbp_get_options_values();
 	$thsp_body_classes = array();
 	
 	// Get layout classes and add them to body_class array
@@ -87,12 +87,12 @@ function thsp_body_classes( $classes ) {
 		$thsp_body_classes[] = $thsp_current_layout_value;
 	}
 
-	$thsp_body_classes[] = 'body-' . $theme_options['body_font'];
-	$thsp_body_classes[] = 'heading-' . $theme_options['heading_font'];
-	$thsp_body_classes[] = $theme_options['color_scheme'];
+	$thsp_body_classes[] = 'body-' . $thsp_theme_options['body_font'];
+	$thsp_body_classes[] = 'heading-' . $thsp_theme_options['heading_font'];
+	$thsp_body_classes[] = $thsp_theme_options['color_scheme'];
 	
 	// See if header gradient is needed
-	if( $theme_options['header_gradient'] ) {
+	if( $thsp_theme_options['header_gradient'] ) {
 		$thsp_body_classes[] = 'header-gradient';
 	}
 
@@ -202,4 +202,45 @@ function thsp_add_yoast_breadcrumbs() {
 }
 if ( function_exists( 'yoast_breadcrumb' ) && ! is_front_page() && ! is_home() ) {
 	add_action( 'thsp_after_header', 'thsp_add_yoast_breadcrumbs', 1 );
+}
+
+
+/**
+ * Retrieves the attachment ID from the file URL
+ * @link	http://philipnewcomer.net/2012/11/get-the-attachment-id-from-an-image-url-in-wordpress/
+ *
+ * @since Cazuela 1.0
+ */
+function thsp_get_logo_image( $attachment_url ) {
+
+	global $wpdb;
+	
+	global $wpdb;
+	$attachment_id = false;
+ 
+	// If there is no url, return.
+	if ( '' == $attachment_url )
+		return;
+ 
+	// Get the upload directory paths
+	$upload_dir_paths = wp_upload_dir();
+ 
+	// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image
+	if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
+ 
+		// If this is the URL of an auto-generated thumbnail, get the URL of the original image
+		$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
+ 
+		// Remove the upload path base directory from the attachment URL
+		$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
+ 
+		// Finally, run a custom database query to get the attachment ID from the modified attachment URL
+		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
+ 
+	}
+	
+	$attachment_array = wp_get_attachment_image_src( $attachment_id, 'full' );
+	
+	return $attachment_array; 
+        
 }

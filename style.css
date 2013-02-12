@@ -632,6 +632,9 @@ textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 .hentry label { display: block; }
 .hentry input[type=password] { width: 60%; display: block; border: 1px solid #e6e6e6; padding: 0.5em; margin-bottom: 1em; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; }
 
+/* Search form in no-results template part */
+#post-0 #s { border: 1px solid #dddddd; padding: 0.5em; }
+
 /* =Comments
 ----------------------------------------------- */
 .commentlist { margin-left: 0; }

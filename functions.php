@@ -569,6 +569,28 @@ function thsp_theme_options_array() {
 				
 			) // End fields
 		),
+
+		// Section ID
+		'title_tagline' => array(
+		
+			'existing_section' => true,
+			'fields' => array(
+				
+				'logo_image' => array(
+					'setting_args' => array(
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					),					
+					'control_args' => array(
+						'label' => __( 'Logo', 'thsp_cazuela' ),
+						'type' => 'image', // Image upload field control
+						'priority' => 20
+					)
+				)
+				
+			) // End fields
+		), // End section
 		
 		// Section ID
 		'nav' => array(

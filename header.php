@@ -42,12 +42,15 @@
 		<div class="inner clearfix">
 	
 			<hgroup>
-				<?php $header_image = get_header_image();
-				if ( ! empty( $header_image ) ) { ?>
+				<?php
+				// Get current theme options values
+				$thsp_theme_options = thsp_cbp_get_options_values();
+				if ( '' != $thsp_theme_options['logo_image'] ) {
+					$logo_image = thsp_get_logo_image( $thsp_theme_options['logo_image'] ); ?>
 					<a class="header-image" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php bloginfo( 'name' ); ?>" />
+						<img src="<?php echo $logo_image[0]; ?>" width="<?php echo $logo_image[1]; ?>" height="<?php echo $logo_image[2]; ?>" alt="<?php bloginfo( 'name' ); ?>" />
 					</a>
-				<?php } else { // if ( ! empty( $header_image ) ) ?>
+				<?php } else { // if ( ! isset( $thsp_theme_options['logo_image'] ) ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php } ?>
 				
