@@ -34,54 +34,46 @@ get_header(); ?>
 							<?php the_content(); ?>
 							
 							<!-- Authors template code -->
-							<ul id="authors-list">
 							<?php
-								$authors_args = array(
-									'orderby'	=> 'display_name'
-								);
-															
-								// Query for users ordered by display name
-								$authors_query = new WP_User_Query(
-									apply_filters( 'thsp_cazuela_authors_args', $authors_args )
-								);
+								$orderby_value = get_post_meta( $post->ID, '_thsp_authors_query_orderby', true ) ? get_post_meta( $post->ID, '_thsp_authors_query_orderby', true ) : 'display_name';
+								$order_value = get_post_meta( $post->ID, '_thsp_authors_query_order', true ) ? get_post_meta( $post->ID, '_thsp_authors_query_order', true ) : 'ASC';
+							?>
 							
-								// Get the results from the query
-								$authors = $authors_query->get_results();
-								foreach ( $authors as $author ) { ?>
-							
-								<li class="clearfix">
-									<div class="author-avatar">
-										<?php echo get_avatar( $author->ID, 96 ); ?>
-										<ul class="author-links">
-										</ul>
-									</div><!-- .author-avatar -->
-									<div class="author-text">
-										<h2><?php echo get_the_author_meta( 'display_name', $author->ID ); ?></h2>
-										<div><?php echo get_the_author_meta( 'description', $author->ID ); ?></div>
+							<ul class="authors-list">
+							<?php
+								if ( get_post_meta( $post->ID, '_thsp_authors_roles_to_include', true ) ) {
+									// Initiate the array
+									$displayed_authors = array();
+									foreach ( get_post_meta( $post->ID, '_thsp_authors_roles_to_include', true ) as $included_role ) {
+										// User query
+										$authors_query = new WP_User_Query( array(
+											'orderby'	=> $orderby_value,
+											'order'		=> $order_value,
+											'role'		=> $included_role
+										) );
+									
+										// Get the results from the query
+										$role_authors = $authors_query->get_results();
 										
-										<!-- Latest posts by author -->
-										<?php
-											$args = array (
-												'posts_per_page'	=> 3,
-												'author'			=> $author->ID
-											);
-											$posts_by_author = new WP_Query( $args );
-											if ( $posts_by_author->have_posts() ) : ?>
-												<h3><?php _e( 'Latest posts', 'thsp_cazuela' ); ?></h3>
-												<ul class="latest-by-author">
-													<?php while ( $posts_by_author->have_posts() ) : $posts_by_author->the_post(); ?>
-													<li><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'thsp_cazuela' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></li>
-													<?php endwhile; ?>
-												</ul><!-- .latest-by-author -->
-											<?php
-											endif;
-											wp_reset_postdata();
-										?>
-										<!-- End latest posts by author -->											
-									</div><!-- .author-text -->
-								</li>
+										// Add authors from this role to all displayed authors array
+										$displayed_authors = array_merge( $displayed_authors, $role_authors );
+									}
+								} else {
+									// User query
+									$authors_query = new WP_User_Query( array(
+										'orderby'	=> $orderby_value,
+										'order'		=> $order_value,
+									) );
 								
-								<?php }
+									// Get the results from the query
+									$displayed_authors = $authors_query->get_results();
+								}
+															
+								// Display authors
+								foreach ( $displayed_authors as $displayed_author ) {
+									// Template tag, defined in /inc/template-tags.php
+									thsp_display_an_author( $displayed_author );
+								}
 							?>
 							</ul><!-- #authors-list -->
 							<!-- End authors template code -->

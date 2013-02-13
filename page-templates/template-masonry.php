@@ -25,11 +25,25 @@ get_header(); ?>
 			<!-- Masonry posts -->
 			<?php
 				$temp_query = $wp_query;
+				
+				// Get number of posts per page
+				if ( get_post_meta( $post->ID, '_thsp_masonry_posts_per_page', true ) ) {
+					$masonry_posts_per_page = get_post_meta( $post->ID, '_thsp_masonry_posts_per_page', true );
+				} else {
+					$masonry_posts_per_page = get_option( 'posts_per_page' );
+				}
+				
 				$masonry_args = array(
-					'posts_per_page' => get_option( 'posts_per_page' ),
+					'posts_per_page' => $masonry_posts_per_page,
 					'post_type' => 'post',
 					'paged' => $paged
 				);
+				
+				// Get categories and add parameter if custom field is not empty
+				if ( get_post_meta( $post->ID, '_thsp_masonry_categories_to_include', true ) ) {
+					$masonry_args['category__in'] = get_post_meta( $post->ID, '_thsp_masonry_categories_to_include', true );
+				}
+				
 				$wp_query = new WP_Query( $masonry_args );
 				
 				if ( $wp_query->have_posts() ) :

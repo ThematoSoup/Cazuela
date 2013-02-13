@@ -105,11 +105,70 @@ add_filter( 'body_class', 'thsp_body_classes' );
 
 
 /**
- * Adds custom classes to the array of body classes.
+ * Passes custom typography classes to Tiny MCE editor
  *
- * @param	Array	$classes				Current body classes
- * @uses	thsp_get_theme_options()		Defined in /inc/get-options.php
- * @return	array	$current_layout			Layout options for current page
+ * @param	$thsp_mceInit						array
+ * @uses	thsp_cbp_get_options_values()		defined in /customizer-boilerplate/helpers.php
+ * @return	$thsp_mceInit						array
+ * @since	Cazuela 1.0
+ */
+function thsp_tiny_mce_classes( $thsp_mceInit ) {
+
+	// Get theme options
+	$thsp_theme_options = thsp_cbp_get_options_values();
+	$thsp_mceInit['body_class'] .= ' body-' . $thsp_theme_options['body_font'] . ' heading-' . $thsp_theme_options['heading_font'];
+	
+	return $thsp_mceInit;
+	
+}
+add_filter( 'tiny_mce_before_init', 'thsp_tiny_mce_classes' );
+add_filter( 'teeny_mce_before_init', 'thsp_tiny_mce_classes' );
+
+
+/**
+ * Load Google Fonts to use in Tiny MCE
+ *
+ * @param	$mce_css							string
+ * @uses	thsp_cbp_get_options_values()		defined in /customizer-boilerplate/helpers.php
+ * @uses	thsp_cbp_get_fields()				defined in /customizer-boilerplate/helpers.php
+ * @return	$mce_css							string
+ * @since	Cazuela 1.0
+ */
+function thsp_mce_css( $mce_css ) {
+
+	$theme_options = thsp_cbp_get_options_values();
+	$theme_options_fields = thsp_cbp_get_fields();
+	
+	$body_font_value = $theme_options['body_font'];
+	$heading_font_value = $theme_options['heading_font'];
+	
+	$body_font_options = $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
+	$heading_font_options = $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
+
+	// Check if it's a Google Font
+	if( isset( $body_font_options[$body_font_value]['google_font'] ) ) {
+		// Commas must be HTML encoded
+		$body_font_string = str_replace( ',', '&#44;', $body_font_options[$body_font_value]['google_font'] );
+		$mce_css .= ', http://fonts.googleapis.com/css?family=' . $body_font_string;
+	}	
+	// Check if it's a Google Font
+	if( isset( $heading_font_options[$heading_font_value]['google_font'] ) ) {
+		// Commas must be HTML encoded
+		$heading_font_string = str_replace( ',', '&#44;', $heading_font_options[$heading_font_value]['google_font'] );
+		$mce_css .= ', http://fonts.googleapis.com/css?family=' . $heading_font_string;
+	}
+	
+	return $mce_css;
+	
+}
+add_filter( 'mce_css', 'thsp_mce_css' );
+
+
+/**
+ * Gets current layout for page being displayed
+ *
+ * @uses	thsp_cbp_get_options_values()		defined in /customizer-boilerplate/helpers.php
+ * @return	array	$current_layout				Layout options for current page
  * @since	Cazuela 1.0
  */
 function thsp_get_current_layout() {

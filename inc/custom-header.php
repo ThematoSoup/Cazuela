@@ -27,9 +27,7 @@ function thsp_custom_header_setup() {
 
 	$args = array(
 		'default-image'          => '',
-		'default-text-color'     => '000',
-		'width'                  => 300,
-		'height'                 => 180,
+		'width'                  => 1000,
 		'flex-height'            => true,
 		'flex-width'	         => true,
 		'wp-head-callback'       => 'thsp_header_style',
@@ -63,10 +61,6 @@ function thsp_header_style() {
 			position: absolute !important;
 			clip: rect(1px 1px 1px 1px); /* IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
-		}
-		#masthead {
-			padding-top: 5px;
-			padding-top: 0.5rem;
 		}
 		#masthead hgroup {
 			margin: 0;

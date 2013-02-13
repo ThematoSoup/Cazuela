@@ -3,70 +3,63 @@ Theme Name: Twenty Twelve
 Description: Used to style the TinyMCE editor.
 */
 
-html {
-	font-size: 87.5%;
-}
+/* =Reset
+
+	Resetting and rebuilding styles have been helped along thanks to the fine work of
+	Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+	along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+	and Blueprint http://www.blueprintcss.org/
+----------------------------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { border: 0; font-family: inherit; font-size: 100%; font-style: inherit; font-weight: inherit; margin: 0; outline: 0; padding: 0; vertical-align: baseline; }
+html { font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */ overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */ -webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */ -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */ }
+body { background: #fff; }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+ol, ul { list-style: none; }
+table { /* tables still need 'cellspacing="0"' in the markup */ border-collapse: separate; border-spacing: 0; }
+caption, th, td { font-weight: normal; text-align: left; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */ outline: 0; }
+
 html .mceContentBody {
 	max-width: 620px;
-}
-body {
-	color: #444;
-	font-family: "Open Sans", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	font-size: 1rem;
-	line-height: 1;
-	text-rendering: optimizeLegibility;
-	vertical-align: baseline;
+	padding: 15px;
 }
 
+/* Body fonts */
+body, button, input, select, textarea { color: #4b4b4b; font-size: 16px; font-size: 1.6rem; line-height: 1.6; }
+.body-arial, .body-arial button, .body-arial input, .body-arial select, .body-arial textarea, .body-arial .site-description { font-family: Arial, sans-serif; }
+.body-helvetica, .body-helvetica button, .body-helvetica input, .body-helvetica select, .body-helvetica textarea, .body-helvetica .site-description { font-family: Helvetica, sans-serif; font-weight: 300; }
+.body-open-sans { font-family: "Open Sans", sans-serif; }
+.body-lato, .body-open-sans button, .body-open-sans input, .body-open-sans select, .body-open-sans textarea, .body-open-sans .site-description, .body-lato button, .body-lato input, .body-lato select, .body-lato textarea, .body-lato .site-description { font-family: Lato, sans-serif; }
+.body-pt-sans, .body-pt-sans button, .body-pt-sans input, .body-pt-sans select, .body-pt-sans textarea, .body-pt-sans .site-description { font-family: "PT Sans", sans-serif; }
+.body-gudea, .body-gudea button, .body-gudea input, .body-gudea select, .body-gudea textarea, .body-gudea .site-description { font-family: Gudea, sans-serif; }
+.body-lora, .body-lora button, .body-lora input, .body-lora select, .body-lora textarea, .body-lora .site-description { font-family: Lora, serif; }
+.body-istok-web, .body-istok-web button, .body-istok-web input, .body-istok-web select, .body-istok-web textarea, .body-istok-web .site-description { font-family: "Istok Web", serif; }
 
-/* =Headings
--------------------------------------------------------------- */
+/* Selected text background color */
+::-moz-selection { background-color: #222; color: #fff; }
+::selection { background-color: #222; color: #fff; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
-	line-height: 1.846153846;
-	margin: 24px 0;
-	margin: 1.714285714rem 0;
-}
-h1 {
-	font-size: 21px;
-	font-size: 1.5rem;
-	line-height: 1.5;
-}
-h2 {
-	font-size: 18px;
-	font-size: 1.285714286rem;
-	line-height: 1.6;
-}
-h3 {
-	font-size: 16px;
-	font-size: 1.142857143rem;
-}
-h4 {
-	font-size: 14px;
-	font-size: 1rem;
-}
-h5 {
-	font-size: 13px;
-	font-size: 0.928571429rem;
-}
-h6 {
-	font-size: 12px;
-	font-size: 0.857142857rem;
-}
-hr {
-	background-color: #ccc;
-	border: 0;
-	height: 1px;
-	margin: 24px;
-	margin-bottom: 1.714285714rem;
-}
+/* Headings */
+h1, h2, h3, h4, h5, h6 { clear: both; line-height: 1.2; margin: 1.5em 0 0.5em; color: #3e3e3e; font-weight: bold; }
+.heading-georgia h1, .heading-georgia h2, .heading-georgia h3, .heading-georgia h4, .heading-georgia h5, .heading-georgia h6 { font-family: Georgia, serif; }
+.heading-open-sans h1, .heading-open-sans h2, .heading-open-sans h3, .heading-open-sans h4, .heading-open-sans h5, .heading-open-sans h6 { font-family: "Open Sans", sans-serif; }
+.heading-lato h1, .heading-lato h2, .heading-lato h3, .heading-lato h4, .heading-lato h5, .heading-lato h6 { font-family: Lato, sans-serif; }
+.heading-oswald h1, .heading-oswald h2, .heading-oswald h3, .heading-oswald h4, .heading-oswald h5, .heading-oswald h6 { font-family: Oswald, sans-serif; }
+.heading-bitter h1, .heading-bitter h2, .heading-bitter h3, .heading-bitter h4, .heading-bitter h5, .heading-bitter h6 { font-family: Bitter, serif; }
+.heading-merriweather h1, .heading-merriweather h2, .heading-merriweather h3, .heading-merriweather h4, .heading-merriweather h5, .heading-merriweather h6 { font-family: Merriweather, serif; }
+.heading-droid-serif h1, .heading-droid-serif h2, .heading-droid-serif h3, .heading-droid-serif h4, .heading-droid-serif h5, .heading-droid-serif h6 { font-family: "Droid Serif", serif; }
+
+/* No need for top margin if :first-child */
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { margin-top: 0; }
+h1 { font-size: 36px; font-size: 3.6rem; }
+h2 { font-size: 28px; font-size: 2.8rem; }
+h3 { font-size: 24px; font-size: 2.4rem; }
+h4, .widget-title { font-size: 20px; font-size: 2rem; }
+h5 { font-size: 20px; font-size: 2rem; font-weight: normal; }
+h6 { font-size: 16px; font-size: 1.6rem; }
 
 
 /* =Text elements
@@ -230,25 +223,17 @@ a:hover {
 /* =Alignment
 -------------------------------------------------------------- */
 
-.alignleft {
-	display: inline;
-	float: left;
-	margin: 12px 24px 12px 0;
-	margin: 0.857142857rem 1.714285714rem 0.857142857rem 0;
+.aligncenter { 
+	margin: 1.5em auto; 
+	display: block; 
 }
-.alignright {
-	display: inline;
-	float: right;
-	margin: 12px 0 12px 24px;
-	margin: 0.857142857rem 0 0.857142857rem 1.714285714rem;
+.alignleft { 
+	float: left; 
+	margin: 0.1em 1.5em 0.75em 0; 
 }
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-top: 12px;
-	margin-top: 0.857142857rem;
-	margin-bottom: 12px;
-	margin-bottom: 0.857142857rem;
+.alignright { 
+	float: right; 
+	margin: 0.1em 0 0.75em 1.5em; 
 }
 
 
@@ -284,17 +269,26 @@ td {
 	padding: 6px 10px 6px 0;
 	text-align: left;
 }
-
+blockquote { 
+	background: url(images/quote.png) top left no-repeat; 
+	margin: 0 1em 2em; 
+	padding-left: 2.5em; 
+}
 
 /* =Images
 -------------------------------------------------------------- */
 
 img,
 .editor-attachment {
-	border: 0;
-	border-radius: 3px;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-	max-width: 100%;
+	border: 1px solid #eeeeee !important; 
+	background: #fff; 
+	padding: 5px !important; 
+	max-width: 100%; 
+	display: block; 
+	margin-bottom: 0.5em; 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
 }
 img.size-full {
 	width: auto/9; /* Prevent stretching of full-size images in IE8 */
@@ -330,13 +324,18 @@ img.wp-smiley {
 .wp-caption-dt {
 	margin: 0;
 }
-.wp-caption .wp-caption-text,
-.wp-caption-dd {
-	color: #757575;
-	font-style: italic;
-	font-size: 12px;
-	font-size: 0.857142857rem;
-	line-height: 2;
-	margin: 0 0 24px;
-	margin: 0 0 1.71429rem;
+.wp-caption { 
+	margin-bottom: 1.5em; 
+	max-width: 100%; 
+}
+.wp-caption-dt {
+	margin-bottom: 0.25em;
+}
+.wp-caption-text,
+.wp-caption-dd { 
+	text-align: center; 
+	margin: 0 0 2px; 
+	font-size: 12px; 
+	font-size: 1.2rem; 
+	line-height: 1.4; 
 }

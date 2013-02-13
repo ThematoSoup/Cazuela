@@ -350,7 +350,8 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 
 #masthead { padding: 20px 0 0; padding: 2rem 0 0; }
 #masthead hgroup { margin-bottom: 15px; margin-bottom: 1.5rem; }
-#masthead .site-title, #masthead .header-image { margin: 0 0 10px; margin: 0 0 1rem; display: inline-block; }
+#masthead .site-title { margin: 0 0 10px; margin: 0 0 1rem; display: inline-block; }
+#masthead .header-image { display: block; margin: 0 auto 10px; margin: 0 auto 1rem; }
 #masthead .site-description { margin: 0; font-size: 16px; font-size: 1.6rem; }
 #masthead .site-title a { text-decoration: none; }
 
@@ -530,14 +531,14 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 .entry-content blockquote cite { display: block; text-align: right; margin-top: 1em; font-size: 14px; font-size: 1.4rem; }
 
 /* Authors page template */
-#authors-list { list-style: none; margin: 2em 0; }
-#authors-list > li { margin-bottom: 1.25em; padding-bottom: 1.25em; border-bottom: 1px solid #f6f6f6; }
-#authors-list > li:last-child { border-bottom: none; }
-#authors-list .avatar { float: left; padding: 0; border: none; }
-#authors-list .author-text { margin-left: 112px; }
-#authors-list h2 { clear: none; margin-top: 0; font-size: 24px; font-size: 2.4rem; }
-#authors-list h3 { clear: none; margin-top: 1em; font-size: 16px; font-size: 1.6rem; }
-#authors-list .latest-by-author li { font-size: 14px; font-size: 1.4rem; }
+.authors-list { list-style: none; margin: 2em 0; }
+.authors-list > li { margin-bottom: 1.25em; padding-bottom: 1.25em; border-bottom: 1px solid #f6f6f6; }
+.authors-list > li:last-child { border-bottom: none; }
+.authors-list .avatar { float: left; padding: 0; border: none; }
+.authors-list .author-text { margin-left: 112px; }
+.authors-list h2 { clear: none; margin-top: 0; font-size: 24px; font-size: 2.4rem; }
+.authors-list h3 { clear: none; margin-top: 1em; font-size: 16px; font-size: 1.6rem; }
+.authors-list .latest-by-author li { font-size: 14px; font-size: 1.4rem; }
 
 /* Masonry layout template */
 #masonry-container { margin: 0 auto 30px; margin: 0 auto 3rem; }

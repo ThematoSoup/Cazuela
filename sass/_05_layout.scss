@@ -58,11 +58,15 @@
 		margin-bottom: 15px;
 		margin-bottom: 1.5rem;
 	}
-	.site-title,
-	.header-image {
+	.site-title {
 		margin: 0 0 10px;
 		margin: 0 0 1rem;
 		display: inline-block;	
+	}
+	.header-image {
+		display: block;
+		margin: 0 auto 10px;
+		margin: 0 auto 1rem;
 	}
 	.site-description {
 		margin: 0;

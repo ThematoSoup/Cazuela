@@ -11,6 +11,7 @@
  * - Posted on
  * - Categorized blog check
  * - Flush category transient
+ * - Display an author in Authors page template
  *
  * @package Cazuela
  * @since Cazuela 1.0
@@ -213,3 +214,46 @@ function thsp_category_transient_flusher() {
 }
 add_action( 'edit_category', 'thsp_category_transient_flusher' );
 add_action( 'save_post', 'thsp_category_transient_flusher' );
+
+
+/**
+ * Template tag that displays an author in Authors page template
+ *
+ * @param	$author			Author object
+ * @since 	Cazuela 1.0
+ */
+function thsp_display_an_author( $author ) { ?>
+
+	<li class="clearfix">
+		<div class="author-avatar">
+			<?php echo get_avatar( $author->ID, 96 ); ?>
+			<ul class="author-links">
+			</ul>
+		</div><!-- .author-avatar -->
+		<div class="author-text">
+			<h2><?php echo get_the_author_meta( 'display_name', $author->ID ); ?></h2>
+			<div><?php echo get_the_author_meta( 'description', $author->ID ); ?></div>
+			
+			<!-- Latest posts by author -->
+			<?php
+				$args = array (
+					'posts_per_page'	=> 3,
+					'author'			=> $author->ID
+				);
+				$posts_by_author = new WP_Query( $args );
+				if ( $posts_by_author->have_posts() ) : ?>
+					<h3><?php _e( 'Latest posts', 'thsp_cazuela' ); ?></h3>
+					<ul class="latest-by-author">
+						<?php while ( $posts_by_author->have_posts() ) : $posts_by_author->the_post(); ?>
+						<li><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'thsp_cazuela' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></li>
+						<?php endwhile; ?>
+					</ul><!-- .latest-by-author -->
+				<?php
+				endif;
+				wp_reset_postdata();
+			?>
+			<!-- End latest posts by author -->											
+		</div><!-- .author-text -->
+	</li>
+	
+<?php }

@@ -56,6 +56,13 @@
 				
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</hgroup>
+
+			<?php 
+			// Header image
+			$header_image = get_header_image();
+			if ( ! empty( $header_image ) ) : ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
+			<?php endif; ?>
 	
 			<nav role="navigation" class="site-navigation main-navigation">
 				<h1 class="assistive-text"><?php _e( 'Menu', 'thsp_cazuela' ); ?></h1>
