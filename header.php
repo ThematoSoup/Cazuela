@@ -65,7 +65,7 @@
 			<?php endif; ?>
 	
 			<nav role="navigation" class="site-navigation main-navigation">
-				<h1 class="assistive-text"><?php _e( 'Menu', 'thsp_cazuela' ); ?></h1>
+				<h1 class="assistive-text"><?php _e( '<span>&#9776;</span> Menu', 'thsp_cazuela' ); ?></h1>
 				<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'thsp_cazuela' ); ?>"><?php _e( 'Skip to content', 'thsp_cazuela' ); ?></a></div>
 	
 				<?php

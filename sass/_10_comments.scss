@@ -27,7 +27,8 @@
 	li.comment article {
 		padding: 15px;
 		background: #fff;
-		border: 1px solid #eee;
+		box-shadow: 0 0 2px #d9d9d9;
+		box-shadow: 0 0 2px rgba(0,0,0,0.15);
 	}
 	li.bypostauthor {
 

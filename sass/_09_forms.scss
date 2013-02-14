@@ -86,7 +86,7 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 input[type=text],
 input[type=email],
 textarea {
-	color: #666;
+	color: #444;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 }
@@ -111,7 +111,7 @@ textarea {
 .wpcf7-form {
 	:focus {
 		outline: none;
-		background: #f9f9f9;
+		border-color: #bbb;
 	}
 	input[type=text],
 	input[type=email] {

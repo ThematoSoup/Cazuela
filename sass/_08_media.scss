@@ -58,7 +58,8 @@ img.size-full {
 	max-width: 100%;
 }
 .wp-caption-text,
-.entry-caption {
+.entry-caption,
+.gallery-caption {
 	text-align: center;
 	margin: 0 0 2px;
 	@include font-size($bodyfontsize * 0.75); // 12px
@@ -82,10 +83,7 @@ img.size-full {
 #content .gallery dd {
 	margin: 0;
 }
-#content .gallery-columns-4 .gallery-item {
-}
-#content .gallery-columns-4 .gallery-item img {
-}
+
 
 /* Make sure embeds and iframes fit their containers */
 embed,

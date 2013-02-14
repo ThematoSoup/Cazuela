@@ -7,7 +7,7 @@
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	hyphens: auto;
-	@include font-size($bodyfontsize * 0.875); // 14px
+	@include font-size($bodyfontsize * 0.75); // 12px
 	
 	ul {
 		list-style: none;
@@ -21,6 +21,14 @@
 		
 		ul {
 			margin-left: 1em;
+		}
+	}
+	select {
+		width: 100%;
+		@include box-sizing(border-box);
+		
+		&:focus {
+			outline: none;
 		}
 	}
 }
@@ -38,6 +46,15 @@
 	display: block;
 	border-radius: 0;
 	border: none;
+	box-shadow: 0 0 2px #d9d9d9;
+	box-shadow: 0 0 2px rgba(0,0,0,0.15);
+	padding: 0.5em;
+	
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 2px #999;
+		box-shadow: 0 0 2px rgba(0,0,0,0.5);
+	}
 }
 /* Calendar widget */
 #wp-calendar {

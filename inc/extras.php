@@ -172,7 +172,6 @@ add_filter( 'mce_css', 'thsp_mce_css' );
  * @since	Cazuela 1.0
  */
 function thsp_get_current_layout() {
-
 	global $post;
 
 	// Get current theme options values
@@ -193,8 +192,13 @@ function thsp_get_current_layout() {
 		$current_layout['layout_type'] = $theme_options['layout_type'];
 	}
 
-	return $current_layout;
-
+	/*
+	 * Returns an array with two values that can be changed using
+	 * 'thsp_current_layout' filter hook:
+	 * $current_layout['default-layout'] - determines number of sidebars etc.
+	 * $current_layout['layout_type'] - boxed or full width
+	 */
+	return apply_filters( 'thsp_current_layout', $current_layout );
 }
 
 /**
@@ -221,7 +225,6 @@ add_filter( 'attachment_link', 'thsp_enhanced_image_navigation', 10, 2 );
  * @since Cazuela 1.0
  */
 function thsp_wp_title( $title, $sep ) {
-
 	global $page, $paged;
 
 	if ( is_feed() )
@@ -240,7 +243,6 @@ function thsp_wp_title( $title, $sep ) {
 		$title .= " $sep " . sprintf( __( 'Page %s', 'thsp_cazuela' ), max( $paged, $page ) );
 
 	return $title;
-	
 }
 add_filter( 'wp_title', 'thsp_wp_title', 10, 2 );
 
@@ -251,29 +253,25 @@ add_filter( 'wp_title', 'thsp_wp_title', 10, 2 );
  * @since Cazuela 1.0
  */
 function thsp_add_yoast_breadcrumbs() {
-
 	/*
 	 * Add breadcrumbs
 	 * WordPress SEO plugin must be installed and breadcrumbs must be enabled
 	 */
 	yoast_breadcrumb( '<div id="yoast-breadcrumbs">', '</div>' );
-	
 }
 if ( function_exists( 'yoast_breadcrumb' ) && ! is_front_page() && ! is_home() ) {
-	add_action( 'thsp_after_header', 'thsp_add_yoast_breadcrumbs', 1 );
+	add_action( 'thsp_after_header', 'thsp_add_yoast_breadcrumbs', 99 );
 }
 
 
 /**
  * Retrieves the attachment ID from the file URL
- * @link	http://philipnewcomer.net/2012/11/get-the-attachment-id-from-an-image-url-in-wordpress/
+ * Used to get attachment object for logo image added through Theme Customizer
  *
+ * @link	http://philipnewcomer.net/2012/11/get-the-attachment-id-from-an-image-url-in-wordpress/
  * @since Cazuela 1.0
  */
 function thsp_get_logo_image( $attachment_url ) {
-
-	global $wpdb;
-	
 	global $wpdb;
 	$attachment_id = false;
  
@@ -301,5 +299,4 @@ function thsp_get_logo_image( $attachment_url ) {
 	$attachment_array = wp_get_attachment_image_src( $attachment_id, 'full' );
 	
 	return $attachment_array; 
-        
 }

@@ -51,9 +51,9 @@ body, button, input, select, textarea { color: #4b4b4b; font-size: 16px; font-si
 
 .body-helvetica, .body-helvetica button, .body-helvetica input, .body-helvetica select, .body-helvetica textarea, .body-helvetica .site-description { font-family: Helvetica, sans-serif; font-weight: 300; }
 
-.body-open-sans { font-family: "Open Sans", sans-serif; }
+.body-open-sans, .body-open-sans button, .body-open-sans input, .body-open-sans select, .body-open-sans textarea, .body-open-sans .site-description { font-family: "Open Sans", sans-serif; }
 
-.body-lato, .body-open-sans button, .body-open-sans input, .body-open-sans select, .body-open-sans textarea, .body-open-sans .site-description, .body-lato button, .body-lato input, .body-lato select, .body-lato textarea, .body-lato .site-description { font-family: Lato, sans-serif; }
+.body-lato, .body-lato button, .body-lato input, .body-lato select, .body-lato textarea, .body-lato .site-description { font-family: Lato, sans-serif; }
 
 .body-pt-sans, .body-pt-sans button, .body-pt-sans input, .body-pt-sans select, .body-pt-sans textarea, .body-pt-sans .site-description { font-family: "PT Sans", sans-serif; }
 
@@ -173,7 +173,7 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 .scheme-black .main-navigation .sub-menu li, .scheme-black .main-navigation .sub-menu .sub-menu li { background: #1f1f1f; }
 .scheme-black .main-navigation .sub-menu li:hover { background: #050505; }
 .scheme-black #after-header { background: #ededed; border-bottom: 1px solid #e1e1e1; }
-.scheme-black .sticky { border-bottom: 3px solid #1f1f1f; }
+.scheme-black .sticky, .scheme-black .commentlist li.comment.bypostauthor > article { border-bottom: 3px solid #1f1f1f; }
 .scheme-black #before-footer { background: #171717; border-bottom: 1px solid #1c1c1c; }
 .scheme-black #colophon { border-top: 1px solid #0d0d0d; }
 .scheme-black #colophon, .scheme-black #after-footer { background: #131313; }
@@ -471,9 +471,15 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 .main-navigation .sub-menu .menu-parent-item > a:after { content: ""; display: inline-block; margin-left: 0.5em; position: absolute; top: 50%; right: 0; margin-top: -4px; margin-right: 0.6em; width: 0; height: 0; border-top: 0.3em solid transparent; border-bottom: 0.3em solid transparent; border-left: 0.5em solid white; opacity: 0.9; }
 
 /* Small menu */
-.menu-toggle { cursor: pointer; }
+.menu-toggle { cursor: pointer; color: #fff; text-align: center; font-size: 24px; font-size: 2.4rem; }
 
-.main-small-navigation .menu { display: none; }
+.main-small-navigation .menu { display: none; text-align: center; list-style: none; margin: 0 0 15px; margin: 0 0 1.5rem; font-size: 18px; font-size: 1.8rem; }
+.main-small-navigation .menu > li { margin-bottom: 10px; margin-bottom: 1rem; padding: 0.15em; }
+.main-small-navigation .menu ul { list-style: none; margin: 0; font-size: 14px; font-size: 1.4rem; }
+.main-small-navigation .menu ul > li { margin-bottom: 5px; }
+.main-small-navigation .menu ul ul { margin: 0; font-size: 12px; font-size: 1.2rem; }
+.main-small-navigation .menu ul ul > li { margin-bottom: 0; }
+.main-small-navigation .menu a { color: #fff; text-decoration: none; display: block; }
 
 /* Post navigation */
 #main .post-navigation, #main .paging-navigation, #main #image-navigation { margin: 0 0 1.5em; overflow: hidden; font-size: 14px; font-size: 1.4rem; /* WP Pagenavi */ }
@@ -489,7 +495,8 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 .page-links span { font-weight: 300; }
 
 /* Yoast breadcrumbs */
-#yoast-breadcrumbs { font-size: 12px; font-size: 1.2rem; line-height: 1; }
+#yoast-breadcrumbs { font-size: 12px; font-size: 1.2rem; line-height: 1; margin-top: 2em; }
+#yoast-breadcrumbs:first-child { margin-top: 0; }
 #yoast-breadcrumbs span a { color: #4b4b4b; font-weight: bold; text-decoration: none; }
 
 /* =Entries
@@ -499,7 +506,7 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 
 .page-title { font-size: 24px; font-size: 2.4rem; margin-bottom: 1em; }
 
-.hentry, .not-found { margin-bottom: 30px; margin-bottom: 3rem; background: #fff; box-shadow: 0 0 2px rgba(0, 0, 0, 0.15); word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
+.hentry, .not-found { margin-bottom: 30px; margin-bottom: 3rem; background: #fff; box-shadow: 0 0 2px #d9d9d9; box-shadow: 0 0 2px rgba(0, 0, 0, 0.15); word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
 .hentry .entry-content > :last-child, .not-found .entry-content > :last-child { margin-bottom: 0; }
 .hentry .entry-inner, .not-found .entry-inner { padding: 20px 20px 0; padding: 2rem 2rem 0; }
 .hentry header, .hentry .entry-content, .not-found header, .not-found .entry-content { padding-bottom: 20px; padding-bottom: 2rem; }
@@ -576,7 +583,7 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 
 .wp-caption { margin-bottom: 1.5em; max-width: 100%; }
 
-.wp-caption-text, .entry-caption { text-align: center; margin: 0 0 2px; font-size: 12px; font-size: 1.2rem; line-height: 1.4; }
+.wp-caption-text, .entry-caption, .gallery-caption { text-align: center; margin: 0 0 2px; font-size: 12px; font-size: 1.2rem; line-height: 1.4; }
 
 #content .gallery { margin-bottom: 1.5em; }
 
@@ -609,7 +616,7 @@ input[type="search"]::-webkit-search-decoration { /* Corrects inner padding disp
 
 button::-moz-focus-inner, input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */ border: 0; padding: 0; }
 
-input[type=text], input[type=email], textarea { color: #666; border: 1px solid #cccccc; border-radius: 3px; }
+input[type=text], input[type=email], textarea { color: #444; border: 1px solid #cccccc; border-radius: 3px; }
 
 input[type=text]:focus, input[type=email]:focus, textarea:focus { color: #111; }
 
@@ -618,7 +625,7 @@ input[type=text], input[type=email] { padding: 3px; }
 textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */ padding-left: 3px; vertical-align: top; /* Improves readability and alignment in all browsers */ width: 98%; }
 
 /* Comment form */
-#commentform :focus, .wpcf7-form :focus { outline: none; background: #f9f9f9; }
+#commentform :focus, .wpcf7-form :focus { outline: none; border-color: #bbb; }
 #commentform input[type=text], #commentform input[type=email], .wpcf7-form input[type=text], .wpcf7-form input[type=email] { width: 60%; }
 #commentform textarea, .wpcf7-form textarea { width: 100%; }
 #commentform input[type=text], #commentform input[type=email], #commentform textarea, .wpcf7-form input[type=text], .wpcf7-form input[type=email], .wpcf7-form textarea { display: block; border: 1px solid #ececec; padding: 0.5em; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; }
@@ -644,7 +651,7 @@ textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 .commentlist li li { margin: 0.5em 0 0; }
 .commentlist li.comment { min-height: 64px; padding-left: 72px; position: relative; }
 .commentlist li.comment .avatar { position: absolute; top: 0; left: 0; }
-.commentlist li.comment article { padding: 15px; background: #fff; border: 1px solid #eeeeee; }
+.commentlist li.comment article { padding: 15px; background: #fff; box-shadow: 0 0 2px #d9d9d9; box-shadow: 0 0 2px rgba(0, 0, 0, 0.15); }
 .commentlist li :last-child { margin-bottom: 0; }
 .commentlist .comment-content { margin-bottom: 1em; }
 .commentlist header { font-weight: bold; }
@@ -654,18 +661,21 @@ textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 
 /* =Widgets
 ----------------------------------------------- */
-.widget { margin: 0 0 2em; word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; font-size: 14px; font-size: 1.4rem; }
+.widget { margin: 0 0 2em; word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; font-size: 12px; font-size: 1.2rem; }
 .widget ul { list-style: none; margin: 0; }
 .widget * { max-width: 100%; }
 .widget li { margin-bottom: 0.5em; }
 .widget li ul { margin-left: 1em; }
+.widget select { width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.widget select:focus { outline: none; }
 
 .widget:last-child, .widget :last-child { margin-bottom: 0; }
 
 /* Search widget */
 #searchsubmit { display: none; }
 
-#s { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; display: block; border-radius: 0; border: none; }
+#s { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; display: block; border-radius: 0; border: none; box-shadow: 0 0 2px #d9d9d9; box-shadow: 0 0 2px rgba(0, 0, 0, 0.15); padding: 0.5em; }
+#s:focus { outline: none; box-shadow: 0 0 2px #999999; box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); }
 
 /* Calendar widget */
 #wp-calendar { width: 100%; }
@@ -677,3 +687,16 @@ textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 /* =Media Queries
 ----------------------------------------------- */
 @media screen and (max-width: 1000px) { body.layout-boxed, .inner { padding: 0 20px; } }
+@media screen and (max-width: 999px) { .layout-cps #main .content-area { float: left; margin: 0 -34% 0 0; width: 100%; }
+  .layout-cps #main #content { margin: 0 34% 0 0; }
+  .layout-cps #main #secondary { float: right; width: 30%; }
+  .layout-cps #main #tertiary { float: none; clear: both; width: 100%; margin: 0; }
+  .layout-psc .content-area, .layout-pcs .content-area { float: right; margin: 0 0 0 -34%; width: 100%; }
+  .layout-psc #content, .layout-pcs #content { margin: 0 0 0 34%; }
+  .layout-psc #secondary, .layout-pcs #secondary { float: left; width: 30%; margin: 0; }
+  .layout-psc #tertiary, .layout-pcs #tertiary { float: none; clear: both; width: 100%; margin: 0; } }
+@media screen and (max-width: 599px) { html { font-size: 9px; }
+  #masthead hgroup { text-align: center; }
+  #main #primary, #main #content, #main #secondary, #main #tertiary { float: none; clear: both; }
+  #main #primary #content { margin: 0; }
+  #main #primary, #main #secondary, #main #tertiary { margin: 0 0 40px; margin: 0 0 4rem; width: 100% !important; } }

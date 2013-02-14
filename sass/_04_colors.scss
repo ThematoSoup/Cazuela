@@ -56,7 +56,8 @@
 		background: darken($background_color, 5%);
 		border-bottom: 1px solid darken($background_color, 10%);
 	}
-	.sticky {
+	.sticky,
+	.commentlist li.comment.bypostauthor > article {
 		border-bottom: 3px solid $accent_color;
 	}
 	#before-footer {

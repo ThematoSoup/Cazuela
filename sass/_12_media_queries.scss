@@ -9,3 +9,88 @@
 	}
 
 }
+
+@media screen and (max-width: 999px) {
+
+	.layout-cps {
+		#main {
+			// Switch to two-column layout, if a three-col layout is used
+			.content-area {
+				float: left;
+				margin: 0 -34% 0 0;
+				width: 100%;
+			}
+			#content {
+				margin: 0 34% 0 0;
+			}
+			#secondary {
+				float: right;
+				width: 30%;
+			}	
+			
+			#tertiary {
+				float: none;
+				clear: both;
+				width: 100%;
+				margin: 0;
+			}
+		}
+	}
+	
+	.layout-psc,
+	.layout-pcs {
+			// Switch to two-column layout, if a three-col layout is used
+			.content-area {
+				float: right;
+				margin: 0 0 0 -34%;
+				width: 100%;
+			}
+			#content {
+				margin: 0 0 0 34%;
+			}
+			#secondary {
+				float: left;
+				width: 30%;
+				margin: 0;
+			}
+			
+			#tertiary {
+				float: none;
+				clear: both;
+				width: 100%;
+				margin: 0;
+			}
+	}
+
+}
+
+
+@media screen and (max-width: 599px) {
+
+	html {
+		font-size: 9px;
+	}
+	#masthead hgroup {
+		text-align: center;
+	}
+	#main {
+		#primary,
+		#content,
+		#secondary,
+		#tertiary {
+			float: none;
+			clear: both;
+		}
+		#primary #content {
+			margin: 0;
+		}
+		#primary,
+		#secondary,
+		#tertiary {
+			margin: 0 0 40px;
+			margin: 0 0 4rem;
+			width: 100% !important;
+		}
+	}
+
+}
