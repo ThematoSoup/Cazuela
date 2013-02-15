@@ -132,6 +132,13 @@ function thsp_cbp_customize_register( $wp_customize ) {
 			} else {
 				$setting_control_id = $thsp_field_key;
 			}
+			
+			/*
+			 * Add default callback function, if none is defined
+			 */
+			if ( ! isset( $thsp_field_value['setting_args']['sanitize_cb'] ) ) {
+				$thsp_field_value['setting_args']['sanitize_cb'] = 'thsp_cbp_sanitize_cb';
+			}
 
 			/**
 			 * Adds Customizer settings
