@@ -1,17 +1,12 @@
 /* =Media Queries
 ----------------------------------------------- */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 999px) {
 
 	body.layout-boxed,
 	.inner {
 		padding: 0 20px;
 	}
-
-}
-
-@media screen and (max-width: 999px) {
-
 	.layout-cps {
 		#main {
 			// Switch to two-column layout, if a three-col layout is used
@@ -65,6 +60,20 @@
 }
 
 
+@media screen and (max-width: 767px) {
+
+	#homepage-lead-image,
+	.page-template-page-templatestemplate-homepage-php .hentry.has-thumbnail .entry-content {
+		float: none;
+		width: 100%;
+	}
+	#homepage-lead-image {
+		margin-bottom: 20px;
+		margin-bottom: 2rem;
+	}
+
+}
+
 @media screen and (max-width: 599px) {
 
 	html {
@@ -91,6 +100,53 @@
 			margin: 0 0 4rem;
 			width: 100% !important;
 		}
+	}
+	
+	#main #homepage-widget-area .widget,
+	#main #homepage-widget-area.widget-count-2 .widget {
+		width: 100%;
+		float: none;
+		padding: 0;
+		margin-bottom: 20px;
+		margin-bottom: 2rem;
+	}
+
+	#footer-widget-area .widget {
+		float: left;
+		width: 50%;
+		padding: 0 15px;
+		padding: 0 1.5rem;
+		@include box-sizing(border-box);
+		
+		&:nth-child(3n+1) {
+			clear: none;
+		}
+		&:nth-child(2n+1) {
+			clear: left;
+			padding: 0 15px 0 0;
+			padding: 0 1.5rem 0 0;
+		}
+		&:nth-child(2n) {
+			padding: 0 0 0 15px;
+			padding: 0 0 0 1.5rem;
+		}
+	}
+
+}
+
+@media screen and (max-width: 479px) {
+
+	#colophon #footer-widget-area .widget {
+		float: none;
+		padding: 0 !important;
+		width: 100%;
+	}
+	
+	.authors-list .author-avatar {
+		width: 48px;
+	}
+	.authors-list .author-text {
+		margin-left: 60px;	
 	}
 
 }

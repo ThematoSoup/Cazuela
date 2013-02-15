@@ -210,3 +210,25 @@
 		text-decoration: none;
 	}
 }
+
+/* Footer navigation */
+.footer-navigation {
+	text-align: center;
+	padding-bottom: 20px;
+	padding-bottom: 2rem;
+	
+	ul {
+		margin: 0;
+		list-style: none;
+		
+		> li {
+			display: inline-block;
+			margin: 0 15px;
+			margin: 0 1.5rem;
+			@include font-size($bodyfontsize * 0.875); // 14px
+		}
+		ul {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,577 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cazuela 1.0\n"
+"POT-Creation-Date: 2013-02-15 12:08+0100\n"
+"PO-Revision-Date: 2013-02-15 12:08+0100\n"
+"Last-Translator: Slobodan Manic <slobodan.manic@gmail.com>\n"
+"Language-Team: ThematoSoup <contact@thematosoup.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-1: ../inc\n"
+"X-Poedit-SearchPath-2: ../page-templates\n"
+
+#: ../404.php:27
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: ../404.php:31
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below?"
+msgstr ""
+
+#: ../404.php:36
+msgid "Most Used Categories"
+msgstr ""
+
+#: ../archive.php:33
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: ../archive.php:36
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: ../archive.php:43
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: ../archive.php:51
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: ../archive.php:54
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: ../archive.php:57
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: ../archive.php:60 ../sidebar.php:24
+msgid "Archives"
+msgstr ""
+
+#: ../comments.php:40 ../comments.php:60
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:41 ../comments.php:61
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:42 ../comments.php:62
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:72
+msgid "Comments are closed."
+msgstr ""
+
+#: ../content-page.php:18 ../content-single.php:16 ../image.php:98
+msgid "<span>Pages:</span>"
+msgstr ""
+
+#: ../content-page.php:19 ../image.php:51 ../image.php:115
+#: ../post-footer.php:50 ../page-templates/template-authors.php:82
+#: ../page-templates/template-sitemap.php:59
+msgid "Edit"
+msgstr ""
+
+#: ../content.php:22
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../content.php:23
+msgid "Pages:"
+msgstr ""
+
+#: ../functions.php:151
+msgid "Main Menu"
+msgstr ""
+
+#: ../functions.php:152
+msgid "Footer Menu"
+msgstr ""
+
+#: ../functions.php:172
+msgid "Primary Sidebar"
+msgstr ""
+
+#: ../functions.php:180
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: ../functions.php:188
+msgid "Footer Widget Area"
+msgstr ""
+
+#: ../functions.php:196
+msgid "Homepage Widget Area"
+msgstr ""
+
+#: ../functions.php:197
+msgid "This widget area is used in \"Widgetized Homepage\" page template"
+msgstr ""
+
+#: ../functions.php:206
+msgid "Before Header"
+msgstr ""
+
+#: ../functions.php:214
+msgid "After Header"
+msgstr ""
+
+#: ../functions.php:223
+msgid "Before Content"
+msgstr ""
+
+#: ../functions.php:231
+msgid "After Content"
+msgstr ""
+
+#: ../functions.php:240
+msgid "Before Footer"
+msgstr ""
+
+#: ../functions.php:248
+msgid "After Footer"
+msgstr ""
+
+#: ../functions.php:469
+msgid "Theme Customizer"
+msgstr ""
+
+#: ../functions.php:501
+msgid "Color scheme"
+msgstr ""
+
+#: ../functions.php:505
+msgid "Black"
+msgstr ""
+
+#: ../functions.php:515
+msgid "Blue"
+msgstr ""
+
+#: ../functions.php:519
+msgid "Brown"
+msgstr ""
+
+#: ../functions.php:523
+msgid "Candy red"
+msgstr ""
+
+#: ../functions.php:527
+msgid "Cobalt"
+msgstr ""
+
+#: ../functions.php:531
+msgid "Grey"
+msgstr ""
+
+#: ../functions.php:535
+msgid "Lime green"
+msgstr ""
+
+#: ../functions.php:539
+msgid "Orange"
+msgstr ""
+
+#: ../functions.php:543
+msgid "Plum purple"
+msgstr ""
+
+#: ../functions.php:547
+msgid "Red"
+msgstr ""
+
+#: ../functions.php:563
+msgid "Header gradient"
+msgstr ""
+
+#: ../functions.php:577
+msgid "Links color"
+msgstr ""
+
+#: ../functions.php:599
+msgid "Logo"
+msgstr ""
+
+#: ../functions.php:622
+msgid "Navigation above posts"
+msgstr ""
+
+#: ../functions.php:636
+msgid "Navigation below posts"
+msgstr ""
+
+#: ../functions.php:650
+msgid "Layout"
+msgstr ""
+
+#: ../functions.php:651
+msgid "Set default page layout"
+msgstr ""
+
+#: ../functions.php:664
+msgid "Layout type"
+msgstr ""
+
+#: ../functions.php:668
+msgid "Full width"
+msgstr ""
+
+#: ../functions.php:672
+msgid "Boxed"
+msgstr ""
+
+#: ../functions.php:688
+msgid "Default layout"
+msgstr ""
+
+#: ../functions.php:692
+msgid "Content"
+msgstr ""
+
+#: ../functions.php:696
+msgid "Content - Primary Sidebar"
+msgstr ""
+
+#: ../functions.php:700
+msgid "Primary Sidebar - Content"
+msgstr ""
+
+#: ../functions.php:704
+msgid "Content - Primary Sidebar - Secondary Sidebar"
+msgstr ""
+
+#: ../functions.php:708
+msgid "Primary Sidebar - Secondary Sidebar - Content"
+msgstr ""
+
+#: ../functions.php:712
+msgid "Primary Sidebar - Content - Secondary Sidebar"
+msgstr ""
+
+#: ../functions.php:728
+msgid "Typography"
+msgstr ""
+
+#: ../functions.php:729
+msgid "Select fonts"
+msgstr ""
+
+#: ../functions.php:742
+msgid "Body font"
+msgstr ""
+
+#: ../functions.php:788
+msgid "Heading font"
+msgstr ""
+
+#: ../header.php:70
+msgid "<span>&#9776;</span> Menu"
+msgstr ""
+
+#: ../header.php:71
+msgid "Skip to content"
+msgstr ""
+
+#: ../image.php:29
+msgid "&larr; Previous"
+msgstr ""
+
+#: ../image.php:30
+msgid "Next &rarr;"
+msgstr ""
+
+#: ../image.php:41
+#, php-format
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-"
+"size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s"
+"\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+
+#: ../image.php:106 ../post-footer.php:41
+#, php-format
+msgid ""
+"Bookmark the <a href=\"%1$s\" title=\"Permalink to %2$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+
+#: ../no-results.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: ../no-results.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../no-results.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: ../no-results.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../post-footer.php:14 ../post-footer.php:24
+msgid ", "
+msgstr ""
+
+#: ../post-footer.php:18
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: ../post-footer.php:29
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: ../post-footer.php:35
+msgid "Leave a comment"
+msgstr ""
+
+#: ../post-footer.php:35
+msgid "1 Comment"
+msgstr ""
+
+#: ../post-footer.php:35
+msgid "% Comments"
+msgstr ""
+
+#: ../post-header.php:14 ../inc/template-tags.php:198
+#: ../page-templates/template-masonry.php:60
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: ../search.php:28
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../searchform.php:11
+msgid "Search"
+msgstr ""
+
+#: ../sidebar.php:44
+msgid "Meta"
+msgstr ""
+
+#: ../inc/extras.php:235
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../inc/post-meta-box.php:55
+msgid "Post/page layout"
+msgstr ""
+
+#: ../inc/post-meta-box.php:56
+msgid "You can override default layout set in theme settings"
+msgstr ""
+
+#: ../inc/post-meta-box.php:78
+msgid "Author template settings"
+msgstr ""
+
+#: ../inc/post-meta-box.php:81
+msgid "Order authors by:"
+msgstr ""
+
+#: ../inc/post-meta-box.php:85
+msgid "Display name"
+msgstr ""
+
+#: ../inc/post-meta-box.php:91
+msgid "Post count"
+msgstr ""
+
+#: ../inc/post-meta-box.php:97
+msgid "Order:"
+msgstr ""
+
+#: ../inc/post-meta-box.php:101
+msgid "Ascending"
+msgstr ""
+
+#: ../inc/post-meta-box.php:107
+msgid "Descending"
+msgstr ""
+
+#: ../inc/post-meta-box.php:113
+msgid "User roles to include (Cmd/Ctrl + click to select multiple roles):"
+msgstr ""
+
+#: ../inc/post-meta-box.php:132
+msgid ""
+"Please note that if you select only certain user roles, sorting you "
+"specified above will still work, but will be applied per role. For example, "
+"Administrator users would go first, sorted, then Editors and so on&hellip;"
+msgstr ""
+
+#: ../inc/post-meta-box.php:142
+msgid "Masonry template settings"
+msgstr ""
+
+#: ../inc/post-meta-box.php:145
+msgid "Categories to include (Cmd/Ctrl + click to select multiple categories):"
+msgstr ""
+
+#: ../inc/post-meta-box.php:165
+msgid "Number of posts per page in this template:"
+msgstr ""
+
+#: ../inc/post-meta-box.php:178
+msgid "If you'd like to show all posts set number of posts per page to -1"
+msgstr ""
+
+#: ../inc/template-tags.php:53
+msgid "Post navigation"
+msgstr ""
+
+#: ../inc/template-tags.php:69
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: ../inc/template-tags.php:73
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:103
+msgid "Pingback:"
+msgstr ""
+
+#: ../inc/template-tags.php:103 ../inc/template-tags.php:133
+msgid "(Edit)"
+msgstr ""
+
+#: ../inc/template-tags.php:114
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:123
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../inc/template-tags.php:131
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../inc/template-tags.php:157
+#, php-format
+msgid ""
+"Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class="
+"\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline"
+"\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" "
+"title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+
+#: ../inc/template-tags.php:163
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: ../inc/template-tags.php:195
+msgid "Latest posts"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:44
+msgid "New Section Title"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:45
+msgid "New section description"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:69
+msgid "Default value"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:79
+msgid "New text field label"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:100
+msgid "New checkbox field label"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:121
+msgid "New radio control label"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:125
+#: ../inc/customizer-boilerplate/options.php:157
+msgid "Option 1"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:128
+#: ../inc/customizer-boilerplate/options.php:160
+msgid "Option 2"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:131
+#: ../inc/customizer-boilerplate/options.php:163
+msgid "Option 3"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:153
+msgid "New select field label"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:185
+msgid "File upload"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:206
+msgid "Image upload"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:227
+msgid "Textarea"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:248
+msgid "Number"
+msgstr ""
+
+#: ../inc/customizer-boilerplate/options.php:280
+msgid "New color field label"
+msgstr ""
+
+#: ../page-templates/template-sitemap.php:37
+msgid "Pages"
+msgstr ""
+
+#: ../page-templates/template-sitemap.php:40
+msgid "Categories"
+msgstr ""
+
+#: ../page-templates/template-sitemap.php:43
+msgid "Latest Posts"
+msgstr ""

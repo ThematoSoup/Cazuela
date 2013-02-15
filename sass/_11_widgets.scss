@@ -2,12 +2,13 @@
 ----------------------------------------------- */
 
 .widget {
-	margin: 0 0 2em;
+	margin: 0 0 30px;
+	margin: 0 0 3rem;
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	hyphens: auto;
-	@include font-size($bodyfontsize * 0.75); // 12px
+	@include font-size($bodyfontsize * 0.875); // 14px
 	
 	ul {
 		list-style: none;
@@ -35,6 +36,10 @@
 .widget:last-child,
 .widget :last-child {
 	margin-bottom: 0;
+}
+#secondary .widget,
+#tertiary .widget {
+	@include font-size($bodyfontsize * 0.75); // 12px
 }
 /* Search widget */
 #searchsubmit {

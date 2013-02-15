@@ -39,7 +39,7 @@
  *
  * @since Cazuela 1.0
  */
-if ( !isset( $content_width ) ) {
+if ( ! isset( $content_width ) ) {
 	$content_width = 620; /* pixels */
 }
 
@@ -47,15 +47,18 @@ if ( !isset( $content_width ) ) {
 /**
  * Change content width, based on layout
  *
- * @since Cazuela 1.0
+ * @uses	thsp_get_current_layout()			Defined in /inc/extras.php
+ * @since	Cazuela 1.0
  */
 function thsp_content_width() {
 	$thsp_current_layout = thsp_get_current_layout();
 	global $content_width;
 	
 	if ( 'layout-c' == $thsp_current_layout ) {
+		// One column layout
 		$content_width = 960; /* pixels */
 	} elseif ( in_array( $thsp_current_layout, array( 'layout-cps', 'layout-psc', 'layout-pcs' ) ) ) {
+		// Three column layouts
 		$content_width = 520; /* pixels */		
 	}
 }
@@ -71,10 +74,9 @@ if ( !function_exists( 'thsp_theme_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  *
- * @since Cazuela 1.0
+ * @since	Cazuela 1.0
  */
 function thsp_theme_setup() {
-
 	/**
 	 * Custom template tags for this theme.
 	 */
@@ -146,17 +148,18 @@ function thsp_theme_setup() {
 	 * @since Cazuela 1.0
 	 */
 	register_nav_menus( array(
-		'main'		=> __( 'Main Menu', 'thsp_cazuela' )
+		'main'		=> __( 'Main Menu', 'thsp_cazuela' ),
+		'footer'	=> __( 'Footer Menu', 'thsp_cazuela' )
 	) );
 
 	/**
 	 * This theme styles the visual editor with editor-style.css to match the theme style
 	 */
 	add_editor_style();
-	
 }
 endif; // thsp_setup
 add_action( 'after_setup_theme', 'thsp_theme_setup' );
+
 
 /**
  * Register widgetized area and update sidebar with default widgets
@@ -255,10 +258,13 @@ add_action( 'widgets_init', 'thsp_widgets_init' );
 
 /**
  * Attach widget areas to theme action hooks
- * When done this way, it's possible to disable widget areas in
- * certain pages
+ * Makes it possible to disable widget areas in certain pages using remove_action
+ * And replace them with custom functionality
  *
- * @since Cazuela 1.0
+ * @uses	add_action			http://codex.wordpress.org/Function_Reference/add_action
+ * @uses	dynamic_sidebar		http://codex.wordpress.org/Function_Reference/dynamic_sidebar
+ * @uses	is_active_sidebar	http://codex.wordpress.org/Function_Reference/is_active_sidebar
+ * @since	Cazuela 1.0
  */
 function thsp_before_header_sidebar() {
 	dynamic_sidebar( 'before-header-sidebar' );
@@ -308,7 +314,6 @@ if ( is_active_sidebar( 'after-footer-sidebar' ) ) {
  * @since Cazuela 1.0
  */
 function thsp_theme_scripts() {
-
 	/*
 	 * Enqueue Google Fonts
 	 *
@@ -317,10 +322,8 @@ function thsp_theme_scripts() {
 	 */
 	$theme_options = thsp_cbp_get_options_values();
 	$theme_options_fields = thsp_cbp_get_fields();
-	
 	$body_font_value = $theme_options['body_font'];
 	$heading_font_value = $theme_options['heading_font'];
-	
 	$body_font_options = $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
 	$heading_font_options = $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
 
@@ -338,15 +341,16 @@ function thsp_theme_scripts() {
 			'http://fonts.googleapis.com/css?family=' . $heading_font_options[$heading_font_value]['google_font']
 		);
 	}
-
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
+	// Compact menu for layouts narrower than 600px
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	// Masonry script, for use in Masonry page template
 	if ( is_page_template( 'page-templates/template-masonry.php' ) ) {
 		wp_enqueue_script(
 			'jquery-masonry',
@@ -365,19 +369,19 @@ function thsp_theme_scripts() {
 		);
 	}
 
+	// Theme specific scripts
 	wp_enqueue_script(
 		'cazuela',
 		get_template_directory_uri() . '/js/cazuela.js',
 		array( 'jquery' ),
 		'20130210'
 	);
-	
 }
 add_action( 'wp_enqueue_scripts', 'thsp_theme_scripts' );
 
 
 /**
- * Dynamically generated CSS (link color)
+ * Dynamically generated CSS (link color), based on theme options
  *
  * @since Cazuela 1.0
  */
@@ -399,32 +403,22 @@ function thsp_dynamic_css() {
 add_action( 'wp_head', 'thsp_dynamic_css' );
 
 
-/**
- * Implement the Custom Header feature
- */
+// Implement the Custom Header feature
 require( get_template_directory() . '/inc/custom-header.php' );
 
-
-/**
- * Add post meta box
- */
+// Post/page meta box
 if ( is_admin() ) {
-	 require( get_template_directory() . '/inc/post-meta-box.php' );
+	require( get_template_directory() . '/inc/post-meta-box.php' );
 }
 
-
-/**
- * Customizer options
- */	
+// Theme Customizer Boilerplate
 require( get_template_directory() . '/inc/customizer-boilerplate/customizer.php' );
 
-
-/**
- * Theme documentation page
- */	
+// Theme documentation page
 if ( is_admin() ) {
 	require( get_template_directory() . '/inc/documentation-page.php' );
 }
+
 
 
 /*
@@ -439,7 +433,7 @@ if ( is_admin() ) {
  * under which theme options are stored
  *
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
- * @since Cazuela 1.0
+ * @since	Cazuela 1.0
  */
 add_filter( 'thsp_cbp_option', 'thsp_edit_cbp_option_name', 1 );
 function thsp_edit_cbp_option_name() {
@@ -453,13 +447,12 @@ function thsp_edit_cbp_option_name() {
  * Hooking into Theme Customizer Boilerplate to set Customizer location
  *
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
- * @since Cazuela 1.0
+ * @return	string		Theme Customizer Boilerplate location path
+ * @since	Cazuela 1.0
  */
 add_filter( 'thsp_cbp_directory_uri', 'thsp_edit_cbp_directory_uri', 1 );
-function thsp_edit_cbp_directory_uri() {
-	
-	return get_template_directory_uri() . '/inc/customizer-boilerplate';
-	
+function thsp_edit_cbp_directory_uri() {	
+	return get_template_directory_uri() . '/inc/customizer-boilerplate';	
 }
 
 
@@ -468,28 +461,25 @@ function thsp_edit_cbp_directory_uri() {
  * https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
  *
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
- * @since Cazuela 1.0
+ * @return	string			Menu link text
+ * @since	Cazuela 1.0
  */
 add_filter( 'thsp_cbp_menu_link_text', 'thsp_customizer_menu_link_text', 1 );
 function thsp_customizer_menu_link_text() {
-	
 	return __( 'Theme Customizer', 'thsp_cazuela' );
-	
 }
 
 
 /**
- * Options for Theme Customizer Boilerplate
+ * Options array for Theme Customizer Boilerplate
  *
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
- * @since Cazuela 1.0
+ * @return	array		Theme options
+ * @since	Cazuela 1.0
  */
 add_filter( 'thsp_cbp_options_array', 'thsp_theme_options_array', 1 );
 function thsp_theme_options_array() {
-	
-	/*
-	 * Using helper function to get default required capability
-	 */
+	// Using helper function to get default required capability
 	$thsp_cbp_capability = thsp_cbp_capability();
 
 	$options = array(
@@ -836,21 +826,19 @@ function thsp_theme_options_array() {
 	);
 
 	return $options;
-	
 }
 
 
 /**
- * Built-in sections to remove from Theme Customizer
+ * Built-in controls to remove from Theme Customizer
  *
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
+ * @return	array	Built-in controls that need to be removed from Theme Customizer
  * @since Cazuela 1.0
  */
 add_filter( 'tshp_cbp_remove_controls', 'thsp_theme_options_remove_controls', 1 );
 function thsp_theme_options_remove_controls() {
-
 	$thsp_cbp_remove_controls = array( 'header_textcolor' );
 	
 	return $thsp_cbp_remove_controls;
-
 }

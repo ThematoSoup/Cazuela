@@ -138,10 +138,18 @@
 			border-bottom: none;
 		}
 	}
-	.avatar {
+	.author-avatar {
 		float: left;
 		padding: 0;
 		border: none;
+		width: 96px;
+		
+		.avatar {
+			padding: 0;
+			border: none;
+			width: 100%;
+			height: auto;
+		}
 	}
 	.author-text {
 		margin-left: 112px;

@@ -350,9 +350,9 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 
 #masthead { padding: 20px 0 0; padding: 2rem 0 0; }
 #masthead hgroup { margin-bottom: 15px; margin-bottom: 1.5rem; }
-#masthead .site-title { margin: 0 0 10px; margin: 0 0 1rem; display: inline-block; }
+#masthead .site-title { margin: 0 0 5px; margin: 0 0 0.5rem; display: inline-block; font-size: 40px; font-size: 4rem; }
 #masthead .header-image { display: block; margin: 0 auto 10px; margin: 0 auto 1rem; }
-#masthead .site-description { margin: 0; font-size: 16px; font-size: 1.6rem; }
+#masthead .site-description { margin: 0; font-size: 14px; font-size: 1.4rem; }
 #masthead .site-title a { text-decoration: none; }
 
 #after-header { padding: 10px 0; padding: 1rem 0; }
@@ -373,7 +373,7 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 .page-template-page-templatestemplate-homepage-php .hentry.has-thumbnail .entry-content { margin-right: 50%; padding-right: 30px; padding-right: 3rem; }
 
 #homepage-lead-image { float: right; width: 50%; }
-#homepage-lead-image img { max-width: 100%; height: auto; }
+#homepage-lead-image img { width: 100%; height: auto; }
 
 /*
 	Responsive grid layouts
@@ -429,15 +429,15 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 /* Footer widgets */
 #footer-widget-area { margin-bottom: 30px; margin-bottom: 3rem; }
 
-#footer-widget-area .widget { float: left; width: 33.333%; padding: 0 10px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#footer-widget-area .widget { float: left; width: 33.333%; padding: 0 15px; padding: 0 1.5rem; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 #footer-widget-area .widget:nth-child(3n+1) { clear: left; padding-left: 0; }
 #footer-widget-area .widget:nth-child(3n+3) { padding-right: 0; }
 
 #footer-widget-area.widget-count-1 .widget { float: none; width: 100%; padding: 0; }
 
 #footer-widget-area.widget-count-2 .widget { width: 50%; }
-#footer-widget-area.widget-count-2 .widget:first-child { padding: 0 10px 0 0; padding: 0 1rem 0 0; }
-#footer-widget-area.widget-count-2 .widget:last-child { padding: 0 0 0 10px; padding: 0 0 0 1rem; }
+#footer-widget-area.widget-count-2 .widget:first-child { padding: 0 15px 0 0; padding: 0 1.5rem 0 0; }
+#footer-widget-area.widget-count-2 .widget:last-child { padding: 0 0 0 15px; padding: 0 0 0 1.5rem; }
 
 /* =Navigation
 ----------------------------------------------- */
@@ -499,6 +499,12 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 #yoast-breadcrumbs:first-child { margin-top: 0; }
 #yoast-breadcrumbs span a { color: #4b4b4b; font-weight: bold; text-decoration: none; }
 
+/* Footer navigation */
+.footer-navigation { text-align: center; padding-bottom: 20px; padding-bottom: 2rem; }
+.footer-navigation ul { margin: 0; list-style: none; }
+.footer-navigation ul > li { display: inline-block; margin: 0 15px; margin: 0 1.5rem; font-size: 14px; font-size: 1.4rem; }
+.footer-navigation ul ul { display: none; }
+
 /* =Entries
 ----------------------------------------------- */
 /* Lead image */
@@ -541,7 +547,8 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 .authors-list { list-style: none; margin: 2em 0; }
 .authors-list > li { margin-bottom: 1.25em; padding-bottom: 1.25em; border-bottom: 1px solid #f6f6f6; }
 .authors-list > li:last-child { border-bottom: none; }
-.authors-list .avatar { float: left; padding: 0; border: none; }
+.authors-list .author-avatar { float: left; padding: 0; border: none; width: 96px; }
+.authors-list .author-avatar .avatar { padding: 0; border: none; width: 100%; height: auto; }
 .authors-list .author-text { margin-left: 112px; }
 .authors-list h2 { clear: none; margin-top: 0; font-size: 24px; font-size: 2.4rem; }
 .authors-list h3 { clear: none; margin-top: 1em; font-size: 16px; font-size: 1.6rem; }
@@ -661,7 +668,7 @@ textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 
 /* =Widgets
 ----------------------------------------------- */
-.widget { margin: 0 0 2em; word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; font-size: 12px; font-size: 1.2rem; }
+.widget { margin: 0 0 30px; margin: 0 0 3rem; word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; font-size: 14px; font-size: 1.4rem; }
 .widget ul { list-style: none; margin: 0; }
 .widget * { max-width: 100%; }
 .widget li { margin-bottom: 0.5em; }
@@ -670,6 +677,8 @@ textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 .widget select:focus { outline: none; }
 
 .widget:last-child, .widget :last-child { margin-bottom: 0; }
+
+#secondary .widget, #tertiary .widget { font-size: 12px; font-size: 1.2rem; }
 
 /* Search widget */
 #searchsubmit { display: none; }
@@ -686,8 +695,8 @@ textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 
 /* =Media Queries
 ----------------------------------------------- */
-@media screen and (max-width: 1000px) { body.layout-boxed, .inner { padding: 0 20px; } }
-@media screen and (max-width: 999px) { .layout-cps #main .content-area { float: left; margin: 0 -34% 0 0; width: 100%; }
+@media screen and (max-width: 999px) { body.layout-boxed, .inner { padding: 0 20px; }
+  .layout-cps #main .content-area { float: left; margin: 0 -34% 0 0; width: 100%; }
   .layout-cps #main #content { margin: 0 34% 0 0; }
   .layout-cps #main #secondary { float: right; width: 30%; }
   .layout-cps #main #tertiary { float: none; clear: both; width: 100%; margin: 0; }
@@ -695,8 +704,18 @@ textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
   .layout-psc #content, .layout-pcs #content { margin: 0 0 0 34%; }
   .layout-psc #secondary, .layout-pcs #secondary { float: left; width: 30%; margin: 0; }
   .layout-psc #tertiary, .layout-pcs #tertiary { float: none; clear: both; width: 100%; margin: 0; } }
+@media screen and (max-width: 767px) { #homepage-lead-image, .page-template-page-templatestemplate-homepage-php .hentry.has-thumbnail .entry-content { float: none; width: 100%; }
+  #homepage-lead-image { margin-bottom: 20px; margin-bottom: 2rem; } }
 @media screen and (max-width: 599px) { html { font-size: 9px; }
   #masthead hgroup { text-align: center; }
   #main #primary, #main #content, #main #secondary, #main #tertiary { float: none; clear: both; }
   #main #primary #content { margin: 0; }
-  #main #primary, #main #secondary, #main #tertiary { margin: 0 0 40px; margin: 0 0 4rem; width: 100% !important; } }
+  #main #primary, #main #secondary, #main #tertiary { margin: 0 0 40px; margin: 0 0 4rem; width: 100% !important; }
+  #main #homepage-widget-area .widget, #main #homepage-widget-area.widget-count-2 .widget { width: 100%; float: none; padding: 0; margin-bottom: 20px; margin-bottom: 2rem; }
+  #footer-widget-area .widget { float: left; width: 50%; padding: 0 15px; padding: 0 1.5rem; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+  #footer-widget-area .widget:nth-child(3n+1) { clear: none; }
+  #footer-widget-area .widget:nth-child(2n+1) { clear: left; padding: 0 15px 0 0; padding: 0 1.5rem 0 0; }
+  #footer-widget-area .widget:nth-child(2n) { padding: 0 0 0 15px; padding: 0 0 0 1.5rem; } }
+@media screen and (max-width: 479px) { #colophon #footer-widget-area .widget { float: none; padding: 0 !important; width: 100%; }
+  .authors-list .author-avatar { width: 48px; }
+  .authors-list .author-text { margin-left: 60px; } }

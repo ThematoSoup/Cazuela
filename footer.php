@@ -40,6 +40,15 @@
 			<section id="footer-widget-area" class="<?php echo $footer_widgets_classes; ?>">
 				<?php dynamic_sidebar( 'footer-widget-area' ); ?>
 			</section><!-- #footer-widgets -->
+
+			<nav role="navigation" class="footer-navigation">
+				<?php
+					wp_nav_menu( array( 
+						'theme_location' => 'footer',
+						'container' => ''
+					) );
+				?>
+			</nav><!-- .site-navigation .main-navigation -->
 		</div><!-- .inner -->
 		<?php endif; ?>
 

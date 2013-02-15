@@ -13,6 +13,8 @@
  * - Enhanced image navigation
  * - Custom wp_title, using filter hook
  * - Add Yoast breadcrumbs, if WordPress SEO is active and breadcrumbs enabled
+ * - Categorized blog check
+ * - Flush category transient
  *
  * @package Cazuela
  * @since Cazuela 1.0
@@ -25,10 +27,8 @@
  * @since Cazuela 1.0
  */
 function thsp_page_menu_args( $args ) {
-
 	$args['show_home'] = true;
 	return $args;
-	
 }
 add_filter( 'wp_page_menu_args', 'thsp_page_menu_args' );
 
@@ -39,7 +39,6 @@ add_filter( 'wp_page_menu_args', 'thsp_page_menu_args' );
  * @since Cazuela 1.0
  */
 function thsp_menu_parent_class( $items ) {
-	
 	$parents = array();
 	foreach ( $items as $item ) {
 		if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
@@ -54,7 +53,6 @@ function thsp_menu_parent_class( $items ) {
 	}
 	
 	return $items;
-	 
 }
 add_filter( 'wp_nav_menu_objects', 'thsp_menu_parent_class' );
 
@@ -69,7 +67,6 @@ add_filter( 'wp_nav_menu_objects', 'thsp_menu_parent_class' );
  * @since	Cazuela 1.0
  */
 function thsp_body_classes( $classes ) {
-
 	global $post;
 
 	// Adds a class of group-blog to blogs with more than 1 published author
@@ -99,7 +96,6 @@ function thsp_body_classes( $classes ) {
 	$classes = array_merge( $classes, $thsp_body_classes );
 
 	return $classes;
-	
 }
 add_filter( 'body_class', 'thsp_body_classes' );
 
@@ -113,13 +109,11 @@ add_filter( 'body_class', 'thsp_body_classes' );
  * @since	Cazuela 1.0
  */
 function thsp_tiny_mce_classes( $thsp_mceInit ) {
-
 	// Get theme options
 	$thsp_theme_options = thsp_cbp_get_options_values();
 	$thsp_mceInit['body_class'] .= ' body-' . $thsp_theme_options['body_font'] . ' heading-' . $thsp_theme_options['heading_font'];
 	
 	return $thsp_mceInit;
-	
 }
 add_filter( 'tiny_mce_before_init', 'thsp_tiny_mce_classes' );
 add_filter( 'teeny_mce_before_init', 'thsp_tiny_mce_classes' );
@@ -135,7 +129,6 @@ add_filter( 'teeny_mce_before_init', 'thsp_tiny_mce_classes' );
  * @since	Cazuela 1.0
  */
 function thsp_mce_css( $mce_css ) {
-
 	$theme_options = thsp_cbp_get_options_values();
 	$theme_options_fields = thsp_cbp_get_fields();
 	
@@ -159,7 +152,6 @@ function thsp_mce_css( $mce_css ) {
 	}
 	
 	return $mce_css;
-	
 }
 add_filter( 'mce_css', 'thsp_mce_css' );
 
@@ -195,8 +187,8 @@ function thsp_get_current_layout() {
 	/*
 	 * Returns an array with two values that can be changed using
 	 * 'thsp_current_layout' filter hook:
-	 * $current_layout['default-layout'] - determines number of sidebars etc.
-	 * $current_layout['layout_type'] - boxed or full width
+	 * $current_layout['default-layout']	- determines number and placement of sidebars
+	 * $current_layout['layout_type']		- boxed or full width
 	 */
 	return apply_filters( 'thsp_current_layout', $current_layout );
 }
@@ -252,7 +244,7 @@ add_filter( 'wp_title', 'thsp_wp_title', 10, 2 );
  *
  * @since Cazuela 1.0
  */
-function thsp_add_yoast_breadcrumbs() {
+function thsp_display_yoast_breadcrumbs() {
 	/*
 	 * Add breadcrumbs
 	 * WordPress SEO plugin must be installed and breadcrumbs must be enabled
@@ -260,7 +252,7 @@ function thsp_add_yoast_breadcrumbs() {
 	yoast_breadcrumb( '<div id="yoast-breadcrumbs">', '</div>' );
 }
 if ( function_exists( 'yoast_breadcrumb' ) && ! is_front_page() && ! is_home() ) {
-	add_action( 'thsp_after_header', 'thsp_add_yoast_breadcrumbs', 99 );
+	add_action( 'thsp_after_header', 'thsp_display_yoast_breadcrumbs', 99 );
 }
 
 
@@ -300,3 +292,44 @@ function thsp_get_logo_image( $attachment_url ) {
 	
 	return $attachment_array; 
 }
+
+
+/**
+ * Returns true if a blog has more than 1 category
+ *
+ * @since Cazuela 1.0
+ */
+function thsp_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+		// Create an array of all the categories that are attached to posts
+		$all_the_cool_cats = get_categories( array(
+			'hide_empty' => 1,
+		) );
+
+		// Count the number of categories that are attached to the posts
+		$all_the_cool_cats = count( $all_the_cool_cats );
+
+		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
+	}
+
+	if ( '1' != $all_the_cool_cats ) {
+		// This blog has more than 1 category so thsp_categorized_blog should return true
+		return true;
+	} else {
+		// This blog has only 1 category so thsp_categorized_blog should return false
+		return false;
+	}
+}
+
+
+/**
+ * Flush out the transients used in thsp_categorized_blog
+ *
+ * @since Cazuela 1.0
+ */
+function thsp_category_transient_flusher() {
+	// Like, beat it. Dig?
+	delete_transient( 'all_the_cool_cats' );
+}
+add_action( 'edit_category', 'thsp_category_transient_flusher' );
+add_action( 'save_post', 'thsp_category_transient_flusher' );

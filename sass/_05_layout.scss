@@ -59,9 +59,10 @@
 		margin-bottom: 1.5rem;
 	}
 	.site-title {
-		margin: 0 0 10px;
-		margin: 0 0 1rem;
-		display: inline-block;	
+		margin: 0 0 5px;
+		margin: 0 0 0.5rem;
+		display: inline-block;
+		@include font-size(40);
 	}
 	.header-image {
 		display: block;
@@ -70,7 +71,7 @@
 	}
 	.site-description {
 		margin: 0;
-		@include font-size($bodyfontsize); // 16px
+		@include font-size($bodyfontsize * 0.875); // 14px
 	}
 	.site-title a {
 		text-decoration: none;
@@ -133,7 +134,7 @@
 	width: 50%;
 	
 	img {
-		max-width: 100%;
+		width: 100%;
 		height: auto;
 	}
 }
@@ -304,7 +305,8 @@
 #footer-widget-area .widget {
 	float: left;
 	width: 33.333%;
-	padding: 0 10px;
+	padding: 0 15px;
+	padding: 0 1.5rem;
 	@include box-sizing(border-box);
 
 	&:nth-child(3n+1) {
@@ -324,11 +326,11 @@
 	width: 50%;
 	
 	&:first-child {
-		padding: 0 10px 0 0;
-		padding: 0 1rem 0 0;
+		padding: 0 15px 0 0;
+		padding: 0 1.5rem 0 0;
 	}
 	&:last-child {
-		padding: 0 0 0 10px;
-		padding: 0 0 0 1rem;
+		padding: 0 0 0 15px;
+		padding: 0 0 0 1.5rem;
 	}
 }
