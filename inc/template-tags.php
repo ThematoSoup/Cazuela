@@ -50,12 +50,12 @@ function thsp_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'thsp_cazuela' ); ?></h1>
+		<h1 class="assistive-text"><?php _e( 'Post navigation', 'cazuela' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'thsp_cazuela' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'thsp_cazuela' ) . '</span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'cazuela' ) . '</span> %title' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'cazuela' ) . '</span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
@@ -66,11 +66,11 @@ function thsp_content_nav( $nav_id ) {
 		} else {
 		?>
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'thsp_cazuela' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'cazuela' ) ); ?></div>
 			<?php endif; ?>
 	
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'thsp_cazuela' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'cazuela' ) ); ?></div>
 			<?php endif; ?>
 		<?php } // end WP Pagenavi check ?>
 
@@ -100,7 +100,7 @@ function thsp_comment_cb( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'thsp_cazuela' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'thsp_cazuela' ), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'cazuela' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'cazuela' ), ' ' ); ?></p>
 	<?php
 			break;
 		default :
@@ -111,7 +111,7 @@ function thsp_comment_cb( $comment, $args, $depth ) {
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
 			
 			<header>
-				<?php printf( __( '%s <span class="says">says:</span>', 'thsp_cazuela' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+				<?php printf( __( '%s <span class="says">says:</span>', 'cazuela' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 			</header>
 			
 			<div class="comment-content"><?php comment_text(); ?></div>
@@ -120,7 +120,7 @@ function thsp_comment_cb( $comment, $args, $depth ) {
 				<div class="comment-author vcard">
 				</div><!-- .comment-author .vcard -->
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', 'thsp_cazuela' ); ?></em>
+					<em><?php _e( 'Your comment is awaiting moderation.', 'cazuela' ); ?></em>
 					<br />
 				<?php endif; ?>
 
@@ -128,9 +128,9 @@ function thsp_comment_cb( $comment, $args, $depth ) {
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
 					<?php
 						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'thsp_cazuela' ), get_comment_date(), get_comment_time() ); ?>
+						printf( __( '%1$s at %2$s', 'cazuela' ), get_comment_date(), get_comment_time() ); ?>
 					</time></a>
-					<?php edit_comment_link( __( '(Edit)', 'thsp_cazuela' ), ' ' );
+					<?php edit_comment_link( __( '(Edit)', 'cazuela' ), ' ' );
 					?>
 				</div><!-- .comment-meta .commentmetadata -->
 			</footer>
@@ -154,13 +154,13 @@ endif; // ends check for thsp_comment_cb()
  */
 if ( ! function_exists( 'thsp_posted_on' ) ) :
 function thsp_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'thsp_cazuela' ),
+	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'cazuela' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'thsp_cazuela' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'cazuela' ), get_the_author() ) ),
 		get_the_author()
 	);
 }
@@ -192,10 +192,10 @@ function thsp_display_an_author( $author ) { ?>
 				);
 				$posts_by_author = new WP_Query( $args );
 				if ( $posts_by_author->have_posts() ) : ?>
-					<h3><?php _e( 'Latest posts', 'thsp_cazuela' ); ?></h3>
+					<h3><?php _e( 'Latest posts', 'cazuela' ); ?></h3>
 					<ul class="latest-by-author">
 						<?php while ( $posts_by_author->have_posts() ) : $posts_by_author->the_post(); ?>
-						<li><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'thsp_cazuela' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></li>
+						<li><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'cazuela' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></li>
 						<?php endwhile; ?>
 					</ul><!-- .latest-by-author -->
 				<?php

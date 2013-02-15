@@ -182,7 +182,7 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'File upload', 'thsp_cazuela' ),
+						'label' => __( 'File upload', 'cazuela' ),
 						'type' => 'upload', // File upload field control
 						'priority' => 5
 					)
@@ -203,7 +203,7 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Image upload', 'thsp_cazuela' ),
+						'label' => __( 'Image upload', 'cazuela' ),
 						'type' => 'image', // Image upload field control
 						'priority' => 6
 					)
@@ -224,7 +224,7 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Textarea', 'thsp_cazuela' ),
+						'label' => __( 'Textarea', 'cazuela' ),
 						'type' => 'textarea', // Textarea control
 						'priority' => 7
 					)
@@ -245,7 +245,7 @@ function thsp_cbp_get_fields() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Number', 'thsp_cazuela' ),
+						'label' => __( 'Number', 'cazuela' ),
 						'type' => 'number', // Textarea control
 						'priority' => 8
 					)

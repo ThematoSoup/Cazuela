@@ -57,7 +57,7 @@ get_header(); ?>
 
 					<div class="masonry-post">
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-							<a class="masonry-link" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'thsp_cazuela' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+							<a class="masonry-link" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'cazuela' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
 								<?php
 								// Add post thumbnail, if it exists
 								if ( ! is_single() && has_post_thumbnail() ) {

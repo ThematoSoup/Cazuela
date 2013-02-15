@@ -91,7 +91,7 @@ function thsp_theme_setup() {
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 */
-	load_theme_textdomain( 'thsp_cazuela', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'cazuela', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -108,7 +108,7 @@ function thsp_theme_setup() {
 	$custom_background_args = array(
 		'default-color' => '#fff'
 	);
-	add_theme_support( 'custom-background' );
+	add_theme_support( 'custom-background', $custom_background_args );
 
 	/**
 	 * Add support for Post Formats
@@ -148,8 +148,8 @@ function thsp_theme_setup() {
 	 * @since Cazuela 1.0
 	 */
 	register_nav_menus( array(
-		'main'		=> __( 'Main Menu', 'thsp_cazuela' ),
-		'footer'	=> __( 'Footer Menu', 'thsp_cazuela' )
+		'main'		=> __( 'Main Menu', 'cazuela' ),
+		'footer'	=> __( 'Footer Menu', 'cazuela' )
 	) );
 
 	/**
@@ -169,7 +169,7 @@ add_action( 'after_setup_theme', 'thsp_theme_setup' );
  */
 function thsp_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Primary Sidebar', 'thsp_cazuela' ),
+		'name' => __( 'Primary Sidebar', 'cazuela' ),
 		'id' => 'primary-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -177,7 +177,7 @@ function thsp_widgets_init() {
 		'after_title' => '</h1>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Secondary Sidebar', 'thsp_cazuela' ),
+		'name' => __( 'Secondary Sidebar', 'cazuela' ),
 		'id' => 'secondary-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -185,7 +185,7 @@ function thsp_widgets_init() {
 		'after_title' => '</h1>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Footer Widget Area', 'thsp_cazuela' ),
+		'name' => __( 'Footer Widget Area', 'cazuela' ),
 		'id' => 'footer-widget-area',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -193,8 +193,8 @@ function thsp_widgets_init() {
 		'after_title' => '</h1>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Homepage Widget Area', 'thsp_cazuela' ),
-		'description' => __( 'This widget area is used in "Widgetized Homepage" page template', 'thsp_cazuela' ),
+		'name' => __( 'Homepage Widget Area', 'cazuela' ),
+		'description' => __( 'This widget area is used in "Widgetized Homepage" page template', 'cazuela' ),
 		'id' => 'homepage-widget-area',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="homepage-inner">',
 		'after_widget' => '</div></aside>',
@@ -203,7 +203,7 @@ function thsp_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Before Header', 'thsp_cazuela' ),
+		'name' => __( 'Before Header', 'cazuela' ),
 		'id' => 'before-header-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -211,7 +211,7 @@ function thsp_widgets_init() {
 		'after_title' => '</h1>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'After Header', 'thsp_cazuela' ),
+		'name' => __( 'After Header', 'cazuela' ),
 		'id' => 'after-header-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -220,7 +220,7 @@ function thsp_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Before Content', 'thsp_cazuela' ),
+		'name' => __( 'Before Content', 'cazuela' ),
 		'id' => 'before-content-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -228,7 +228,7 @@ function thsp_widgets_init() {
 		'after_title' => '</h1>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'After Content', 'thsp_cazuela' ),
+		'name' => __( 'After Content', 'cazuela' ),
 		'id' => 'after-content-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -237,7 +237,7 @@ function thsp_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Before Footer', 'thsp_cazuela' ),
+		'name' => __( 'Before Footer', 'cazuela' ),
 		'id' => 'before-footer-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -245,7 +245,7 @@ function thsp_widgets_init() {
 		'after_title' => '</h1>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'After Footer', 'thsp_cazuela' ),
+		'name' => __( 'After Footer', 'cazuela' ),
 		'id' => 'after-footer-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -466,7 +466,7 @@ function thsp_edit_cbp_directory_uri() {
  */
 add_filter( 'thsp_cbp_menu_link_text', 'thsp_customizer_menu_link_text', 1 );
 function thsp_customizer_menu_link_text() {
-	return __( 'Theme Customizer', 'thsp_cazuela' );
+	return __( 'Theme Customizer', 'cazuela' );
 }
 
 
@@ -498,53 +498,53 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Color scheme', 'thsp_cazuela' ),
+						'label' => __( 'Color scheme', 'cazuela' ),
 						'type' => 'images_radio', // Images (radio replacement)
 						'choices' => array(
 							'scheme-black' => array(
-								'label' => __( 'Black', 'thsp_cazuela' ),
+								'label' => __( 'Black', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-black.png'
 							),
 							/*
 							'scheme-white' => array(
-								'label' => __( 'White', 'thsp_cazuela' ),
+								'label' => __( 'White', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-white.png'
 							),
 							*/
 							'scheme-blue' => array(
-								'label' => __( 'Blue', 'thsp_cazuela' ),
+								'label' => __( 'Blue', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-blue.png'
 							),
 							'scheme-brown' => array(
-								'label' => __( 'Brown', 'thsp_cazuela' ),
+								'label' => __( 'Brown', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-brown.png'
 							),
 							'scheme-candy-red' => array(
-								'label' => __( 'Candy red', 'thsp_cazuela' ),
+								'label' => __( 'Candy red', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-candy-red.png'
 							),
 							'scheme-cobalt' => array(
-								'label' => __( 'Cobalt', 'thsp_cazuela' ),
+								'label' => __( 'Cobalt', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-cobalt.png'
 							),
 							'scheme-grey' => array(
-								'label' => __( 'Grey', 'thsp_cazuela' ),
+								'label' => __( 'Grey', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-grey.png'
 							),
 							'scheme-lime-green' => array(
-								'label' => __( 'Lime green', 'thsp_cazuela' ),
+								'label' => __( 'Lime green', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-lime-green.png'
 							),
 							'scheme-orange' => array(
-								'label' => __( 'Orange', 'thsp_cazuela' ),
+								'label' => __( 'Orange', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-orange.png'
 							),
 							'scheme-plum-purple' => array(
-								'label' => __( 'Plum purple', 'thsp_cazuela' ),
+								'label' => __( 'Plum purple', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-plum-purple.png'
 							),
 							'scheme-red' => array(
-								'label' => __( 'Red', 'thsp_cazuela' ),
+								'label' => __( 'Red', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-red.png'
 							)
 						),					
@@ -560,7 +560,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Header gradient', 'thsp_cazuela' ),
+						'label' => __( 'Header gradient', 'cazuela' ),
 						'type' => 'checkbox', // Checkbox field control
 						'priority' => 2
 					)
@@ -574,7 +574,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Links color', 'thsp_cazuela' ),
+						'label' => __( 'Links color', 'cazuela' ),
 						'type' => 'color', // Color picker field control
 						'priority' => 3
 					)
@@ -596,7 +596,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Logo', 'thsp_cazuela' ),
+						'label' => __( 'Logo', 'cazuela' ),
 						'type' => 'image', // Image upload field control
 						'priority' => 20
 					)
@@ -619,7 +619,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Navigation above posts', 'thsp_cazuela' ),
+						'label' => __( 'Navigation above posts', 'cazuela' ),
 						'type' => 'checkbox', // Checkbox field control
 						'priority' => 20
 					)
@@ -633,7 +633,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Navigation below posts', 'thsp_cazuela' ),
+						'label' => __( 'Navigation below posts', 'cazuela' ),
 						'type' => 'checkbox', // Checkbox field control
 						'priority' => 21
 					)
@@ -647,8 +647,8 @@ function thsp_theme_options_array() {
 
 			'existing_section' => false,
 			'args' => array(
-				'title' => __( 'Layout', 'thsp_cazuela' ),
-				'description' => __( 'Set default page layout', 'thsp_cazuela' ),
+				'title' => __( 'Layout', 'cazuela' ),
+				'description' => __( 'Set default page layout', 'cazuela' ),
 				'priority' => 10
 			),
 			'fields' => array(
@@ -661,15 +661,15 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Layout type', 'thsp_cazuela' ),
+						'label' => __( 'Layout type', 'cazuela' ),
 						'type' => 'images_radio', // Image radio replacement
 						'choices' => array(
 							'layout-full-width' => array(
-								'label' => __( 'Full width', 'thsp_cazuela' ),
+								'label' => __( 'Full width', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-full-width.png'
 							),
 							'layout-boxed' => array(
-								'label' => __( 'Boxed', 'thsp_cazuela' ),
+								'label' => __( 'Boxed', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-boxed.png'
 							)
 						),					
@@ -685,31 +685,31 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Default layout', 'thsp_cazuela' ),
+						'label' => __( 'Default layout', 'cazuela' ),
 						'type' => 'images_radio', // Image radio replacement
 						'choices' => array(
 							'layout-c' => array(
-								'label' => __( 'Content', 'thsp_cazuela' ),
+								'label' => __( 'Content', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-c.png'
 							),
 							'layout-cp' =>  array(
-								'label' => __( 'Content - Primary Sidebar', 'thsp_cazuela' ),
+								'label' => __( 'Content - Primary Sidebar', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-cp.png'
 							),
 							'layout-pc' => array(
-								'label' => __( 'Primary Sidebar - Content', 'thsp_cazuela' ),
+								'label' => __( 'Primary Sidebar - Content', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-pc.png'
 							),
 							'layout-cps' => array(
-								'label' => __( 'Content - Primary Sidebar - Secondary Sidebar', 'thsp_cazuela' ),
+								'label' => __( 'Content - Primary Sidebar - Secondary Sidebar', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-cps.png'
 							),
 							'layout-psc' => array(
-								'label' => __( 'Primary Sidebar - Secondary Sidebar - Content', 'thsp_cazuela' ),
+								'label' => __( 'Primary Sidebar - Secondary Sidebar - Content', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-psc.png'
 							),
 							'layout-pcs' => array(
-								'label' => __( 'Primary Sidebar - Content - Secondary Sidebar', 'thsp_cazuela' ),
+								'label' => __( 'Primary Sidebar - Content - Secondary Sidebar', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-pcs.png'
 							)
 						),					
@@ -725,8 +725,8 @@ function thsp_theme_options_array() {
 
 			'existing_section' => false,
 			'args' => array(
-				'title' => __( 'Typography', 'thsp_cazuela' ),
-				'description' => __( 'Select fonts', 'thsp_cazuela' ),
+				'title' => __( 'Typography', 'cazuela' ),
+				'description' => __( 'Select fonts', 'cazuela' ),
 				'priority' => 20
 			),
 			'fields' => array(
@@ -739,7 +739,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Body font', 'thsp_cazuela' ),
+						'label' => __( 'Body font', 'cazuela' ),
 						'type' => 'select', // Select control
 						'choices' => array(
 							'arial' => array(
@@ -785,7 +785,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Heading font', 'thsp_cazuela' ),
+						'label' => __( 'Heading font', 'cazuela' ),
 						'type' => 'select', // Select control
 						'choices' => array(
 							'georgia' => array(

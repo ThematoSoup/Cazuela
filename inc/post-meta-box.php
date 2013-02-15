@@ -52,8 +52,8 @@ function thsp_post_layout_meta_cb( $post ) {
 	// Layout switcher is not needed in Masonry template
 	if ( 'page-templates/template-masonry.php' != get_post_meta( $post->ID, '_wp_page_template', true ) ) { ?>
 		<fieldset class="clearfix">
-			<h4><?php _e( 'Post/page layout', 'thsp_cazuela' ); ?></h4>
-			<p><?php _e( 'You can override default layout set in theme settings', 'thsp_cazuela' ); ?></p>
+			<h4><?php _e( 'Post/page layout', 'cazuela' ); ?></h4>
+			<p><?php _e( 'You can override default layout set in theme settings', 'cazuela' ); ?></p>
 			
 			<?php
 			$thsp_theme_options_fields = thsp_cbp_get_fields();
@@ -75,42 +75,42 @@ function thsp_post_layout_meta_cb( $post ) {
 	if ( 'page-templates/template-authors.php' == get_post_meta( $post->ID, '_wp_page_template', true ) ) { ?>
 	
 	<fieldset class="clearfix">
-		<h4><?php _e( 'Author template settings', 'thsp_cazuela' ); ?></h4>
+		<h4><?php _e( 'Author template settings', 'cazuela' ); ?></h4>
 		
 		<p class="meta-options">
-			<div style="margin-bottom:0.25em"><?php _e( 'Order authors by:', 'thsp_cazuela' ); ?></div>
+			<div style="margin-bottom:0.25em"><?php _e( 'Order authors by:', 'cazuela' ); ?></div>
 						
 			<label for="_thsp_authors_query_orderby[display_name]">
 				<input name="_thsp_authors_query_orderby" type="radio" id="_thsp_authors_query_orderby[display_name]" value="display_name" <?php checked( get_post_meta( $post->ID, '_thsp_authors_query_orderby', true ), 'display_name' ); ?> /> 
-				<?php _e( 'Display name', 'thsp_cazuela' ); ?>
+				<?php _e( 'Display name', 'cazuela' ); ?>
 			</label>
 			<br />
 			
 			<label for="_thsp_authors_query_orderby[post_count]">
 				<input name="_thsp_authors_query_orderby" type="radio" id="_thsp_authors_query_orderby[post_count]" value="post_count" <?php checked( get_post_meta( $post->ID, '_thsp_authors_query_orderby', true ), 'post_count' ); ?> /> 
-				<?php _e( 'Post count', 'thsp_cazuela' ); ?>
+				<?php _e( 'Post count', 'cazuela' ); ?>
 			</label>
 			<br />
 		</p>
 		
 		<p class="meta-options">
-			<div style="margin-bottom:0.25em"><?php _e( 'Order:', 'thsp_cazuela' ); ?></div>
+			<div style="margin-bottom:0.25em"><?php _e( 'Order:', 'cazuela' ); ?></div>
 						
 			<label for="_thsp_authors_query_order[ASC]">
 				<input name="_thsp_authors_query_order" type="radio" id="_thsp_authors_query_order[ASC]" value="ASC" <?php checked( get_post_meta( $post->ID, '_thsp_authors_query_order', true ), 'ASC' ); ?> /> 
-				<?php _e( 'Ascending', 'thsp_cazuela' ); ?>
+				<?php _e( 'Ascending', 'cazuela' ); ?>
 			</label>
 			<br />
 			
 			<label for="_thsp_authors_query_order[DESC]">
 				<input name="_thsp_authors_query_order" type="radio" id="_thsp_authors_query_order[DESC]" value="DESC" <?php checked( get_post_meta( $post->ID, '_thsp_authors_query_order', true ), 'DESC' ); ?> /> 
-				<?php _e( 'Descending', 'thsp_cazuela' ); ?>
+				<?php _e( 'Descending', 'cazuela' ); ?>
 			</label>
 			<br />
 		</p>
 
 		<p class="meta-options">
-			<div style="margin-bottom:0.25em"><label for="_thsp_authors_roles_to_include"><?php _e( 'User roles to include (Cmd/Ctrl + click to select multiple roles):', 'thsp_cazuela' ); ?></label></div>
+			<div style="margin-bottom:0.25em"><label for="_thsp_authors_roles_to_include"><?php _e( 'User roles to include (Cmd/Ctrl + click to select multiple roles):', 'cazuela' ); ?></label></div>
 						
 			<select multiple name="_thsp_authors_roles_to_include[]" id="_thsp_authors_roles_to_include" class="widefat" style="height:6.75em;margin-bottom:1em;background:#fff">
 			<?php
@@ -129,7 +129,7 @@ function thsp_post_layout_meta_cb( $post ) {
 			</select>
 			<br />
 			
-			<div><?php _e( 'Please note that if you select only certain user roles, sorting you specified above will still work, but will be applied per role. For example, Administrator users would go first, sorted, then Editors and so on&hellip;', 'thsp_cazuela' ); ?></div>
+			<div><?php _e( 'Please note that if you select only certain user roles, sorting you specified above will still work, but will be applied per role. For example, Administrator users would go first, sorted, then Editors and so on&hellip;', 'cazuela' ); ?></div>
 		</p>
 	</fieldset>
 
@@ -139,10 +139,10 @@ function thsp_post_layout_meta_cb( $post ) {
 	if ( 'page-templates/template-masonry.php' == get_post_meta( $post->ID, '_wp_page_template', true ) ) { ?>
 	
 	<fieldset class="clearfix">
-		<h4><?php _e( 'Masonry template settings', 'thsp_cazuela' ); ?></h4>
+		<h4><?php _e( 'Masonry template settings', 'cazuela' ); ?></h4>
 		
 		<p class="meta-options">
-			<div style="margin-bottom:0.25em"><label for="_thsp_masonry_categories_to_include"><?php _e( 'Categories to include (Cmd/Ctrl + click to select multiple categories):', 'thsp_cazuela' ); ?></label></div>
+			<div style="margin-bottom:0.25em"><label for="_thsp_masonry_categories_to_include"><?php _e( 'Categories to include (Cmd/Ctrl + click to select multiple categories):', 'cazuela' ); ?></label></div>
 						
 			<select multiple name="_thsp_masonry_categories_to_include[]" id="_thsp_masonry_categories_to_include" class="widefat" style="height:13.2em;margin-bottom:1em;background:#fff">
 			<?php
@@ -162,7 +162,7 @@ function thsp_post_layout_meta_cb( $post ) {
 		</p>
 
 		<p class="meta-options">
-			<div style="margin-bottom:0.25em"><label for="_thsp_authors_query_orderby[display_name]"><?php _e( 'Number of posts per page in this template:', 'thsp_cazuela' ); ?></label></div>
+			<div style="margin-bottom:0.25em"><label for="_thsp_authors_query_orderby[display_name]"><?php _e( 'Number of posts per page in this template:', 'cazuela' ); ?></label></div>
 						
 			<?php
 				if ( get_post_meta( $post->ID, '_thsp_masonry_posts_per_page', true ) ) {
@@ -175,7 +175,7 @@ function thsp_post_layout_meta_cb( $post ) {
 			<br />
 		</p>
 
-		<div><?php _e( 'If you\'d like to show all posts set number of posts per page to -1', 'thsp_cazuela' ); ?></div>
+		<div><?php _e( 'If you\'d like to show all posts set number of posts per page to -1', 'cazuela' ); ?></div>
 	</fieldset>
 
 	<?php } // End fields specific to Authors template

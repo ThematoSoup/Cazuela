@@ -15,8 +15,8 @@
 	
 		<div class="entry-content">
 			<?php the_content(); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( '<span>Pages:</span>', 'thsp_cazuela' ), 'after' => '</div>' ) ); ?>
-			<?php edit_post_link( __( 'Edit', 'thsp_cazuela' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( '<span>Pages:</span>', 'cazuela' ), 'after' => '</div>' ) ); ?>
+			<?php edit_post_link( __( 'Edit', 'cazuela' ), '<span class="edit-link">', '</span>' ); ?>
 		</div><!-- .entry-content -->
 	</div><!-- .entry-inner -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -232,7 +232,7 @@ function thsp_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $sep " . sprintf( __( 'Page %s', 'thsp_cazuela' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'cazuela' ), max( $paged, $page ) );
 
 	return $title;
 }

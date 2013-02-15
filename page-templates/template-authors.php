@@ -79,7 +79,7 @@ get_header(); ?>
 							<!-- End authors template code -->
 							
 							
-							<?php edit_post_link( __( 'Edit', 'thsp_cazuela' ), '<span class="edit-link">', '</span>' ); ?>
+							<?php edit_post_link( __( 'Edit', 'cazuela' ), '<span class="edit-link">', '</span>' ); ?>
 						</div><!-- .entry-content -->
 					</div><!-- .entry-inner -->
 				</article><!-- #post-<?php the_ID(); ?> -->

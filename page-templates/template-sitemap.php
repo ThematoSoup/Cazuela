@@ -34,13 +34,13 @@ get_header(); ?>
 							<?php the_content(); ?>
 							
 							<!-- Sitemap template code -->
-							<h2><?php _e( 'Pages', 'thsp_cazuela' ); ?></h2>
+							<h2><?php _e( 'Pages', 'cazuela' ); ?></h2>
 							<ul id="sitemap-pages" class="sitemap-list"><?php wp_list_pages( 'title_li=' ); ?></ul>
 							
-							<h2><?php _e( 'Categories', 'thsp_cazuela' ); ?></h2>
+							<h2><?php _e( 'Categories', 'cazuela' ); ?></h2>
 							<ul id="sitemap-categories" class="sitemap-list"><?php wp_list_categories( 'title_li=' ); ?></ul>
 
-							<h2><?php _e( 'Latest Posts', 'thsp_cazuela' ); ?></h2>
+							<h2><?php _e( 'Latest Posts', 'cazuela' ); ?></h2>
 							<ul id="sitemap-posts" class="sitemap-list">
 							<?php
 								// Get 25 latest posts
@@ -56,7 +56,7 @@ get_header(); ?>
 							<!-- End sitemap template code -->
 							
 							
-							<?php edit_post_link( __( 'Edit', 'thsp_cazuela' ), '<span class="edit-link">', '</span>' ); ?>
+							<?php edit_post_link( __( 'Edit', 'cazuela' ), '<span class="edit-link">', '</span>' ); ?>
 						</div><!-- .entry-content -->
 					</div><!-- .entry-inner -->
 				</article><!-- #post-<?php the_ID(); ?> -->

@@ -41,14 +41,14 @@
 				<?php dynamic_sidebar( 'footer-widget-area' ); ?>
 			</section><!-- #footer-widgets -->
 
-			<nav role="navigation" class="footer-navigation">
-				<?php
-					wp_nav_menu( array( 
-						'theme_location' => 'footer',
-						'container' => ''
-					) );
-				?>
-			</nav><!-- .site-navigation .main-navigation -->
+			<?php
+				// Footer menu
+				wp_nav_menu( array( 
+					'theme_location'	=> 'footer',
+					'container'			=> 'nav',
+					'container_class'	=> 'footer-navigation'
+				) );
+			?>
 		</div><!-- .inner -->
 		<?php endif; ?>
 

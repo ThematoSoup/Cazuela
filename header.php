@@ -67,13 +67,14 @@
 			<?php endif; ?>
 	
 			<nav role="navigation" class="site-navigation main-navigation">
-				<h1 class="assistive-text"><?php _e( '<span>&#9776;</span> Menu', 'thsp_cazuela' ); ?></h1>
-				<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'thsp_cazuela' ); ?>"><?php _e( 'Skip to content', 'thsp_cazuela' ); ?></a></div>
+				<h1 class="assistive-text"><?php _e( '<span>&#9776;</span> Menu', 'cazuela' ); ?></h1>
+				<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'cazuela' ); ?>"><?php _e( 'Skip to content', 'cazuela' ); ?></a></div>
 	
 				<?php
 					wp_nav_menu( array( 
-						'theme_location' => 'main',
-						'container' => ''
+						'theme_location'	=> 'main',
+						'container'			=> '',
+						'fallback_cb'		=> 'wp_page_menu'
 					) );
 				?>
 			</nav><!-- .site-navigation .main-navigation -->

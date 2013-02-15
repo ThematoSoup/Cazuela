@@ -13,7 +13,7 @@
 	
 		<div class="entry-content">
 			<?php the_content(); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( '<span>Pages:</span>', 'thsp_cazuela' ), 'after' => '</div>' ) ); ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( '<span>Pages:</span>', 'cazuela' ), 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->
 	</div><!-- .entry-inner -->
 

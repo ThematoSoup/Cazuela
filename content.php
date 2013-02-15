@@ -19,8 +19,8 @@
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'thsp_cazuela' ) ); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'thsp_cazuela' ), 'after' => '</div>' ) ); ?>
+			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'cazuela' ) ); ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'cazuela' ), 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
 	</div><!-- .entry-inner -->

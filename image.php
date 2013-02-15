@@ -26,8 +26,8 @@ get_header();
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<nav id="image-navigation" class="site-navigation">
-					<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'thsp_cazuela' ) ); ?></span>
-					<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', 'thsp_cazuela' ) ); ?></span>
+					<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'cazuela' ) ); ?></span>
+					<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', 'cazuela' ) ); ?></span>
 				</nav><!-- #image-navigation -->
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -38,7 +38,7 @@ get_header();
 							<div class="entry-meta">
 								<?php
 									$metadata = wp_get_attachment_metadata();
-									printf( __( 'Published <span class="entry-date"><time class="entry-date" datetime="%1$s" pubdate>%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'thsp_cazuela' ),
+									printf( __( 'Published <span class="entry-date"><time class="entry-date" datetime="%1$s" pubdate>%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'cazuela' ),
 										esc_attr( get_the_date( 'c' ) ),
 										esc_html( get_the_date() ),
 										wp_get_attachment_url(),
@@ -48,7 +48,7 @@ get_header();
 										get_the_title( $post->post_parent )
 									);
 								?>
-								<?php edit_post_link( __( 'Edit', 'thsp_cazuela' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
+								<?php edit_post_link( __( 'Edit', 'cazuela' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
 							</div><!-- .entry-meta -->
 						</header><!-- .entry-header -->
 	
@@ -95,7 +95,7 @@ get_header();
 							</div><!-- .entry-attachment -->
 	
 							<?php the_content(); ?>
-							<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( '<span>Pages:</span>', 'thsp_cazuela' ), 'after' => '</div>' ) ); ?>
+							<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( '<span>Pages:</span>', 'cazuela' ), 'after' => '</div>' ) ); ?>
 	
 						</div><!-- .entry-content -->
 					</div><!-- .entry-inner -->
@@ -103,7 +103,7 @@ get_header();
 					<footer class="entry-meta">
 						<div class="entry-bookmark">
 							<?php
-								$bookmark_text = __( 'Bookmark the <a href="%1$s" title="Permalink to %2$s" rel="bookmark">permalink</a>.', 'thsp_cazuela' );
+								$bookmark_text = __( 'Bookmark the <a href="%1$s" title="Permalink to %2$s" rel="bookmark">permalink</a>.', 'cazuela' );
 								printf(
 									$bookmark_text,
 									get_permalink(),
@@ -112,7 +112,7 @@ get_header();
 							?>
 						</div><!-- .entry-bookmark -->
 					
-						<?php edit_post_link( __( 'Edit', 'thsp_cazuela' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( __( 'Edit', 'cazuela' ), '<span class="edit-link">', '</span>' ); ?>
 					</footer><!-- .entry-meta -->
 				</article><!-- #post-<?php the_ID(); ?> -->
 

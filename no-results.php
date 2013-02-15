@@ -11,22 +11,22 @@
 
 <article id="post-0" class="post no-results not-found">
 	<header class="entry-header">
-		<h1 class="entry-title"><?php _e( 'Nothing Found', 'thsp_cazuela' ); ?></h1>
+		<h1 class="entry-title"><?php _e( 'Nothing Found', 'cazuela' ); ?></h1>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'thsp_cazuela' ), admin_url( 'post-new.php' ) ); ?></p>
+			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'cazuela' ), admin_url( 'post-new.php' ) ); ?></p>
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'thsp_cazuela' ); ?></p>
+			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'cazuela' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
 
-			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'thsp_cazuela' ); ?></p>
+			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'cazuela' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
