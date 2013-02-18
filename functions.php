@@ -16,7 +16,6 @@
  *   -- Register nav menus
  *   -- Add editor style
  * - Register sidebars
- * - Attach sidebars to theme action hooks
  * - Register scripts and styles
  * - Dynamic CSS for links color
  * - Custom header
@@ -86,6 +85,11 @@ function thsp_theme_setup() {
 	 * Custom functions that act independently of the theme templates
 	 */
 	require( get_template_directory() . '/inc/extras.php' );
+
+	/**
+	 * Theme hooks
+	 */
+	require( get_template_directory() . '/inc/hooks.php' );
 
 	/**
 	 * Make theme available for translation
@@ -256,89 +260,6 @@ function thsp_widgets_init() {
 add_action( 'widgets_init', 'thsp_widgets_init' );
 
 
-/**
- * Attach widget areas to theme action hooks
- * Makes it possible to disable widget areas in certain pages using remove_action
- * And replace them with custom functionality
- *
- * @uses	add_action			http://codex.wordpress.org/Function_Reference/add_action
- * @uses	dynamic_sidebar		http://codex.wordpress.org/Function_Reference/dynamic_sidebar
- * @uses	is_active_sidebar	http://codex.wordpress.org/Function_Reference/is_active_sidebar
- * @since	Cazuela 1.0
- */
-function thsp_before_header_sidebar() {
-	/* 
-	 * Count widgets in before header widget area
-	 * Used to set widget width based on total count
-	 * Defined in /inc/extras.php
-	 */
-	$before_header_widgets_count = thsp_count_widgets( 'before-header-sidebar' );
-	echo '<div class="' . $before_header_widgets_count . '">';
-	dynamic_sidebar( 'before-header-sidebar' );
-	echo '</div>';
-}
-if ( is_active_sidebar( 'before-header-sidebar' ) ) {
-	add_action( 'thsp_before_header', 'thsp_before_header_sidebar' );
-}
-
-function thsp_after_header_sidebar() {
-	/* 
-	 * Count widgets in after header widget area
-	 * Used to set widget width based on total count
-	 * Defined in /inc/extras.php
-	 */
-	$after_header_widgets_count = thsp_count_widgets( 'after-header-sidebar' );
-	echo '<div class="' . $after_header_widgets_count . '">';
-	dynamic_sidebar( 'after-header-sidebar' );
-	echo '</div>';
-}
-if ( is_active_sidebar( 'after-header-sidebar' ) ) {
-	add_action( 'thsp_after_header', 'thsp_after_header_sidebar' );
-}
-
-function thsp_attach_before_content_sidebar() {
-	dynamic_sidebar( 'before-content-sidebar' );
-}
-if ( is_active_sidebar( 'before-content-sidebar' ) ) {
-	add_action( 'thsp_before_content', 'thsp_attach_before_content_sidebar' );
-}
-
-function thsp_attach_after_content_sidebar() {
-	dynamic_sidebar( 'after-content-sidebar' );
-}
-if ( is_active_sidebar( 'after-content-sidebar' ) ) {
-	add_action( 'thsp_after_content', 'thsp_attach_after_content_sidebar' );
-}
-
-function thsp_attach_before_footer_sidebar() {
-	/* 
-	 * Count widgets in before footer widget area
-	 * Used to set widget width based on total count
-	 * Defined in /inc/extras.php
-	 */
-	$before_footer_widgets_count = thsp_count_widgets( 'before-footer-sidebar' );
-	echo '<div class="' . $before_footer_widgets_count . '">';
-	dynamic_sidebar( 'before-footer-sidebar' );
-	echo '</div>';
-}
-if ( is_active_sidebar( 'before-footer-sidebar' ) ) {
-	add_action( 'thsp_before_footer', 'thsp_attach_before_footer_sidebar' );
-}
-
-function thsp_attach_after_footer_sidebar() {
-	/* 
-	 * Count widgets in after footer widget area
-	 * Used to set widget width based on total count
-	 * Defined in /inc/extras.php
-	 */
-	$after_footer_widgets_count = thsp_count_widgets( 'after-footer-sidebar' );
-	echo '<div class="' . $after_footer_widgets_count . '">';
-	dynamic_sidebar( 'after-footer-sidebar' );
-	echo '</div>';
-}
-if ( is_active_sidebar( 'after-footer-sidebar' ) ) {
-	add_action( 'thsp_after_footer', 'thsp_attach_after_footer_sidebar' );
-}
 
 /**
  * Enqueue scripts and styles

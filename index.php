@@ -18,14 +18,8 @@ get_header(); ?>
 			<div id="content" class="site-content" role="main">
 
 			<?php
-				/*
-				 * Prevents adding empty #before-content div
-				 */
-				if ( has_action( 'thsp_before_content' ) ) { ?>
-				<div id="before-content" class="clearfix">
-					<?php do_action( 'thsp_before_content' ); ?>
-				</div><!-- #before-content -->
-				<?php }
+				// Before Content theme hook callback
+				thsp_hook_before_content();
 			?>
 
 			<?php if ( have_posts() ) : ?>
@@ -56,14 +50,8 @@ get_header(); ?>
 			<?php endif; ?>
 
 			<?php
-				/*
-				 * Prevents adding empty #after-content div
-				 */
-				if ( has_action( 'thsp_after_content' ) ) { ?>
-				<div id="after-content" class="clearfix">
-					<?php do_action( 'thsp_after_content' ); ?>
-				</div><!-- #after-content -->
-				<?php }
+				// After Content theme hook callback
+				thsp_hook_after_content();
 			?>
 
 			</div><!-- #content .site-content -->

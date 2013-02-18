@@ -39,14 +39,8 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 			<?php
-				/*
-				 * Prevents adding empty #after-content div
-				 */
-				if ( has_action( 'thsp_after_content' ) ) { ?>
-				<div id="after-content" class="clearfix">
-					<?php do_action( 'thsp_after_content' ); ?>
-				</div><!-- #after-content -->
-				<?php }
+				// After Content theme hook callback
+				thsp_hook_after_content();
 			?>
 
 			</div><!-- #content .site-content -->

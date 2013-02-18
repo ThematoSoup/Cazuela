@@ -13,16 +13,8 @@
 	</div><!-- #main .site-main -->
 
 	<?php
-		/*
-		 * Prevents adding empty #before-footer div
-		 */
-		if ( has_action( 'thsp_before_footer' ) ) { ?>
-		<div id="before-footer" class="clearfix">
-			<div class="inner clearfix">
-				<?php do_action( 'thsp_before_footer' ); ?>
-			</div>
-		</div><!-- #before-footer -->
-		<?php }
+		// Before Footer theme hook callback
+		thsp_hook_before_footer();
 	?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
@@ -59,16 +51,8 @@
 		</div><!-- #footer-nav -->
 
 		<?php
-			/*
-			 * Prevents adding empty #before-header div
-			 */
-			if ( has_action( 'thsp_after_footer' ) ) { ?>
-			<div id="after-footer" class="clearfix">
-				<div class="inner clearfix">
-					<?php do_action( 'thsp_after_footer' ); ?>
-				</div>
-			</div><!-- #before-header -->
-			<?php }
+			// Before Footer theme hook callback
+			thsp_hook_before_footer();
 		?>
 	</footer><!-- #colophon .site-footer -->
 

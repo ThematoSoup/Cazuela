@@ -27,16 +27,8 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<?php
-			/*
-			 * Prevents adding empty #before-header div
-			 */
-			if ( has_action( 'thsp_before_header' ) ) { ?>
-			<div id="before-header" class="clearfix">
-				<div class="inner clearfix">
-					<?php do_action( 'thsp_before_header' ); ?>
-				</div>
-			</div><!-- #before-header -->
-			<?php }
+			// Before Header theme hook callback
+			thsp_hook_before_header();
 		?>
 
 		<div class="inner clearfix">
@@ -82,16 +74,8 @@
 	</header><!-- #masthead .site-header -->
 
 	<?php
-		/*
-		 * Prevents adding empty #after-header div
-		 */
-		if ( has_action( 'thsp_after_header' ) ) { ?>
-		<div id="after-header">
-			<div class="inner clearfix">
-				<?php do_action( 'thsp_after_header' ); ?>
-			</div>
-		</div><!-- #after-header -->
-		<?php }
+		// After Header theme hook callback
+		thsp_hook_after_header();
 	?>
 
 	<div id="main" class="site-main">
