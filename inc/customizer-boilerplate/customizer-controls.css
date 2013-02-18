@@ -18,7 +18,7 @@
 	border-color: #333;
 	opacity: 1;
 	
-	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
-	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
-	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.75);
+	box-shadow: 0 0 5px rgba(0,0,0,0.75);
 }

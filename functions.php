@@ -267,14 +267,30 @@ add_action( 'widgets_init', 'thsp_widgets_init' );
  * @since	Cazuela 1.0
  */
 function thsp_before_header_sidebar() {
+	/* 
+	 * Count widgets in before header widget area
+	 * Used to set widget width based on total count
+	 * Defined in /inc/extras.php
+	 */
+	$before_header_widgets_count = thsp_count_widgets( 'before-header-sidebar' );
+	echo '<div class="' . $before_header_widgets_count . '">';
 	dynamic_sidebar( 'before-header-sidebar' );
+	echo '</div>';
 }
 if ( is_active_sidebar( 'before-header-sidebar' ) ) {
 	add_action( 'thsp_before_header', 'thsp_before_header_sidebar' );
 }
 
 function thsp_after_header_sidebar() {
+	/* 
+	 * Count widgets in after header widget area
+	 * Used to set widget width based on total count
+	 * Defined in /inc/extras.php
+	 */
+	$after_header_widgets_count = thsp_count_widgets( 'after-header-sidebar' );
+	echo '<div class="' . $after_header_widgets_count . '">';
 	dynamic_sidebar( 'after-header-sidebar' );
+	echo '</div>';
 }
 if ( is_active_sidebar( 'after-header-sidebar' ) ) {
 	add_action( 'thsp_after_header', 'thsp_after_header_sidebar' );
@@ -295,14 +311,30 @@ if ( is_active_sidebar( 'after-content-sidebar' ) ) {
 }
 
 function thsp_attach_before_footer_sidebar() {
+	/* 
+	 * Count widgets in before footer widget area
+	 * Used to set widget width based on total count
+	 * Defined in /inc/extras.php
+	 */
+	$before_footer_widgets_count = thsp_count_widgets( 'before-footer-sidebar' );
+	echo '<div class="' . $before_footer_widgets_count . '">';
 	dynamic_sidebar( 'before-footer-sidebar' );
+	echo '</div>';
 }
 if ( is_active_sidebar( 'before-footer-sidebar' ) ) {
 	add_action( 'thsp_before_footer', 'thsp_attach_before_footer_sidebar' );
 }
 
 function thsp_attach_after_footer_sidebar() {
+	/* 
+	 * Count widgets in after footer widget area
+	 * Used to set widget width based on total count
+	 * Defined in /inc/extras.php
+	 */
+	$after_footer_widgets_count = thsp_count_widgets( 'after-footer-sidebar' );
+	echo '<div class="' . $after_footer_widgets_count . '">';
 	dynamic_sidebar( 'after-footer-sidebar' );
+	echo '</div>';
 }
 if ( is_active_sidebar( 'after-footer-sidebar' ) ) {
 	add_action( 'thsp_after_footer', 'thsp_attach_after_footer_sidebar' );

@@ -39,12 +39,20 @@ add_action( 'add_meta_boxes', 'thsp_layout_meta_box' );
  */
 function thsp_post_layout_meta_cb( $post ) {
 
+	// Get current theme options and all option fields
+	$theme_options = thsp_cbp_get_options_values();
+	$thsp_theme_options_fields = thsp_cbp_get_fields();
+
 	if( get_post_meta( $post->ID, '_thsp_post_layout', true ) ) {
 		$current_layout = get_post_meta( $post->ID, '_thsp_post_layout', true );
 	} else {
-		// Get current theme options and all option fields
-		$theme_options = thsp_cbp_get_options_values();
 		$current_layout = $theme_options['default_layout'];
+	}
+
+	if( get_post_meta( $post->ID, '_thsp_post_color_scheme', true ) ) {
+		$current_color_scheme = get_post_meta( $post->ID, '_thsp_post_color_scheme', true );
+	} else {
+		$current_color_scheme = $theme_options['color_scheme'];
 	}
 
 	wp_nonce_field( 'thsp_save_post_layout', 'thsp_layout_nonce' );
@@ -56,7 +64,6 @@ function thsp_post_layout_meta_cb( $post ) {
 			<p><?php _e( 'You can override default layout set in theme settings', 'cazuela' ); ?></p>
 			
 			<?php
-			$thsp_theme_options_fields = thsp_cbp_get_fields();
 			$layout_options = $thsp_theme_options_fields['thsp_layout_section']['fields']['default_layout']['control_args']['choices'];
 			foreach( $layout_options as $layout_option_key => $layout_option_value ) { ?>
 		
@@ -69,8 +76,26 @@ function thsp_post_layout_meta_cb( $post ) {
 			<?php } // end foreach ?>
 		</fieldset>
 		<?php
-	}
+	} ?>
+
+	<fieldset class="clearfix">
+		<h4><?php _e( 'Post/page color scheme', 'cazuela' ); ?></h4>
+		<p><?php _e( 'You can override default color scheme set in theme settings', 'cazuela' ); ?></p>
+		
+		<?php
+		$color_scheme_options = $thsp_theme_options_fields['colors']['fields']['color_scheme']['control_args']['choices'];
+		foreach( $color_scheme_options as $color_scheme_option_key => $color_scheme_option_value ) { ?>
 	
+			<input id="_thsp_post_color_scheme_<?php echo esc_attr( $color_scheme_option_key ); ?>" class="image-radio" type="radio" value="<?php echo esc_attr( $color_scheme_option_key ); ?>" name="_thsp_post_color_scheme" <?php checked( $color_scheme_option_key, $current_color_scheme ); ?> />
+			
+			<label for="_thsp_post_color_scheme_<?php echo esc_attr( $color_scheme_option_key ); ?>">
+				<img src="<?php echo $color_scheme_option_value['image_src']; ?>" alt="<?php echo $color_scheme_option_value['label']; ?>" width="24" height="24" />
+			</label>
+			
+		<?php } // end foreach ?>
+	</fieldset>
+	
+	<?php
 	// Add fields that are specific to Authors template
 	if ( 'page-templates/template-authors.php' == get_post_meta( $post->ID, '_wp_page_template', true ) ) { ?>
 	
@@ -214,6 +239,17 @@ function thsp_save_post_layout( $postid ) {
 		// If meta field is the same as theme setting, delete meta field 
 		} else {
 			delete_post_meta( $postid, '_thsp_post_layout' );
+		}
+	}	
+
+	// Color scheme field
+	if ( isset( $_POST['_thsp_post_color_scheme'] ) ) {
+		// Update the post layout meta field if it's not the same as theme setting
+		if ( $_POST['_thsp_post_color_scheme'] != $theme_options['color_scheme'] ) {
+			update_post_meta( $postid, '_thsp_post_color_scheme', esc_attr( strip_tags( $_POST['_thsp_post_color_scheme'] ) ) );
+		// If meta field is the same as theme setting, delete meta field 
+		} else {
+			delete_post_meta( $postid, '_thsp_post_color_scheme' );
 		}
 	}	
 

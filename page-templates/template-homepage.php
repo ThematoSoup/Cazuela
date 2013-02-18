@@ -43,14 +43,14 @@ get_header(); ?>
 			<?php if ( is_active_sidebar( 'homepage-widget-area' ) ) : ?>
 				<?php
 					/* 
-					 * Count widgets in footer widget area
+					 * Count widgets in homepage widget area
 					 * Used to set widget width based on total count
+					 * Defined in /inc/extras.php
 					 */
-					$sidebars_widgets_count = wp_get_sidebars_widgets();
-					$homepage_widgets_classes = isset( $sidebars_widgets_count['homepage-widget-area'] ) ? 'clearfix widget-count-' . count( $sidebars_widgets_count['homepage-widget-area'] ) : 'clearfix';
+					$homepage_widgets_count = thsp_count_widgets( 'homepage-widget-area' );
 				?>
 				
-				<section id="homepage-widget-area" class="<?php echo $homepage_widgets_classes; ?>">
+				<section id="homepage-widget-area" class="<?php echo $homepage_widgets_count; ?>">
 					<?php dynamic_sidebar( 'homepage-widget-area' ); ?>
 				</section><!-- #footer-widgets -->
 			<?php endif; ?>

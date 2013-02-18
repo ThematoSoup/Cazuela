@@ -83,10 +83,13 @@ function thsp_body_classes( $classes ) {
 	foreach ( $thsp_current_layout as $thsp_current_layout_value ) {
 		$thsp_body_classes[] = $thsp_current_layout_value;
 	}
+	
+	// Color scheme class
+	$thsp_current_color_scheme = thsp_get_current_color_scheme();
+	$thsp_body_classes[] = $thsp_current_color_scheme;
 
 	$thsp_body_classes[] = 'body-' . $thsp_theme_options['body_font'];
 	$thsp_body_classes[] = 'heading-' . $thsp_theme_options['heading_font'];
-	$thsp_body_classes[] = $thsp_theme_options['color_scheme'];
 	
 	// See if header gradient is needed
 	if( $thsp_theme_options['header_gradient'] ) {
@@ -194,6 +197,30 @@ function thsp_get_current_layout() {
 }
 
 /**
+ * Gets current layout for page being displayed
+ *
+ * @uses	thsp_cbp_get_options_values()		defined in /customizer-boilerplate/helpers.php
+ * @return	string	$current_color_scheme		Color scheme for current page
+ * @since	Cazuela 1.0
+ */
+function thsp_get_current_color_scheme() {
+	global $post;
+
+	// Get current theme options values
+	$theme_options = thsp_cbp_get_options_values();
+
+	// Check if in single post/page view and if layout custom field value exists
+	if ( is_singular() && get_post_meta( $post->ID, '_thsp_post_color_scheme', true ) ) {
+		$current_color_scheme = get_post_meta( $post->ID, '_thsp_post_color_scheme', true );
+	} else {
+		$current_color_scheme = $theme_options['color_scheme'];
+	}
+
+	return apply_filters( 'thsp_current_color_scheme', $current_color_scheme );
+}
+
+
+/**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  *
  * @since Cazuela 1.0
@@ -291,6 +318,25 @@ function thsp_get_logo_image( $attachment_url ) {
 	$attachment_array = wp_get_attachment_image_src( $attachment_id, 'full' );
 	
 	return $attachment_array; 
+}
+
+
+/**
+ * Count number of widgets in a sidebar
+ * Used to add classes to widget areas so widgets can be displayed one, two or three per row
+ *
+ * @uses	wp_get_sidebars_widgets()		http://codex.wordpress.org/Function_Reference/wp_get_sidebars_widgets
+ * @since	Cazuela 1.0
+ */
+function thsp_count_widgets( $sidebar_id ) {
+	/* 
+	 * Count widgets in footer widget area
+	 * Used to set widget width based on total count
+	 */
+	$sidebars_widgets_count = wp_get_sidebars_widgets();
+	$sidebar_classes = isset( $sidebars_widgets_count[ $sidebar_id ] ) ? 'clearfix dynamic-widget-width widget-count-' . count( $sidebars_widgets_count[ $sidebar_id ] ) : 'clearfix';
+	
+	return $sidebar_classes;
 }
 
 
