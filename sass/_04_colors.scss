@@ -85,7 +85,7 @@
 
 .scheme-white {
 	$accent_color: #ececec;
-	$background_color: #fcfcfc;
+	$background_color: #fdfdfd;
 	
 	#main {
 		background-color: $background_color;
@@ -135,6 +135,10 @@
 	}
 	#colophon {
 		border-top: 1px solid #f0f0f0;
+		
+		a {
+			color: #4b4b4b;
+		}
 	}
 	#colophon,
 	#after-footer {

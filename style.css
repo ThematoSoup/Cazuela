@@ -128,7 +128,7 @@ pre { background: #eee; font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sa
 
 code, kbd, tt, var { font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; }
 
-abbr, acronym { border-bottom: 1px dotted #666666; cursor: help; }
+abbr, acronym { border-bottom: 1px dotted #666; cursor: help; }
 
 mark, ins { background: #fff9c0; text-decoration: none; }
 
@@ -180,8 +180,8 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 
 .scheme-black.header-gradient #masthead { background-image: url(images/grain.png), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1a1a1a), color-stop(100%, #272727)); background-image: url(images/grain.png), -webkit-linear-gradient(#1a1a1a, #272727); background-image: url(images/grain.png), -moz-linear-gradient(#1a1a1a, #272727); background-image: url(images/grain.png), -o-linear-gradient(#1a1a1a, #272727); background-image: url(images/grain.png), linear-gradient(#1a1a1a, #272727); }
 
-.scheme-white #main { background-color: #fcfcfc; }
-.scheme-white #masthead { background: white !important; border-bottom: 1px solid #ececec; }
+.scheme-white #main { background-color: #fdfdfd; }
+.scheme-white #masthead { background: #fff !important; border-bottom: 1px solid #ececec; }
 .scheme-white #masthead .site-title a, .scheme-white #masthead .site-description { color: #3e3e3e; }
 .scheme-white .main-navigation ul ul { padding-top: 1px; }
 .scheme-white .main-navigation ul ul ul { padding-top: 0; }
@@ -194,6 +194,7 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 .scheme-white .sticky { border-bottom: 3px solid lightgrey; }
 .scheme-white #before-footer { background: #fcfcfc; border-bottom: 1px solid #f0f0f0; }
 .scheme-white #colophon { border-top: 1px solid #f0f0f0; }
+.scheme-white #colophon a { color: #4b4b4b; }
 .scheme-white #colophon, .scheme-white #after-footer { background: #fff; }
 
 .scheme-white.header-gradient #masthead { background-image: url(images/grain.png), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1a1a1a), color-stop(100%, #272727)); background-image: url(images/grain.png), -webkit-linear-gradient(#1a1a1a, #272727); background-image: url(images/grain.png), -moz-linear-gradient(#1a1a1a, #272727); background-image: url(images/grain.png), -o-linear-gradient(#1a1a1a, #272727); background-image: url(images/grain.png), linear-gradient(#1a1a1a, #272727); }
@@ -436,7 +437,7 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 
 .main-navigation li { display: inline-block; position: relative; margin-right: 0.75em; font-size: 14px; font-size: 1.4rem; }
 
-.main-navigation > ul > li { margin-right: 30px; margin-right: 3rem; }
+.main-navigation > ul > li, .main-navigation .menu > ul > li { margin-right: 30px; margin-right: 3rem; }
 
 .main-navigation li li { margin-right: 0; }
 
@@ -455,11 +456,11 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 /* Parent item indicator */
 .main-navigation > ul > .menu-parent-item > a { padding-left: 1em; }
 
-.main-navigation > ul > .menu-parent-item > a:before { content: ""; display: inline-block; margin-right: 0.4em; position: absolute; top: 50%; left: 0; width: 0; height: 0; margin-top: -2px; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 6px solid white; opacity: 0.9; }
+.main-navigation > ul > .menu-parent-item > a:before { content: ""; display: inline-block; margin-right: 0.4em; position: absolute; top: 50%; left: 0; width: 0; height: 0; margin-top: -2px; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 6px solid #fff; opacity: 0.9; }
 
 .main-navigation .sub-menu .menu-parent-item > a { padding-right: 1.5em; }
 
-.main-navigation .sub-menu .menu-parent-item > a:after { content: ""; display: inline-block; margin-left: 0.5em; position: absolute; top: 50%; right: 0; margin-top: -4px; margin-right: 0.6em; width: 0; height: 0; border-top: 0.3em solid transparent; border-bottom: 0.3em solid transparent; border-left: 0.5em solid white; opacity: 0.9; }
+.main-navigation .sub-menu .menu-parent-item > a:after { content: ""; display: inline-block; margin-left: 0.5em; position: absolute; top: 50%; right: 0; margin-top: -4px; margin-right: 0.6em; width: 0; height: 0; border-top: 0.3em solid transparent; border-bottom: 0.3em solid transparent; border-left: 0.5em solid #fff; opacity: 0.9; }
 
 /* Small menu */
 .menu-toggle { cursor: pointer; color: #fff; text-align: center; font-size: 24px; font-size: 2.4rem; }
@@ -575,7 +576,7 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 
 .entry-content .alignright { float: right; margin: 0.1em 0 0.75em 1.5em; }
 
-.entry-content img { border: 1px solid #eeeeee; background: #fff; padding: 5px; max-width: 100%; display: block; margin-bottom: 0.5em; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.entry-content img { border: 1px solid #eee; background: #fff; padding: 5px; max-width: 100%; display: block; margin-bottom: 0.5em; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 .entry-content .wp-caption img, .attachment img { margin: 0 auto 0.25em; }
 
@@ -600,11 +601,11 @@ button, input, select, textarea { font-size: 100%; /* Corrects font size not bei
 
 button, input { line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */ *overflow: visible; /* Corrects inner spacing displayed oddly in IE6/7 */ }
 
-button, html input[type="button"], input[type="reset"], input[type="submit"] { border: 1px solid #cccccc; border-color: #cccccc #cccccc #bbbbbb #cccccc; border-radius: 3px; background: #fafafa; /* Old browsers */ background: -moz-linear-gradient(top, #fafafa 60%, #e6e6e6 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #fafafa), color-stop(100%, #e6e6e6)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #fafafa 60%, #e6e6e6 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #fafafa 60%, #e6e6e6 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #fafafa 60%, #e6e6e6 100%); /* IE10+ */ background: linear-gradient(top, #fafafa 60%, #e6e6e6 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#e6e6e6',GradientType=0 ); /* IE6-9 */ box-shadow: inset 0 2px 1px white; color: rgba(0, 0, 0, 0.8); cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */ -webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */ font-size: 12px; font-size: 1.4rem; padding: 1.12em 1.5em 0.88em; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { border: 1px solid #ccc; border-color: #ccc #ccc #bbb #ccc; border-radius: 3px; background: #fafafa; /* Old browsers */ background: -moz-linear-gradient(top, #fafafa 60%, #e6e6e6 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #fafafa), color-stop(100%, #e6e6e6)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #fafafa 60%, #e6e6e6 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #fafafa 60%, #e6e6e6 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #fafafa 60%, #e6e6e6 100%); /* IE10+ */ background: linear-gradient(top, #fafafa 60%, #e6e6e6 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#e6e6e6',GradientType=0 ); /* IE6-9 */ box-shadow: inset 0 2px 1px #fff; color: rgba(0, 0, 0, 0.8); cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */ -webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */ font-size: 12px; font-size: 1.4rem; padding: 1.12em 1.5em .88em; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); }
 
-button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background: #f5f5f5; /* Old browsers */ background: -moz-linear-gradient(top, whitesmoke 60%, gainsboro 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, whitesmoke), color-stop(100%, gainsboro)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, whitesmoke 60%, gainsboro 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, whitesmoke 60%, gainsboro 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, whitesmoke 60%, gainsboro 100%); /* IE10+ */ background: linear-gradient(top, #f5f5f5 60%, #dcdcdc 100%); /* W3C */ border-color: #bbbbbb #bbbbbb #aaaaaa #bbbbbb; }
+button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background: #f5f5f5; /* Old browsers */ background: -moz-linear-gradient(top, whitesmoke 60%, gainsboro 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, whitesmoke), color-stop(100%, gainsboro)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, whitesmoke 60%, gainsboro 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, whitesmoke 60%, gainsboro 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, whitesmoke 60%, gainsboro 100%); /* IE10+ */ background: linear-gradient(top, #f5f5f5 60%, #dcdcdc 100%); /* W3C */ border-color: #bbb #bbb #aaa #bbb; }
 
-button:focus, html input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button:active, html input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active { border-color: #aaaaaa #bbbbbb #bbbbbb #bbbbbb; box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.15); box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.15); }
+button:focus, html input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button:active, html input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active { border-color: #aaa #bbb #bbb #bbb; box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.15); box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.15); }
 
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */ padding: 0; /* Addresses excess padding in IE8/9 */ }
 
@@ -614,7 +615,7 @@ input[type="search"]::-webkit-search-decoration { /* Corrects inner padding disp
 
 button::-moz-focus-inner, input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */ border: 0; padding: 0; }
 
-input[type=text], input[type=email], textarea { color: #444; border: 1px solid #cccccc; border-radius: 3px; }
+input[type=text], input[type=email], textarea { color: #444; border: 1px solid #ccc; border-radius: 3px; }
 
 input[type=text]:focus, input[type=email]:focus, textarea:focus { color: #111; }
 
@@ -639,7 +640,7 @@ textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 .hentry input[type=password] { width: 60%; display: block; border: 1px solid #e6e6e6; padding: 0.5em; margin-bottom: 1em; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; }
 
 /* Search form in no-results template part */
-#post-0 #s { border: 1px solid #dddddd; padding: 0.5em; }
+#post-0 #s { border: 1px solid #ddd; padding: 0.5em; }
 
 /* =Comments
 ----------------------------------------------- */
@@ -675,7 +676,7 @@ textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 #searchsubmit { display: none; }
 
 #s { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; display: block; border-radius: 0; border: none; box-shadow: 0 0 2px #d9d9d9; box-shadow: 0 0 2px rgba(0, 0, 0, 0.15); padding: 0.5em; }
-#s:focus { outline: none; box-shadow: 0 0 2px #999999; box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); }
+#s:focus { outline: none; box-shadow: 0 0 2px #999; box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); }
 
 /* Calendar widget */
 #wp-calendar { width: 100%; }

@@ -12,7 +12,8 @@
 	margin-right: 0.75em;
 	@include font-size($bodyfontsize * 0.875); // 14px
 }
-.main-navigation > ul > li {
+.main-navigation > ul > li,
+.main-navigation .menu > ul > li {
 	margin-right: 30px;
 	margin-right: 3rem;
 }

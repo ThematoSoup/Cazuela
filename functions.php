@@ -537,12 +537,10 @@ function thsp_theme_options_array() {
 								'label' => __( 'Black', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-black.png'
 							),
-							/*
 							'scheme-white' => array(
 								'label' => __( 'White', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-white.png'
 							),
-							*/
 							'scheme-blue' => array(
 								'label' => __( 'Blue', 'cazuela' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/scheme-blue.png'

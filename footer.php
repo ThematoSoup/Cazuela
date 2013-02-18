@@ -40,17 +40,17 @@
 			<section id="footer-widget-area" class="<?php echo $footer_widgets_count; ?>">
 				<?php dynamic_sidebar( 'footer-widget-area' ); ?>
 			</section><!-- #footer-widgets -->
-
-			<?php
-				// Footer menu
-				wp_nav_menu( array( 
-					'theme_location'	=> 'footer',
-					'container'			=> 'nav',
-					'container_class'	=> 'footer-navigation'
-				) );
-			?>
 		</div><!-- .inner -->
 		<?php endif; ?>
+
+		<?php
+			// Footer menu
+			wp_nav_menu( array( 
+				'theme_location'	=> 'footer',
+				'container'			=> 'nav',
+				'container_class'	=> 'footer-navigation inner'
+			) );
+		?>
 
 		<?php
 			/*
