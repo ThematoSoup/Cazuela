@@ -14,14 +14,14 @@
 
 	<?php
 		/*
-		 * Prevents adding empty #before-header div
+		 * Prevents adding empty #before-footer div
 		 */
 		if ( has_action( 'thsp_before_footer' ) ) { ?>
 		<div id="before-footer" class="clearfix">
 			<div class="inner clearfix">
 				<?php do_action( 'thsp_before_footer' ); ?>
 			</div>
-		</div><!-- #before-header -->
+		</div><!-- #before-footer -->
 		<?php }
 	?>
 
@@ -43,14 +43,20 @@
 		</div><!-- .inner -->
 		<?php endif; ?>
 
-		<?php
-			// Footer menu
-			wp_nav_menu( array( 
-				'theme_location'	=> 'footer',
-				'container'			=> 'nav',
-				'container_class'	=> 'footer-navigation inner'
-			) );
-		?>
+		<div id="footer-nav" class="inner clearfix">
+			<?php
+				// Footer menu
+				wp_nav_menu( array( 
+					'theme_location'	=> 'footer',
+					'container'			=> 'nav',
+					'container_class'	=> 'footer-navigation'
+				) );
+			?>
+			
+			<div id="footer-credits">
+				<a href="<?php echo esc_url( __( 'http://demo.thematosoup.com/cazuela/', 'cazuela' ) ); ?>" title="<?php esc_attr_e( 'Cazuela &mdash; free, responsive WordPress theme', 'cazuela' ); ?>"><?php echo __( 'Cazuela theme', 'cazuela' ); ?></a> powered by <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'cazuela' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'cazuela' ); ?>"><?php _e( 'WordPress', 'cazuela' ); ?></a>
+			</div><!-- #footer-credits -->
+		</div><!-- #footer-nav -->
 
 		<?php
 			/*

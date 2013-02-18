@@ -102,6 +102,18 @@
 		padding-bottom: 20px;
 		padding-bottom: 2rem;
 	}
+	#footer-nav {
+		@include font-size($bodyfontsize * 0.875); // 14px
+		
+		.footer-navigation {
+			float: right;
+			width: 66.666%;
+		}
+		#footer-credits {
+			float: left;
+			width: 33.333%;
+		}
+	}
 }
 #before-footer {
 	padding: 20px 0;

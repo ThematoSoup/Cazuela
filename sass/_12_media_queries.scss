@@ -131,6 +131,22 @@
 			padding: 0 0 0 1.5rem;
 		}
 	}
+	
+	#colophon #footer-nav {
+		.footer-navigation,
+		#footer-credits {
+			width: auto;
+			float: none;
+		}
+	}
+	#colophon .footer-navigation ul {
+		text-align: center;
+	}
+	#colophon #footer-credits {
+		margin-bottom: 20px;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
 
 }
 

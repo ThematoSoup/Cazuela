@@ -362,6 +362,9 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 #colophon { padding-top: 20px; padding-top: 2rem; }
 #colophon #footer-sidebars { padding-bottom: 30px; padding-bottom: 3rem; }
 #colophon #after-footer { padding-bottom: 20px; padding-bottom: 2rem; }
+#colophon #footer-nav { font-size: 14px; font-size: 1.4rem; }
+#colophon #footer-nav .footer-navigation { float: right; width: 66.666%; }
+#colophon #footer-nav #footer-credits { float: left; width: 33.333%; }
 
 #before-footer { padding: 20px 0; padding: 2rem 0; }
 
@@ -492,10 +495,10 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 #yoast-breadcrumbs span a { color: #4b4b4b; font-weight: bold; text-decoration: none; }
 
 /* Footer navigation */
-.footer-navigation { text-align: center; padding-bottom: 20px; padding-bottom: 2rem; }
-.footer-navigation ul { margin: 0; list-style: none; }
-.footer-navigation ul > li { display: inline-block; margin: 0 15px; margin: 0 1.5rem; font-size: 14px; font-size: 1.4rem; }
-.footer-navigation ul ul { display: none; }
+#colophon .footer-navigation { text-align: center; padding-bottom: 20px; padding-bottom: 2rem; }
+#colophon .footer-navigation ul { margin: 0; list-style: none; text-align: right; }
+#colophon .footer-navigation ul > li { display: inline-block; margin: 0 15px; margin: 0 1.5rem; }
+#colophon .footer-navigation ul ul { display: none; }
 
 /* =Entries
 ----------------------------------------------- */
@@ -707,7 +710,10 @@ textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
   #footer-widget-area .widget { float: left; width: 50%; padding: 0 15px; padding: 0 1.5rem; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
   #footer-widget-area .widget:nth-child(3n+1) { clear: none; }
   #footer-widget-area .widget:nth-child(2n+1) { clear: left; padding: 0 15px 0 0; padding: 0 1.5rem 0 0; }
-  #footer-widget-area .widget:nth-child(2n) { padding: 0 0 0 15px; padding: 0 0 0 1.5rem; } }
+  #footer-widget-area .widget:nth-child(2n) { padding: 0 0 0 15px; padding: 0 0 0 1.5rem; }
+  #colophon #footer-nav .footer-navigation, #colophon #footer-nav #footer-credits { width: auto; float: none; }
+  #colophon .footer-navigation ul { text-align: center; }
+  #colophon #footer-credits { margin-bottom: 20px; margin-bottom: 2rem; text-align: center; } }
 @media screen and (max-width: 479px) { #colophon #footer-widget-area .widget { float: none; padding: 0 !important; width: 100%; }
   .authors-list .author-avatar { width: 48px; }
   .authors-list .author-text { margin-left: 60px; } }
