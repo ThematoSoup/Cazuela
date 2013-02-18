@@ -12,14 +12,8 @@ get_header(); ?>
 			<div id="content" class="site-content" role="main">
 
 			<?php
-				/*
-				 * Prevents adding empty #before-content div
-				 */
-				if ( has_action( 'thsp_before_content' ) ) { ?>
-				<div id="before-content" class="clearfix">
-					<?php do_action( 'thsp_before_content' ); ?>
-				</div><!-- #before-content -->
-				<?php }
+				// Before Content theme hook callback
+				thsp_hook_before_content();
 			?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
