@@ -135,7 +135,7 @@
 	.entry-content {
 		padding-bottom: 0;
 	}
-	&.has-thumbnail .entry-content {
+	#homepage-lead-image + .entry-content {
 		margin-right: 50%;
 		padding-right: 30px;
 		padding-right: 3rem;

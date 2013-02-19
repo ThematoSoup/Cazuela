@@ -203,7 +203,40 @@ function thsp_post_layout_meta_cb( $post ) {
 		<div><?php _e( 'If you\'d like to show all posts set number of posts per page to -1', 'cazuela' ); ?></div>
 	</fieldset>
 
-	<?php } // End fields specific to Authors template
+	<?php } // End fields specific to Masonry template
+
+	// Add fields that are specific to widgetized homepage template
+	if ( 'page-templates/template-homepage.php' == get_post_meta( $post->ID, '_wp_page_template', true ) ) {
+		
+	$homepage_aside_value = get_post_meta( $post->ID, '_thsp_widgetized_homepage_aside', true ) ? get_post_meta( $post->ID, '_thsp_widgetized_homepage_aside', true ) : 'featured_image';
+	?>
+	
+	<fieldset class="clearfix">
+		<h4><?php _e( 'Widgetized homepage template settings', 'cazuela' ); ?></h4>
+		
+		<p class="meta-options">
+			<div style="margin-bottom:0.25em"><?php _e( 'Widgetized homepage aside:', 'cazuela' ); ?></div>
+						
+			<label for="_thsp_widgetized_homepage_aside[featured_image]">
+				<input name="_thsp_widgetized_homepage_aside" type="radio" id="_thsp_widgetized_homepage_aside[featured_image]" value="featured_image" <?php checked( $homepage_aside_value, 'featured_image' ); ?> /> 
+				<?php _e( 'Featured image', 'cazuela' ); ?>
+			</label>
+			<br />
+			
+			<label for="_thsp_widgetized_homepage_aside[slider]">
+				<input name="_thsp_widgetized_homepage_aside" type="radio" id="_thsp_widgetized_homepage_aside[slider]" value="slider" <?php checked( $homepage_aside_value, 'slider' ); ?> /> 
+				<?php _e( 'Slider (all attachments from this page)', 'cazuela' ); ?>
+			</label>
+			<br />
+
+			<label for="_thsp_widgetized_homepage_aside[none]">
+				<input name="_thsp_widgetized_homepage_aside" type="radio" id="_thsp_widgetized_homepage_aside[none]" value="none" <?php checked( $homepage_aside_value, 'none' ); ?> /> 
+				<?php _e( 'None (full-width text)', 'cazuela' ); ?>
+			</label>
+		</p>
+	</fieldset>
+
+	<?php } // End fields specific to widgetized homepage template
 	
 }
 
@@ -299,6 +332,11 @@ function thsp_save_post_layout( $postid ) {
 	} else {
 		delete_post_meta( $postid, '_thsp_masonry_categories_to_include' );	
 	}
+
+	// Aside value for Authors template
+	if ( isset( $_POST['_thsp_widgetized_homepage_aside'] ) && in_array( $_POST['_thsp_widgetized_homepage_aside'], array( 'featured_image', 'slider', 'none' ) ) ) {
+		update_post_meta( $postid, '_thsp_widgetized_homepage_aside', $_POST['_thsp_widgetized_homepage_aside'] );	
+	}	
 	
 	
 }

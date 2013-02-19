@@ -63,7 +63,7 @@
 @media screen and (max-width: 767px) {
 
 	#homepage-lead-image,
-	.page-template-page-templatestemplate-homepage-php .hentry.has-thumbnail .entry-content {
+	.page-template-page-templatestemplate-homepage-php .hentry #homepage-lead-image + .entry-content {
 		float: none;
 		width: 100%;
 	}
