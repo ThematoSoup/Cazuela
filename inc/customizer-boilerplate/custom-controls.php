@@ -102,3 +102,9 @@ class CBP_Customizer_Images_Radio_Control extends WP_Customize_Control {
 	}
 	
 }
+
+
+/**
+ * Action hook that allows you to create your own controls
+ */
+do_action( 'thsp_cbp_custom_controls' );
