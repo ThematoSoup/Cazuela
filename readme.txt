@@ -1,6 +1,3 @@
-Cazuela WordPress Theme
-=======================
-
 Thank you for downloading Cazuela Theme
 ---------------------------------------
 
