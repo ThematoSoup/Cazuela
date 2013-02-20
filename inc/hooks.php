@@ -107,8 +107,7 @@ function thsp_before_header_sidebar() {
 	 * Used to set widget width based on total count
 	 * Defined in /inc/extras.php
 	 */
-	$before_header_widgets_count = thsp_count_widgets( 'before-header-sidebar' );
-	echo '<div class="' . $before_header_widgets_count . '">';
+	echo '<div class="' . thsp_count_widgets( 'before-header-sidebar' ) . '">';
 	dynamic_sidebar( 'before-header-sidebar' );
 	echo '</div>';
 }
@@ -122,8 +121,7 @@ function thsp_after_header_sidebar() {
 	 * Used to set widget width based on total count
 	 * Defined in /inc/extras.php
 	 */
-	$after_header_widgets_count = thsp_count_widgets( 'after-header-sidebar' );
-	echo '<div class="' . $after_header_widgets_count . '">';
+	echo '<div class="' . thsp_count_widgets( 'after-header-sidebar' ) . '">';
 	dynamic_sidebar( 'after-header-sidebar' );
 	echo '</div>';
 }
@@ -151,8 +149,7 @@ function thsp_attach_before_footer_sidebar() {
 	 * Used to set widget width based on total count
 	 * Defined in /inc/extras.php
 	 */
-	$before_footer_widgets_count = thsp_count_widgets( 'before-footer-sidebar' );
-	echo '<div class="' . $before_footer_widgets_count . '">';
+	echo '<div class="' . thsp_count_widgets( 'before-footer-sidebar' ) . '">';
 	dynamic_sidebar( 'before-footer-sidebar' );
 	echo '</div>';
 }
@@ -166,8 +163,7 @@ function thsp_attach_after_footer_sidebar() {
 	 * Used to set widget width based on total count
 	 * Defined in /inc/extras.php
 	 */
-	$after_footer_widgets_count = thsp_count_widgets( 'after-footer-sidebar' );
-	echo '<div class="' . $after_footer_widgets_count . '">';
+	echo '<div class="' . thsp_count_widgets( 'after-footer-sidebar' ) . '">';
 	dynamic_sidebar( 'after-footer-sidebar' );
 	echo '</div>';
 }

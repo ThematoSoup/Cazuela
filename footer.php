@@ -20,16 +20,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php if ( is_active_sidebar( 'footer-widget-area' ) ) : ?>
 		<div class="inner clearfix">
-			<?php
-				/* 
-				 * Count widgets in footer widget area
-				 * Used to set widget width based on total count
-				 * Defined in /inc/extras.php
-				 */
-				$footer_widgets_count = thsp_count_widgets( 'footer-widget-area' );
-			?>
-			
-			<section id="footer-widget-area" class="<?php echo $footer_widgets_count; ?>">
+			<section id="footer-widget-area" class="<?php echo thsp_count_widgets( 'footer-widget-area' ); ?>">
 				<?php dynamic_sidebar( 'footer-widget-area' ); ?>
 			</section><!-- #footer-widgets -->
 		</div><!-- .inner -->
@@ -52,7 +43,7 @@
 
 		<?php
 			// Before Footer theme hook callback
-			thsp_hook_before_footer();
+			thsp_hook_after_footer();
 		?>
 	</footer><!-- #colophon .site-footer -->
 

@@ -18,12 +18,47 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<?php if ( has_post_thumbnail() ) : ?>
-					<div id="homepage-lead-image">
+			<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?>>
+				<?php 
+				// Check if featured image or slider needs to be shown
+				if ( has_post_thumbnail() && 'featured_image' == get_post_meta( $post->ID, '_thsp_widgetized_homepage_aside', true ) ) { ?>
+					<div id="homepage-aside">
 						<?php the_post_thumbnail( 'lead-image' ); ?>
-					</div><!-- .entry-page-image -->
-				<?php endif; ?>
+					</div><!-- #homepage-aside -->
+				<?php } // end Featured Image check
+				elseif( 'slider' == get_post_meta( $post->ID, '_thsp_widgetized_homepage_aside', true ) ) {
+					$args = array(
+						'post_type' => 'attachment',
+						'numberposts' => -1,
+						'post_status' =>'any',
+						'post_parent' => $post->ID
+					); 
+					$attachments = get_posts( $args );
+					if ( $attachments ) { ?>
+						<div id="homepage-aside">
+							<div class="flexslider">
+								<ul class="slides">
+								<?php foreach( $attachments as $attachment ) {
+									$attachment_image_src = wp_get_attachment_image( $attachment->ID, 'lead-image' ); ?>
+									<li>
+										<?php echo $attachment_image_src; ?>
+										<?php // See if captions need to be shown
+										if ( get_post_meta( $post->ID, '_thsp_widgetized_homepage_captions', true ) ) { ?>
+										<div class="slide-caption">
+											<h3><?php echo $attachment->post_title; ?></h3>
+											<?php if ( '' != $attachment->post_content ) { ?>
+												<div><?php echo $attachment->post_content; ?></div>
+											<?php } ?>
+										</div><!-- .slide-caption -->
+										<?php } // end if ?>
+									</li>
+								<?php } // end foreach ?>
+								</ul><!-- .slides -->
+							</div><!-- .flexslider -->
+						</div><!-- #homepage-aside -->
+					<?php } // end if			
+				} // end Slider check
+				?>
 					
 				<div class="entry-content">
 					<?php the_content(); ?>
@@ -34,16 +69,7 @@ get_header(); ?>
 
 			<!-- Homepage widget area  -->
 			<?php if ( is_active_sidebar( 'homepage-widget-area' ) ) : ?>
-				<?php
-					/* 
-					 * Count widgets in homepage widget area
-					 * Used to set widget width based on total count
-					 * Defined in /inc/extras.php
-					 */
-					$homepage_widgets_count = thsp_count_widgets( 'homepage-widget-area' );
-				?>
-				
-				<section id="homepage-widget-area" class="<?php echo $homepage_widgets_count; ?>">
+				<section id="homepage-widget-area" class="<?php echo thsp_count_widgets( 'homepage-widget-area' ); ?>">
 					<?php dynamic_sidebar( 'homepage-widget-area' ); ?>
 				</section><!-- #footer-widgets -->
 			<?php endif; ?>

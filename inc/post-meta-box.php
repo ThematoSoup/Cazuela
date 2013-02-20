@@ -58,7 +58,7 @@ function thsp_post_layout_meta_cb( $post ) {
 	wp_nonce_field( 'thsp_save_post_layout', 'thsp_layout_nonce' );
 	
 	// Layout switcher is not needed in Masonry template
-	if ( 'page-templates/template-masonry.php' != get_post_meta( $post->ID, '_wp_page_template', true ) ) { ?>
+	if ( 'page-templates/template-masonry.php' != get_post_meta( $post->ID, '_wp_page_template', true ) && 'page-templates/template-homepage.php' != get_post_meta( $post->ID, '_wp_page_template', true ) ) { ?>
 		<fieldset class="clearfix">
 			<h4><?php _e( 'Post/page layout', 'cazuela' ); ?></h4>
 			<p><?php _e( 'You can override default layout set in theme settings', 'cazuela' ); ?></p>
@@ -234,6 +234,18 @@ function thsp_post_layout_meta_cb( $post ) {
 				<?php _e( 'None (full-width text)', 'cazuela' ); ?>
 			</label>
 		</p>
+
+		<p class="meta-options">
+			<div style="margin-bottom:0.25em"><?php _e( 'Captions:', 'cazuela' ); ?></div>
+						
+			<label for="_thsp_widgetized_homepage_captions">
+				<input name="_thsp_widgetized_homepage_captions" type="checkbox" id="_thsp_widgetized_homepage_captions" value="1" <?php checked( get_post_meta( $post->ID, '_thsp_widgetized_homepage_captions', true ), 1 ); ?> /> 
+				<?php _e( 'Show slider images captions?', 'cazuela' ); ?>
+			</label>
+			<br />
+
+			<div style="margin-top:1em"><?php _e( 'Captions option is only applied if you select attachments slider for widgetized homepage aside. You can set title and description for each image in Media Library.', 'cazuela' ); ?></div>
+		</p>
 	</fieldset>
 
 	<?php } // End fields specific to widgetized homepage template
@@ -333,10 +345,17 @@ function thsp_save_post_layout( $postid ) {
 		delete_post_meta( $postid, '_thsp_masonry_categories_to_include' );	
 	}
 
-	// Aside value for Authors template
+	// Aside value for Widgetized Homepage template
 	if ( isset( $_POST['_thsp_widgetized_homepage_aside'] ) && in_array( $_POST['_thsp_widgetized_homepage_aside'], array( 'featured_image', 'slider', 'none' ) ) ) {
 		update_post_meta( $postid, '_thsp_widgetized_homepage_aside', $_POST['_thsp_widgetized_homepage_aside'] );	
 	}	
+
+	// Captions value for Widgetized Homepage template
+	if ( isset( $_POST['_thsp_widgetized_homepage_captions'] ) && 1 == $_POST['_thsp_widgetized_homepage_captions'] ) {
+		update_post_meta( $postid, '_thsp_widgetized_homepage_captions', 1 );	
+	} else {
+		delete_post_meta( $postid, '_thsp_widgetized_homepage_captions', 1 );	
+	}
 	
 	
 }
@@ -358,3 +377,48 @@ function thsp_meta_box_style() {
 }
 add_action( 'admin_print_styles-post-new.php', 'thsp_meta_box_style', 11 );
 add_action( 'admin_print_styles-post.php', 'thsp_meta_box_style', 11 );
+
+
+/**
+ * Admin notices related to meta box issues
+ *
+ * @since	Cazuela 1.0
+ */
+function thsp_meta_box_admin_notice() {
+	global $pagenow;
+	global $post;
+	
+	if ( 'post.php' == $pagenow && 'page-templates/template-homepage.php' == get_post_meta( $post->ID, '_wp_page_template', true ) ) {
+		/**
+		 * If slider was selected as widgetized homepage aside, 
+		 * check if there are any attachments
+		 */
+		if( 'slider' == get_post_meta( $post->ID, '_thsp_widgetized_homepage_aside', true ) ) {
+			$args = array(
+				'post_type' => 'attachment',
+				'numberposts' => 1,
+				'post_status' =>'any',
+				'post_parent' => $post->ID
+			); 
+			$attachments = get_posts($args);
+			if ( ! $attachments ) { ?>
+				<div class="error">
+					<p><?php _e( 'You chose attachments slider as aside for this page, please make sure the page has some attachments.', 'cazuela' ); ?></p>
+				</div>
+			<?php }			
+		} 
+
+		/**
+		 * If slider was selected as widgetized homepage aside, 
+		 * check if there are any attachments
+		 */
+		if( 'featured_image' == get_post_meta( $post->ID, '_thsp_widgetized_homepage_aside', true ) ) {
+			if ( ! has_post_thumbnail( $post->ID ) ) { ?>
+				<div class="error">
+					<p><?php _e( 'You chose featured image as aside for this page, please make sure featured image is set.', 'cazuela' ); ?></p>
+				</div>
+			<?php }			
+		} 
+	}
+}
+add_action( 'admin_notices', 'thsp_meta_box_admin_notice' );

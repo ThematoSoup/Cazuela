@@ -11,4 +11,10 @@ jQuery(document).ready(function($){
 		});
 	} // end if
 
+	if ( $('.flexslider').length > 0 ) {
+		$('.flexslider').flexslider({
+			directionNav: false
+		});
+	}
+
 });

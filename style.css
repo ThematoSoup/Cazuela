@@ -373,10 +373,10 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 /* Widgetized homepage template */
 .page-template-page-templatestemplate-homepage-php .hentry { background: none; box-shadow: none; padding: 10px 0; padding: 1rem 0; }
 .page-template-page-templatestemplate-homepage-php .hentry .entry-content { padding-bottom: 0; }
-.page-template-page-templatestemplate-homepage-php .hentry #homepage-lead-image + .entry-content { margin-right: 50%; padding-right: 30px; padding-right: 3rem; }
+.page-template-page-templatestemplate-homepage-php .hentry #homepage-aside + .entry-content { margin-right: 50%; padding-right: 30px; padding-right: 3rem; }
 
-#homepage-lead-image { float: right; width: 50%; }
-#homepage-lead-image img { width: 100%; height: auto; }
+#homepage-aside { float: right; width: 50%; }
+#homepage-aside img { width: 100%; height: auto; }
 
 /*
 	Responsive grid layouts
@@ -581,6 +581,8 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 
 .entry-content img { border: 1px solid #eeeeee; background: #fff; padding: 5px; max-width: 100%; display: block; margin-bottom: 0.5em; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
+.attachment { margin-bottom: 20px; margin-bottom: 2rem; }
+
 .entry-content .wp-caption img, .attachment img { margin: 0 auto 0.25em; }
 
 .wp-caption { margin-bottom: 1.5em; max-width: 100%; }
@@ -597,6 +599,17 @@ blockquote { background: #fff; padding: 1.5em; margin-bottom: 3em; }
 
 /* Make sure embeds and iframes fit their containers */
 embed, iframe, object { max-width: 100%; }
+
+/* Flex Slider */
+#homepage-aside .flexslider { background: none; border: none; box-shadow: none; margin-bottom: 40px; margin-bottom: 4rem; }
+#homepage-aside .flexslider .flex-control-nav { bottom: -30px; }
+#homepage-aside .flexslider .flex-control-paging li a { width: 10px; height: 10px; display: block; background: #fff; cursor: pointer; text-indent: -9999px; -webkit-border-radius: 12px; -moz-border-radius: 12px; -ms-border-radius: 12px; -o-border-radius: 12px; border-radius: 12px; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border: 1px solid #cccccc; border: 1px solid rgba(0, 0, 0, 0.2); }
+#homepage-aside .flexslider .flex-control-paging li a.flex-active { background: #555; background: rgba(0, 0, 0, 0.7); border-color: #555; }
+#homepage-aside .flexslider li { position: relative; }
+#homepage-aside .flexslider li .slide-caption { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0, 0, 0, 0.5); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 10px; padding: 1rem; }
+#homepage-aside .flexslider li .slide-caption > h3 { font-size: 18px; font-size: 1.8rem; color: #fcfcfc; }
+#homepage-aside .flexslider li .slide-caption > div { font-size: 12px; font-size: 1.2rem; color: #fff; }
+#homepage-aside .flexslider li .slide-caption > div a { color: #fff; }
 
 /* =Forms
 ----------------------------------------------- */
@@ -699,8 +712,15 @@ textarea { overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
   .layout-psc #content, .layout-pcs #content { margin: 0 0 0 34%; }
   .layout-psc #secondary, .layout-pcs #secondary { float: left; width: 30%; margin: 0; }
   .layout-psc #tertiary, .layout-pcs #tertiary { float: none; clear: both; width: 100%; margin: 0; } }
-@media screen and (max-width: 767px) { #homepage-lead-image, .page-template-page-templatestemplate-homepage-php .hentry #homepage-lead-image + .entry-content { float: none; width: 100%; }
-  #homepage-lead-image { margin-bottom: 20px; margin-bottom: 2rem; } }
+@media screen and (max-width: 767px) { #homepage-aside, .page-template-page-templatestemplate-homepage-php .hentry #homepage-aside + .entry-content { float: none; width: 100%; }
+  #homepage-aside { margin-bottom: 20px; margin-bottom: 2rem; }
+  #homepage-aside .flexslider { margin-bottom: 50px; margin-bottom: 5rem; }
+  .dynamic-widget-width .widget { padding: 0 10px; padding: 0 1rem; }
+  .dynamic-widget-width .widget:nth-child(3n+1) { padding-left: 0; }
+  .dynamic-widget-width .widget:nth-child(3n+3) { padding-right: 0; }
+  .dynamic-widget-width.widget-count-2 .widget { width: 50%; }
+  .dynamic-widget-width.widget-count-2 .widget:first-child { padding: 0 10px 0 0; padding: 0 1rem 0 0; }
+  .dynamic-widget-width.widget-count-2 .widget:last-child { padding: 0 0 0 10px; padding: 0 0 0 1rem; } }
 @media screen and (max-width: 599px) { html { font-size: 9px; }
   #masthead hgroup { text-align: center; }
   #main #primary, #main #content, #main #secondary, #main #tertiary { float: none; clear: both; }

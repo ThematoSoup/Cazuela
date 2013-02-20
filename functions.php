@@ -313,6 +313,24 @@ function thsp_theme_scripts() {
 		);
 	}
 
+	// Flex slider scripts and styles, for use in widgetized homepage template
+	if ( is_page_template( 'page-templates/template-homepage.php' ) ) {
+		global $post;
+		
+		if ( 'slider' == get_post_meta( $post->ID, '_thsp_widgetized_homepage_aside', true ) ) {
+			wp_enqueue_script(
+				'flexslider',
+				get_template_directory_uri() . '/js/flexslider/jquery.flexslider-min.js',
+				array( 'jquery' ),
+				'v2.1'
+			);
+			wp_enqueue_style(
+				'flexslider',
+				get_template_directory_uri() . '/js/flexslider/flexslider.css'
+			);
+		}
+	}
+
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script(
 			'keyboard-image-navigation',
@@ -323,12 +341,14 @@ function thsp_theme_scripts() {
 	}
 
 	// Theme specific scripts
-	wp_enqueue_script(
-		'cazuela',
-		get_template_directory_uri() . '/js/cazuela.js',
-		array( 'jquery' ),
-		'20130210'
-	);
+	if ( is_page_template( 'page-templates/template-homepage.php' ) || is_page_template( 'page-templates/template-masonry.php' ) ) {
+		wp_enqueue_script(
+			'cazuela',
+			get_template_directory_uri() . '/js/cazuela.js',
+			array( 'jquery' ),
+			'201302120'
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'thsp_theme_scripts' );
 

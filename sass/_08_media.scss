@@ -49,6 +49,10 @@ img.size-full {
 	margin-bottom: 0.5em;
 	@include box-sizing(border-box);
 }
+.attachment {
+	margin-bottom: 20px;
+	margin-bottom: 2rem;
+}
 .entry-content .wp-caption img,
 .attachment img {
 	margin: 0 auto 0.25em;
@@ -90,4 +94,63 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+/* Flex Slider */
+#homepage-aside .flexslider {
+	background: none;
+	border: none;
+	box-shadow: none;
+	margin-bottom: 40px;
+	margin-bottom: 4rem;
+	
+	.flex-control-nav {
+		bottom: -30px;
+	}
+	.flex-control-paging li {
+		a {
+			width: 10px;
+			height: 10px;
+			display: block;
+			background: #fff;
+			cursor: pointer;
+			text-indent: -9999px;
+			@include border-radius(12px);
+			@include box-shadow(none);
+			border: 1px solid #ccc;
+			border: 1px solid rgba(0,0,0,0.2);
+		}
+		a.flex-active {
+			background: #555;
+			background: rgba(0,0,0,0.7);
+			border-color: #555;
+		}
+	}
+	li {
+		position: relative;
+	
+		.slide-caption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background: rgba(0,0,0,0.5);
+			@include box-sizing(border-box);
+			padding: 10px;
+			padding: 1rem;
+			
+			> h3 {
+				@include font-size($bodyfontsize * 1.125); // 18px
+				color: #fcfcfc;
+			}
+			> div {
+				@include font-size($bodyfontsize * 0.75); // 12px
+				color: #fff;
+				
+				a {
+					color: #fff;
+				}
+			}
+		}
+	}
 }

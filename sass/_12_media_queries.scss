@@ -34,27 +34,27 @@
 	
 	.layout-psc,
 	.layout-pcs {
-			// Switch to two-column layout, if a three-col layout is used
-			.content-area {
-				float: right;
-				margin: 0 0 0 -34%;
-				width: 100%;
-			}
-			#content {
-				margin: 0 0 0 34%;
-			}
-			#secondary {
-				float: left;
-				width: 30%;
-				margin: 0;
-			}
-			
-			#tertiary {
-				float: none;
-				clear: both;
-				width: 100%;
-				margin: 0;
-			}
+		// Switch to two-column layout, if a three-col layout is used
+		.content-area {
+			float: right;
+			margin: 0 0 0 -34%;
+			width: 100%;
+		}
+		#content {
+			margin: 0 0 0 34%;
+		}
+		#secondary {
+			float: left;
+			width: 30%;
+			margin: 0;
+		}
+		
+		#tertiary {
+			float: none;
+			clear: both;
+			width: 100%;
+			margin: 0;
+		}
 	}
 
 }
@@ -62,14 +62,43 @@
 
 @media screen and (max-width: 767px) {
 
-	#homepage-lead-image,
-	.page-template-page-templatestemplate-homepage-php .hentry #homepage-lead-image + .entry-content {
+	#homepage-aside,
+	.page-template-page-templatestemplate-homepage-php .hentry #homepage-aside + .entry-content {
 		float: none;
 		width: 100%;
 	}
-	#homepage-lead-image {
+	#homepage-aside {
 		margin-bottom: 20px;
 		margin-bottom: 2rem;
+		
+		.flexslider {
+			margin-bottom: 50px;
+			margin-bottom: 5rem;
+		}
+	}
+
+	.dynamic-widget-width .widget {
+		padding: 0 10px;
+		padding: 0 1rem;
+	
+		&:nth-child(3n+1) {
+			padding-left: 0;
+		}
+		&:nth-child(3n+3) {
+			padding-right: 0;
+		}
+	}
+	.dynamic-widget-width.widget-count-2 .widget {
+		width: 50%;
+		
+		&:first-child {
+			padding: 0 10px 0 0;
+			padding: 0 1rem 0 0;
+		}
+		&:last-child {
+			padding: 0 0 0 10px;
+			padding: 0 0 0 1rem;
+		}
 	}
 
 }
