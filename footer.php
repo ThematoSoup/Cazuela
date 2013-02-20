@@ -32,7 +32,8 @@
 				wp_nav_menu( array( 
 					'theme_location'	=> 'footer',
 					'container'			=> 'nav',
-					'container_class'	=> 'footer-navigation'
+					'container_class'	=> 'footer-navigation',
+					'fallback_cb'		=> ''
 				) );
 			?>
 			

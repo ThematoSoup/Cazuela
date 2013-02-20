@@ -104,6 +104,8 @@
 	}
 	#footer-nav {
 		@include font-size($bodyfontsize * 0.875); // 14px
+		padding-bottom: 20px;
+		padding-bottom: 2rem;
 		
 		.footer-navigation {
 			float: right;

@@ -3,7 +3,7 @@ Thank you for downloading Cazuela Theme
 
 We make themes following WordPress best practices and they should be bugs-free. However, if you spot a bug, do us a favor and report it using the dedicated forum on WordPress.org.
 
-We'll do everything we can to debug it and solve the issue.
+We'll do everything we can to debug it and resolve the issue.
 
 
 Cazuela Features
@@ -82,7 +82,7 @@ Site title and tagline are your standard WordPress features. They are placed in 
 
 ### Colors
 
-Cazuela comes with 10 predefined color schemes. You can also tweak any color scheme by changing its link color and background color in Theme Customizer. Background color changes will only be visible if you're using boxed layout.
+Cazuela comes with 11 predefined color schemes. You can also tweak any color scheme by changing its link color and background color in Theme Customizer. Background color changes will only be visible if you're using boxed layout.
 
 
 ### Background Image
@@ -113,9 +113,7 @@ It's GPL so yes you can base your Themes on Cazuela, but they need to use a GPL 
 All derivative Themes must be different from the original work, which includes the Theme design as well as all the codes
 from Cazuela Theme.
 
-You can show us your appreciation by following WordPress.org best practices yourself.
-
-You can also follow [ThematoSoup][1] on [Facebook][2] or [Twitter][3].
+You can show us your appreciation by following WordPress.org best practices yourselfand connecting with [ThematoSoup][1] on [Facebook][2] or [Twitter][3].
 
 [1]: http://thematosoup.com
 [2]: http://www.facebook.com/thematosoup

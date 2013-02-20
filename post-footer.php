@@ -17,6 +17,7 @@
 		<span class="cat-links">
 			<?php printf( __( 'Posted in %1$s', 'cazuela' ), $categories_list ); ?>
 		</span>
+		<span class="sep"> | </span>
 		<?php endif; // End if categories ?>
 	
 		<?php
@@ -24,14 +25,13 @@
 			$tags_list = get_the_tag_list( '', __( ', ', 'cazuela' ) );
 			if ( $tags_list ) :
 		?>
-		<span class="sep"> | </span>
 		<span class="tags-links">
 			<?php printf( __( 'Tagged %1$s', 'cazuela' ), $tags_list ); ?>
 		</span>
+		<span class="sep"> | </span>
 		<?php endif; // End if $tags_list ?>
 	
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="sep"> | </span>
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'cazuela' ), __( '1 Comment', 'cazuela' ), __( '% Comments', 'cazuela' ) ); ?></span>
 		<?php endif; ?>
 	</div><!-- .entry-cats-tags -->
