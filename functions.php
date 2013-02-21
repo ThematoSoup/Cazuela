@@ -21,7 +21,7 @@
  * - Custom header
  * - Post metaboxes
  * - Customizer Boilerplate (https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate)
- * - Theme Documentation
+ * - Theme Documentation (removed for now)
  * - Customizer Boilerplate hooks
  *   -- Path
  *   -- Menu link text
@@ -386,11 +386,6 @@ if ( is_admin() ) {
 
 // Theme Customizer Boilerplate
 require( get_template_directory() . '/inc/customizer-boilerplate/customizer.php' );
-
-// Theme documentation page
-if ( is_admin() ) {
-	require( get_template_directory() . '/inc/documentation-page.php' );
-}
 
 
 
