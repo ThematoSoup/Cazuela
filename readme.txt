@@ -1,3 +1,6 @@
+Cazuela WordPress Theme
+=======================
+
 Thank you for downloading Cazuela Theme
 ---------------------------------------
 
@@ -23,12 +26,22 @@ Cazuela lets you choose between 2 layout types:
 * full-width
 
 In addition to this you have the option of 6 page layouts:
-* single-column layout
+* one column layout
 * two column layout - right sidebar
 * two column layout - left sidebar
 * three column layout - 2 right sidebars
 * three column layout - 2 left sidebars
 * three column layout - left primary sidebar, right secondary sidebar
+
+
+### Page Templates
+
+4 different templates (with more to come) let you choose the best possible way to present your content:
+
+* Widgetized Homepage (Widget area below content)
+* Authors (Sortable list of subscribers, contributors, authors, editors and administrators)
+* Masonry (Pinterest-like template)
+* Sitemap (Pages, categories and 25 of your latest posts)
 
 
 ### Widget Areas
@@ -113,7 +126,7 @@ It's GPL so yes you can base your Themes on Cazuela, but they need to use a GPL 
 All derivative Themes must be different from the original work, which includes the Theme design as well as all the codes
 from Cazuela Theme.
 
-You can show us your appreciation by following WordPress.org best practices yourselfand connecting with [ThematoSoup][1] on [Facebook][2] or [Twitter][3].
+You can show us your appreciation by following WordPress.org best practices yourself and connecting with [ThematoSoup][1] on [Facebook][2] or [Twitter][3].
 
 [1]: http://thematosoup.com
 [2]: http://www.facebook.com/thematosoup
