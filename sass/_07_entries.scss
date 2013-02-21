@@ -38,6 +38,11 @@
 	.entry-content {
 		padding-bottom: 20px;
 		padding-bottom: 2rem;
+		
+		.edit-link {
+			display: block;
+			clear: both;
+		}
 	}
 	footer {
 		padding: 20px;

@@ -1000,12 +1000,15 @@ blockquote {
 /* =Layout
 ----------------------------------------------- */
 .clearfix:before,
-.clearfix:after {
+.clearfix:after,
+.entry-content:before,
+.entry-content:after {
   content: " ";
   display: table;
 }
 
-.clearfix:after {
+.clearfix:after,
+.entry-content:after {
   clear: both;
 }
 
@@ -1627,6 +1630,13 @@ blockquote {
 .not-found .entry-content {
   padding-bottom: 20px;
   padding-bottom: 2rem;
+}
+.hentry header .edit-link,
+.hentry .entry-content .edit-link,
+.not-found header .edit-link,
+.not-found .entry-content .edit-link {
+  display: block;
+  clear: both;
 }
 .hentry footer,
 .not-found footer {
