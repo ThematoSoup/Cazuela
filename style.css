@@ -1608,6 +1608,10 @@ blockquote {
   -ms-hyphens: auto;
   hyphens: auto;
 }
+.hentry .entry-content > :first-child,
+.not-found .entry-content > :first-child {
+  margin-top: 0;
+}
 .hentry .entry-content > :last-child,
 .not-found .entry-content > :last-child {
   margin-bottom: 0;

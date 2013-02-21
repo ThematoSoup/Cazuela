@@ -24,6 +24,9 @@
 	-ms-hyphens: auto;
 	hyphens: auto;
 	
+	.entry-content > :first-child {
+		margin-top: 0;
+	}
 	.entry-content > :last-child {
 		margin-bottom: 0;
 	}
