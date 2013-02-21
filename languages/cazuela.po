@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cazuela 1.0\n"
-"POT-Creation-Date: 2013-02-15 12:08+0100\n"
-"PO-Revision-Date: 2013-02-15 12:08+0100\n"
+"POT-Creation-Date: 2013-02-21 12:34+0100\n"
+"PO-Revision-Date: 2013-02-21 12:34+0100\n"
 "Last-Translator: Slobodan Manic <slobodan.manic@gmail.com>\n"
 "Language-Team: ThematoSoup <contact@thematosoup.com>\n"
 "Language: English\n"
@@ -16,51 +16,51 @@ msgstr ""
 "X-Poedit-SearchPath-1: ../inc\n"
 "X-Poedit-SearchPath-2: ../page-templates\n"
 
-#: ../404.php:27
+#: ../404.php:21
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: ../404.php:31
+#: ../404.php:25
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below?"
 msgstr ""
 
-#: ../404.php:36
+#: ../404.php:30
 msgid "Most Used Categories"
 msgstr ""
 
-#: ../archive.php:33
+#: ../archive.php:27
 #, php-format
 msgid "Category Archives: %s"
 msgstr ""
 
-#: ../archive.php:36
+#: ../archive.php:30
 #, php-format
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: ../archive.php:43
+#: ../archive.php:37
 #, php-format
 msgid "Author Archives: %s"
 msgstr ""
 
-#: ../archive.php:51
+#: ../archive.php:45
 #, php-format
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: ../archive.php:54
+#: ../archive.php:48
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: ../archive.php:57
+#: ../archive.php:51
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: ../archive.php:60 ../sidebar.php:24
+#: ../archive.php:54 ../sidebar.php:24
 msgid "Archives"
 msgstr ""
 
@@ -80,13 +80,13 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../content-page.php:18 ../content-single.php:16 ../image.php:98
+#: ../content-page.php:18 ../content-single.php:16 ../image.php:92
 msgid "<span>Pages:</span>"
 msgstr ""
 
-#: ../content-page.php:19 ../image.php:51 ../image.php:115
-#: ../post-footer.php:50 ../page-templates/template-authors.php:82
-#: ../page-templates/template-sitemap.php:59
+#: ../content-page.php:19 ../image.php:45 ../image.php:109
+#: ../post-footer.php:50 ../page-templates/template-authors.php:76
+#: ../page-templates/template-sitemap.php:53
 msgid "Edit"
 msgstr ""
 
@@ -98,207 +98,227 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: ../functions.php:151
+#: ../footer.php:41
+msgid "http://demo.thematosoup.com/cazuela/"
+msgstr ""
+
+#: ../footer.php:41
+msgid "Cazuela theme"
+msgstr ""
+
+#: ../footer.php:41
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: ../footer.php:41
+msgid "WordPress"
+msgstr ""
+
+#: ../functions.php:155
 msgid "Main Menu"
 msgstr ""
 
-#: ../functions.php:152
+#: ../functions.php:156
 msgid "Footer Menu"
 msgstr ""
 
-#: ../functions.php:172
+#: ../functions.php:176
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../functions.php:180
+#: ../functions.php:184
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: ../functions.php:188
+#: ../functions.php:192
 msgid "Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:196
+#: ../functions.php:200
 msgid "Homepage Widget Area"
 msgstr ""
 
-#: ../functions.php:197
+#: ../functions.php:201
 msgid "This widget area is used in \"Widgetized Homepage\" page template"
 msgstr ""
 
-#: ../functions.php:206
+#: ../functions.php:210
 msgid "Before Header"
 msgstr ""
 
-#: ../functions.php:214
+#: ../functions.php:218
 msgid "After Header"
 msgstr ""
 
-#: ../functions.php:223
+#: ../functions.php:227
 msgid "Before Content"
 msgstr ""
 
-#: ../functions.php:231
+#: ../functions.php:235
 msgid "After Content"
 msgstr ""
 
-#: ../functions.php:240
+#: ../functions.php:244
 msgid "Before Footer"
 msgstr ""
 
-#: ../functions.php:248
+#: ../functions.php:252
 msgid "After Footer"
 msgstr ""
 
-#: ../functions.php:469
+#: ../functions.php:437
 msgid "Theme Customizer"
 msgstr ""
 
-#: ../functions.php:501
+#: ../functions.php:469
 msgid "Color scheme"
 msgstr ""
 
-#: ../functions.php:505
+#: ../functions.php:473
 msgid "Black"
 msgstr ""
 
-#: ../functions.php:515
+#: ../functions.php:477
+msgid "White"
+msgstr ""
+
+#: ../functions.php:481
 msgid "Blue"
 msgstr ""
 
-#: ../functions.php:519
+#: ../functions.php:485
 msgid "Brown"
 msgstr ""
 
-#: ../functions.php:523
+#: ../functions.php:489
 msgid "Candy red"
 msgstr ""
 
-#: ../functions.php:527
+#: ../functions.php:493
 msgid "Cobalt"
 msgstr ""
 
-#: ../functions.php:531
+#: ../functions.php:497
 msgid "Grey"
 msgstr ""
 
-#: ../functions.php:535
+#: ../functions.php:501
 msgid "Lime green"
 msgstr ""
 
-#: ../functions.php:539
+#: ../functions.php:505
 msgid "Orange"
 msgstr ""
 
-#: ../functions.php:543
+#: ../functions.php:509
 msgid "Plum purple"
 msgstr ""
 
-#: ../functions.php:547
+#: ../functions.php:513
 msgid "Red"
 msgstr ""
 
-#: ../functions.php:563
+#: ../functions.php:529
 msgid "Header gradient"
 msgstr ""
 
-#: ../functions.php:577
+#: ../functions.php:543
 msgid "Links color"
 msgstr ""
 
-#: ../functions.php:599
+#: ../functions.php:565
 msgid "Logo"
 msgstr ""
 
-#: ../functions.php:622
+#: ../functions.php:588
 msgid "Navigation above posts"
 msgstr ""
 
-#: ../functions.php:636
+#: ../functions.php:602
 msgid "Navigation below posts"
 msgstr ""
 
-#: ../functions.php:650
+#: ../functions.php:616
 msgid "Layout"
 msgstr ""
 
-#: ../functions.php:651
+#: ../functions.php:617
 msgid "Set default page layout"
 msgstr ""
 
-#: ../functions.php:664
+#: ../functions.php:630
 msgid "Layout type"
 msgstr ""
 
-#: ../functions.php:668
+#: ../functions.php:634
 msgid "Full width"
 msgstr ""
 
-#: ../functions.php:672
+#: ../functions.php:638
 msgid "Boxed"
 msgstr ""
 
-#: ../functions.php:688
+#: ../functions.php:654
 msgid "Default layout"
 msgstr ""
 
-#: ../functions.php:692
+#: ../functions.php:658
 msgid "Content"
 msgstr ""
 
-#: ../functions.php:696
+#: ../functions.php:662
 msgid "Content - Primary Sidebar"
 msgstr ""
 
-#: ../functions.php:700
+#: ../functions.php:666
 msgid "Primary Sidebar - Content"
 msgstr ""
 
-#: ../functions.php:704
+#: ../functions.php:670
 msgid "Content - Primary Sidebar - Secondary Sidebar"
 msgstr ""
 
-#: ../functions.php:708
+#: ../functions.php:674
 msgid "Primary Sidebar - Secondary Sidebar - Content"
 msgstr ""
 
-#: ../functions.php:712
+#: ../functions.php:678
 msgid "Primary Sidebar - Content - Secondary Sidebar"
 msgstr ""
 
-#: ../functions.php:728
+#: ../functions.php:694
 msgid "Typography"
 msgstr ""
 
-#: ../functions.php:729
+#: ../functions.php:695
 msgid "Select fonts"
 msgstr ""
 
-#: ../functions.php:742
+#: ../functions.php:708
 msgid "Body font"
 msgstr ""
 
-#: ../functions.php:788
+#: ../functions.php:754
 msgid "Heading font"
 msgstr ""
 
-#: ../header.php:70
+#: ../header.php:62
 msgid "<span>&#9776;</span> Menu"
 msgstr ""
 
-#: ../header.php:71
+#: ../header.php:63
 msgid "Skip to content"
 msgstr ""
 
-#: ../image.php:29
+#: ../image.php:23
 msgid "&larr; Previous"
 msgstr ""
 
-#: ../image.php:30
+#: ../image.php:24
 msgid "Next &rarr;"
 msgstr ""
 
-#: ../image.php:41
+#: ../image.php:35
 #, php-format
 msgid ""
 "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
@@ -307,7 +327,7 @@ msgid ""
 "\" rel=\"gallery\">%7$s</a>"
 msgstr ""
 
-#: ../image.php:106 ../post-footer.php:41
+#: ../image.php:100 ../post-footer.php:41
 #, php-format
 msgid ""
 "Bookmark the <a href=\"%1$s\" title=\"Permalink to %2$s\" rel=\"bookmark"
@@ -336,7 +356,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: ../post-footer.php:14 ../post-footer.php:24
+#: ../post-footer.php:14 ../post-footer.php:25
 msgid ", "
 msgstr ""
 
@@ -363,12 +383,12 @@ msgid "% Comments"
 msgstr ""
 
 #: ../post-header.php:14 ../inc/template-tags.php:198
-#: ../page-templates/template-masonry.php:60
+#: ../page-templates/template-masonry.php:54
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: ../search.php:28
+#: ../search.php:22
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -381,72 +401,127 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: ../inc/extras.php:235
+#: ../inc/extras.php:262
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../inc/post-meta-box.php:55
+#: ../inc/post-meta-box.php:63
 msgid "Post/page layout"
 msgstr ""
 
-#: ../inc/post-meta-box.php:56
+#: ../inc/post-meta-box.php:64
 msgid "You can override default layout set in theme settings"
 msgstr ""
 
-#: ../inc/post-meta-box.php:78
+#: ../inc/post-meta-box.php:82
+msgid "Post/page color scheme"
+msgstr ""
+
+#: ../inc/post-meta-box.php:83
+msgid "You can override default color scheme set in theme settings"
+msgstr ""
+
+#: ../inc/post-meta-box.php:103
 msgid "Author template settings"
 msgstr ""
 
-#: ../inc/post-meta-box.php:81
+#: ../inc/post-meta-box.php:106
 msgid "Order authors by:"
 msgstr ""
 
-#: ../inc/post-meta-box.php:85
+#: ../inc/post-meta-box.php:110
 msgid "Display name"
 msgstr ""
 
-#: ../inc/post-meta-box.php:91
+#: ../inc/post-meta-box.php:116
 msgid "Post count"
 msgstr ""
 
-#: ../inc/post-meta-box.php:97
+#: ../inc/post-meta-box.php:122
 msgid "Order:"
 msgstr ""
 
-#: ../inc/post-meta-box.php:101
+#: ../inc/post-meta-box.php:126
 msgid "Ascending"
 msgstr ""
 
-#: ../inc/post-meta-box.php:107
+#: ../inc/post-meta-box.php:132
 msgid "Descending"
 msgstr ""
 
-#: ../inc/post-meta-box.php:113
+#: ../inc/post-meta-box.php:138
 msgid "User roles to include (Cmd/Ctrl + click to select multiple roles):"
 msgstr ""
 
-#: ../inc/post-meta-box.php:132
+#: ../inc/post-meta-box.php:157
 msgid ""
 "Please note that if you select only certain user roles, sorting you "
 "specified above will still work, but will be applied per role. For example, "
 "Administrator users would go first, sorted, then Editors and so on&hellip;"
 msgstr ""
 
-#: ../inc/post-meta-box.php:142
+#: ../inc/post-meta-box.php:167
 msgid "Masonry template settings"
 msgstr ""
 
-#: ../inc/post-meta-box.php:145
+#: ../inc/post-meta-box.php:170
 msgid "Categories to include (Cmd/Ctrl + click to select multiple categories):"
 msgstr ""
 
-#: ../inc/post-meta-box.php:165
+#: ../inc/post-meta-box.php:190
 msgid "Number of posts per page in this template:"
 msgstr ""
 
-#: ../inc/post-meta-box.php:178
+#: ../inc/post-meta-box.php:203
 msgid "If you'd like to show all posts set number of posts per page to -1"
+msgstr ""
+
+#: ../inc/post-meta-box.php:215
+msgid "Widgetized homepage template settings"
+msgstr ""
+
+#: ../inc/post-meta-box.php:218
+msgid "Widgetized homepage aside:"
+msgstr ""
+
+#: ../inc/post-meta-box.php:222
+msgid "Featured image"
+msgstr ""
+
+#: ../inc/post-meta-box.php:228
+msgid "Slider (all attachments from this page)"
+msgstr ""
+
+#: ../inc/post-meta-box.php:234
+msgid "None (full-width text)"
+msgstr ""
+
+#: ../inc/post-meta-box.php:239
+msgid "Captions:"
+msgstr ""
+
+#: ../inc/post-meta-box.php:243
+msgid "Show slider images captions?"
+msgstr ""
+
+#: ../inc/post-meta-box.php:247
+msgid ""
+"Captions option is only applied if you select attachments slider for "
+"widgetized homepage aside. You can set title and description for each image "
+"in Media Library."
+msgstr ""
+
+#: ../inc/post-meta-box.php:406
+msgid ""
+"You chose attachments slider as aside for this page, please make sure the "
+"page has some attachments."
+msgstr ""
+
+#: ../inc/post-meta-box.php:418
+msgid ""
+"You chose featured image as aside for this page, please make sure featured "
+"image is set."
 msgstr ""
 
 #: ../inc/template-tags.php:53
@@ -564,14 +639,14 @@ msgstr ""
 msgid "New color field label"
 msgstr ""
 
-#: ../page-templates/template-sitemap.php:37
+#: ../page-templates/template-sitemap.php:31
 msgid "Pages"
 msgstr ""
 
-#: ../page-templates/template-sitemap.php:40
+#: ../page-templates/template-sitemap.php:34
 msgid "Categories"
 msgstr ""
 
-#: ../page-templates/template-sitemap.php:43
+#: ../page-templates/template-sitemap.php:37
 msgid "Latest Posts"
 msgstr ""
