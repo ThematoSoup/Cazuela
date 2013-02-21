@@ -500,6 +500,8 @@ blockquote {
 }
 .scheme-white .main-navigation ul ul ul {
   padding-top: 0;
+  border-top: 1px solid #f0f0f0;
+  margin-top: -1px;
 }
 .scheme-white .main-navigation .sub-menu li,
 .scheme-white .main-navigation .sub-menu .sub-menu li {
@@ -512,6 +514,9 @@ blockquote {
 }
 .scheme-white .main-navigation a:hover {
   color: #555;
+}
+.scheme-white .main-navigation ul ul li:hover {
+  background: #f6f6f6 !important;
 }
 .scheme-white .main-navigation > ul > .menu-parent-item > a:before {
   border-top-color: #777;
@@ -539,6 +544,17 @@ blockquote {
 .scheme-white #colophon,
 .scheme-white #after-footer {
   background: #fff;
+}
+.scheme-white #colophon h1, .scheme-white #colophon h2, .scheme-white #colophon h3, .scheme-white #colophon h4, .scheme-white #colophon h5, .scheme-white #colophon h6,
+.scheme-white #colophon a,
+.scheme-white #before-footer h1,
+.scheme-white #before-footer h2,
+.scheme-white #before-footer h3,
+.scheme-white #before-footer h4,
+.scheme-white #before-footer h5,
+.scheme-white #before-footer h6,
+.scheme-white #before-footer a {
+  color: #888;
 }
 
 .scheme-white.header-gradient #masthead {
@@ -1060,8 +1076,8 @@ blockquote {
 }
 #masthead .header-image {
   display: block;
-  margin: 0 auto 10px;
-  margin: 0 auto 1rem;
+  margin: 0 auto 5px;
+  margin: 0 auto 0.5rem;
 }
 #masthead .site-description {
   margin: 0;
@@ -1842,9 +1858,9 @@ img.size-full {
 }
 
 .entry-content img {
-  border: 1px solid #eeeeee;
+  border: none;
   background: #fff;
-  padding: 5px;
+  padding: 0;
   max-width: 100%;
   display: block;
   margin-bottom: 0.5em;

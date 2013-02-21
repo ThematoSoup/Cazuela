@@ -280,9 +280,9 @@ blockquote {
 
 img,
 .editor-attachment {
-	border: 1px solid #eeeeee !important; 
+	border: none !important; 
 	background: #fff; 
-	padding: 5px !important; 
+	padding: 0 !important; 
 	max-width: 100%; 
 	display: block; 
 	margin-bottom: 0.5em; 

@@ -103,6 +103,8 @@
 	}
 	.main-navigation ul ul ul {
 		padding-top: 0;
+		border-top: 1px solid #f0f0f0;
+		margin-top: -1px;
 	}
 	.main-navigation .sub-menu li,
 	.main-navigation .sub-menu .sub-menu li {
@@ -115,6 +117,9 @@
 	}
 	.main-navigation a:hover {
 		color: #555;
+	}
+	.main-navigation ul ul li:hover {
+		background: #f6f6f6 !important;
 	}
 	.main-navigation > ul > .menu-parent-item > a:before {
 		border-top-color: #777;
@@ -143,6 +148,14 @@
 	#colophon,
 	#after-footer {
 		background: #fff;
+	}
+	#colophon,
+	#before-footer {
+		h1, h2, h3, h4, h5, h6,
+		a {
+			color: #888;	
+		}
+		
 	}
 }
 .scheme-white.header-gradient #masthead {
