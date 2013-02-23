@@ -61,7 +61,7 @@ function thsp_hook_after_footer() {
 	if ( has_action( 'thsp_after_footer' ) ) { ?>
 	<div id="after-footer" class="clearfix">
 		<div class="inner clearfix">
-			<?php do_action( 'thsp_hook_after_footer' ); ?>
+			<?php do_action( 'thsp_after_footer' ); ?>
 		</div>
 	</div><!-- #after-footer -->
 	<?php }
