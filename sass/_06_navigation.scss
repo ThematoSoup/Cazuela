@@ -223,8 +223,14 @@
 		
 		> li {
 			display: inline-block;
-			margin: 0 15px;
-			margin: 0 1.5rem;
+			margin: 0 10px;
+			margin: 0 1rem;
+		}
+		> li:first-child {
+			margin-left: 0;
+		}
+		> li:last-child {
+			margin-right: 0;
 		}
 		ul {
 			display: none;
