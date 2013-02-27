@@ -38,7 +38,7 @@
 			?>
 			
 			<div id="footer-credits">
-				<a href="<?php echo esc_url( __( 'http://demo.thematosoup.com/cazuela/', 'cazuela' ) ); ?>" title="<?php esc_attr_e( 'Cazuela &mdash; free, responsive WordPress theme', 'cazuela' ); ?>"><?php echo __( 'Cazuela theme', 'cazuela' ); ?></a> powered by <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'cazuela' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'cazuela' ); ?>"><?php _e( 'WordPress', 'cazuela' ); ?></a>
+				<a href="<?php echo esc_url( __( 'http://thematosoup.com/themes/cazuela/', 'cazuela' ) ); ?>" title="<?php esc_attr_e( 'Cazuela &mdash; free, responsive WordPress theme', 'cazuela' ); ?>"><?php echo __( 'Cazuela theme', 'cazuela' ); ?></a> powered by <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'cazuela' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'cazuela' ); ?>"><?php _e( 'WordPress', 'cazuela' ); ?></a>
 			</div><!-- #footer-credits -->
 		</div><!-- #footer-nav -->
 
