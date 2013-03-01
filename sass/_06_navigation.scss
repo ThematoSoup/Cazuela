@@ -37,6 +37,7 @@
 	z-index: 99999;
 	text-align: left;
 	padding-top: 5px;
+	margin-top: -1px; /* fixes 1px gap */
 }
 .main-navigation ul ul ul {
 	left: 100%;
