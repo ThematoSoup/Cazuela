@@ -254,7 +254,7 @@ function thsp_cbp_customize_register( $wp_customize ) {
 	}	
 
 }
-add_action( 'customize_register', 'thsp_cbp_customize_register' );
+add_action( 'customize_register', 'thsp_cbp_customize_register', 11 );
 
 
 /**
