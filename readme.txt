@@ -112,6 +112,11 @@ Cazuela lets you select your menus from within theme customizer, as well. You ha
 Static Front Page is where you choose what to show on your home page, as well as which page is your blogroll.
 
 
+Theme Customizer Boilerplate
+----------------------------
+The theme uses Theme Customizer Boilerplate (GPL licenced) to handle its Customizer options. It is a drop-in code library that can be used to speed up theme development process. You can find out more about Theme Customizer boilerplate at its Github project page.
+
+
 License
 -------
 
