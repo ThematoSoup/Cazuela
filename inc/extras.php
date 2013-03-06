@@ -141,6 +141,7 @@ function thsp_mce_css( $mce_css ) {
 	$body_font_options = $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
 	$heading_font_options = $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
 
+	// Check protocol
 	$protocol = is_ssl() ? 'https' : 'http';
 	
 	// Check if it's a Google Font
