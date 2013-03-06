@@ -141,17 +141,19 @@ function thsp_mce_css( $mce_css ) {
 	$body_font_options = $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
 	$heading_font_options = $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
 
+	$protocol = is_ssl() ? 'https' : 'http';
+	
 	// Check if it's a Google Font
 	if( isset( $body_font_options[$body_font_value]['google_font'] ) ) {
 		// Commas must be HTML encoded
 		$body_font_string = str_replace( ',', '&#44;', $body_font_options[$body_font_value]['google_font'] );
-		$mce_css .= ', http://fonts.googleapis.com/css?family=' . $body_font_string;
+		$mce_css .= ', ' . $protocol . '://fonts.googleapis.com/css?family=' . $body_font_string;
 	}	
 	// Check if it's a Google Font
 	if( isset( $heading_font_options[$heading_font_value]['google_font'] ) ) {
 		// Commas must be HTML encoded
 		$heading_font_string = str_replace( ',', '&#44;', $heading_font_options[$heading_font_value]['google_font'] );
-		$mce_css .= ', http://fonts.googleapis.com/css?family=' . $heading_font_string;
+		$mce_css .= ', ' . $protocol . '://fonts.googleapis.com/css?family=' . $heading_font_string;
 	}
 	
 	return $mce_css;
