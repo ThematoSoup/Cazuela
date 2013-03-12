@@ -10,7 +10,7 @@ function thsp_layout_meta_box() {
 
 	add_meta_box(
 		'thsp-post-layout',
-		'Post Options',
+		__( 'Post Options', 'cazuela' ),
 		'thsp_post_layout_meta_cb',
 		'post',
 		'normal',
@@ -19,7 +19,7 @@ function thsp_layout_meta_box() {
 
 	add_meta_box(
 		'thsp-post-layout',
-		'Page Options',
+		__( 'Page Options', 'cazuela' ),
 		'thsp_post_layout_meta_cb',
 		'page',
 		'normal',
@@ -33,7 +33,7 @@ add_action( 'add_meta_boxes', 'thsp_layout_meta_box' );
 /**
  * Post layout meta box calllback
  *
- * @uses	thsp_get_theme_options()			Defined in /inc/get-options.php
+ * @uses	thsp_get_theme_options()				Defined in /inc/get-options.php
  * @uses	thsp_get_theme_customizer_fields()		Defined in /inc/get-options.php
  * @since	Cazuela 1.0
  */

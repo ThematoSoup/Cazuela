@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cazuela 1.0\n"
-"POT-Creation-Date: 2013-02-21 12:34+0100\n"
-"PO-Revision-Date: 2013-02-21 13:14+0100\n"
+"POT-Creation-Date: 2013-03-12 12:53+0100\n"
+"PO-Revision-Date: 2013-03-12 12:53+0100\n"
 "Last-Translator: Slobodan Manic <slobodan.manic@gmail.com>\n"
 "Language-Team: ThematoSoup <contact@thematosoup.com>\n"
 "Language: English\n"
@@ -99,7 +99,7 @@ msgid "Pages:"
 msgstr ""
 
 #: ../footer.php:41
-msgid "http://demo.thematosoup.com/cazuela/"
+msgid "http://thematosoup.com/themes/cazuela/"
 msgstr ""
 
 #: ../footer.php:41
@@ -401,9 +401,17 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: ../inc/extras.php:262
+#: ../inc/extras.php:265
 #, php-format
 msgid "Page %s"
+msgstr ""
+
+#: ../inc/post-meta-box.php:13
+msgid "Post Options"
+msgstr ""
+
+#: ../inc/post-meta-box.php:22
+msgid "Page Options"
 msgstr ""
 
 #: ../inc/post-meta-box.php:63
@@ -574,69 +582,6 @@ msgstr ""
 
 #: ../inc/template-tags.php:195
 msgid "Latest posts"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:44
-msgid "New Section Title"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:45
-msgid "New section description"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:69
-msgid "Default value"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:79
-msgid "New text field label"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:100
-msgid "New checkbox field label"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:121
-msgid "New radio control label"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:125
-#: ../inc/customizer-boilerplate/options.php:157
-msgid "Option 1"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:128
-#: ../inc/customizer-boilerplate/options.php:160
-msgid "Option 2"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:131
-#: ../inc/customizer-boilerplate/options.php:163
-msgid "Option 3"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:153
-msgid "New select field label"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:185
-msgid "File upload"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:206
-msgid "Image upload"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:227
-msgid "Textarea"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:248
-msgid "Number"
-msgstr ""
-
-#: ../inc/customizer-boilerplate/options.php:280
-msgid "New color field label"
 msgstr ""
 
 #: ../page-templates/template-sitemap.php:31
