@@ -203,13 +203,13 @@ function thsp_theme_documentation_cb() { ?>
 						<li><?php _e( 'Widgetized homepage aside: Slider (all attachments from this page)', 'cazuela' ); ?></li>
 					</ul>
 										
-					<h4><?php _e( 'Q: How can I create page with featured image aside?', 'cazuela' ); ?></h4>
+					<h4><?php _e( 'Q: How can I create <a href="http://demo.thematosoup.com/cazuela/pagetemplates/widgetized-homepage-featured-image/">page with featured image aside</a>?', 'cazuela' ); ?></h4>
 					<p><?php _e( 'Prepare your image. Image should be at least 660px wide. Bear in mind that height of images is never cropped, so if you don\'t do it adjust height manually, your images may look weirdly tall.', 'cazuela' ); ?></p>
 					<p><?php _e( 'Click "Set featured image" and upload the image. Once you do that set the following:', 'cazuela' ); ?></p>
 					<p><?php _e( 'Edit the page, by selecting:', 'cazuela' ); ?></p>
 					<ul style="list-style:disc;margin-left:2em">
-						<li>Template: Widgetized Homepage</li>
-						<li>Widgetized homepage aside: Featured Image</li>
+						<li><?php _e( 'Template: Widgetized Homepage', 'cazuela' ); ?></li>
+						<li><?php _e( 'Widgetized homepage aside: Featured Image', 'cazuela' ); ?></li>
 					</ul>				
 					<?php break;
 			}
