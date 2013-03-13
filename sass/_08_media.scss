@@ -142,6 +142,10 @@ object {
 			> h3 {
 				@include font-size($bodyfontsize * 1.125); // 18px
 				color: #fcfcfc;
+				
+				a {
+					color: #fcfcfc !important;
+				}
 			}
 			> div {
 				@include font-size($bodyfontsize * 0.75); // 12px

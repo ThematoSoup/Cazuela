@@ -114,7 +114,6 @@ textarea {
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
 }
 
 .body-arial, .body-arial button,
@@ -1996,6 +1995,9 @@ object {
   font-size: 18px;
   font-size: 1.8rem;
   color: #fcfcfc;
+}
+#homepage-aside .flexslider li .slide-caption > h3 a {
+  color: #fcfcfc !important;
 }
 #homepage-aside .flexslider li .slide-caption > div {
   font-size: 12px;

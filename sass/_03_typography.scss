@@ -9,7 +9,6 @@ textarea {
 	color: $bodytextcolor;
 	@include font-size($bodyfontsize);
 	line-height: $baselineheight;
-	-webkit-font-smoothing: antialiased;
 }
 .body-arial {
 	font-family: Arial, sans-serif;

@@ -92,6 +92,11 @@ function thsp_theme_setup() {
 	require( get_template_directory() . '/inc/hooks.php' );
 
 	/**
+	 * Inline theme documentation
+	 */
+	require( get_template_directory() . '/inc/documentation.php' );
+
+	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 */
