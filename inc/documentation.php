@@ -50,10 +50,11 @@ function thsp_theme_documentation_cb() { ?>
 			// Set up tabs
 			$docu_page = 'thsp_theme_documentation';
 			$docu_page_tabs = array(
-				'features'	=> __( 'Features', 'cazuela' ),
-				'faq'		=> __( 'FAQ', 'cazuela' ),
-				'child'		=> __( 'Child Theming', 'cazuela' ),
-				'about'		=> __( 'About Cazuela', 'cazuela' ),
+				'features'			=> __( 'Features', 'cazuela' ),
+				'faq'				=> __( 'FAQ', 'cazuela' ),
+				'child'				=> __( 'Child Theming', 'cazuela' ),
+				'about_cazuela'		=> __( 'About Cazuela Theme', 'cazuela' ),
+				'about_thematosoup'	=> __( 'About ThematoSoup', 'cazuela' ),
 			);
 			
 			if ( isset( $_GET['tab'] ) ) {
