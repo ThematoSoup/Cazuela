@@ -1371,9 +1371,8 @@ blockquote {
   left: 0;
   z-index: 99999;
   text-align: left;
-  padding-top: 5px;
   margin-top: -1px;
-  /* fixes 1px gap */
+  padding-top: 1px;
 }
 
 .main-navigation ul ul ul {
