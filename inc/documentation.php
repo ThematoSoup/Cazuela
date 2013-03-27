@@ -21,8 +21,8 @@
 function thsp_theme_documentation_page() {
 
 	add_theme_page(
-		__ ( 'Cazuela Documentation', 'cazuela' ),
-		__ ( 'Cazuela Documentation', 'cazuela' ),
+		__ ( 'Theme Documentation', 'cazuela' ),
+		__ ( 'Theme Documentation', 'cazuela' ),
 		'read',
 		'thsp_theme_documentation',
 		'thsp_theme_documentation_cb'
@@ -52,9 +52,11 @@ function thsp_theme_documentation_cb() { ?>
 			$docu_page_tabs = array(
 				'features'			=> __( 'Features', 'cazuela' ),
 				'faq'				=> __( 'FAQ', 'cazuela' ),
+				/*
 				'child'				=> __( 'Child Theming', 'cazuela' ),
 				'about_cazuela'		=> __( 'About Cazuela Theme', 'cazuela' ),
 				'about_thematosoup'	=> __( 'About ThematoSoup', 'cazuela' ),
+				*/
 			);
 			
 			if ( isset( $_GET['tab'] ) ) {

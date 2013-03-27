@@ -87,6 +87,11 @@
 	$accent_color: #ececec;
 	$background_color: #fdfdfd;
 	
+	.site-title a,
+	.site-description,
+	#before-header * {
+		color: $bodytextcolor;
+	}
 	#main {
 		background-color: $background_color;
 	}

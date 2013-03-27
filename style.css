@@ -484,6 +484,11 @@ blockquote {
   background-image: url(images/grain.png), linear-gradient(#1a1a1a, #272727);
 }
 
+.scheme-white .site-title a,
+.scheme-white .site-description,
+.scheme-white #before-header * {
+  color: #4b4b4b;
+}
 .scheme-white #main {
   background-color: #fdfdfd;
 }
