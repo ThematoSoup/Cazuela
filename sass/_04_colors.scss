@@ -89,7 +89,9 @@
 	
 	.site-title a,
 	.site-description,
-	#before-header * {
+	#before-header *,
+	.menu-toggle,
+	.main-small-navigation .menu a {
 		color: $bodytextcolor;
 	}
 	#main {

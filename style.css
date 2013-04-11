@@ -486,7 +486,9 @@ blockquote {
 
 .scheme-white .site-title a,
 .scheme-white .site-description,
-.scheme-white #before-header * {
+.scheme-white #before-header *,
+.scheme-white .menu-toggle,
+.scheme-white .main-small-navigation .menu a {
   color: #4b4b4b;
 }
 .scheme-white #main {
