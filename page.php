@@ -23,7 +23,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php get_template_part( '/partials/content', 'page' ); ?>
 
 				<?php comments_template( '', true ); ?>
 

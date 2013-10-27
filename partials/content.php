@@ -7,11 +7,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( !is_search() ) : // No thumbnail in Search results page ?>
-		<?php get_template_part( 'post', 'lead' ); ?>
+		<?php get_template_part( '/partials/post', 'lead' ); ?>
 	<?php endif; ?>
 	
 	<div class="entry-inner">
-		<?php get_template_part( 'post', 'header' ); ?>
+		<?php get_template_part( '/partials/post', 'header' ); ?>
 	
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 		<div class="entry-summary">
@@ -25,5 +25,5 @@
 		<?php endif; ?>
 	</div><!-- .entry-inner -->
 
-	<?php get_template_part( 'post', 'footer' ); ?>
+	<?php get_template_part( '/partials/post', 'footer' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

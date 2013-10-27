@@ -20,7 +20,7 @@ get_header(); ?>
 
 				<?php thsp_content_nav( 'nav-above' ); ?>
 
-				<?php get_template_part( 'content', 'single' ); ?>
+				<?php get_template_part( '/partials/content', 'single' ); ?>
 
 				<?php thsp_content_nav( 'nav-below' ); ?>
 
