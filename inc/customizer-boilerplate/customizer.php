@@ -9,25 +9,25 @@
  * @author		Slobodan Manic
  *
  * @since		Theme_Customizer_Boilerplate 1.0
-
-	License:
-	
-	Copyright 2013 Slobodan Manic (slobodan.manic@gmail.com)
-	
-	This program is free software; you can redistribute it and/or modify
-	it under the terms of the GNU General Public License, version 2, as 
-	published by the Free Software Foundation.
-	
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-	
-	You should have received a copy of the GNU General Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
-*/
+ *
+ * License:
+ *	
+ * Copyright 2013 Slobodan Manic (slobodan.manic@gmail.com)
+ *	
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License, version 2, as 
+ * published by the Free Software Foundation.
+ *	
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *	
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ */
 
 
 /**
@@ -39,23 +39,6 @@ require( dirname(__FILE__) . '/options.php' );
  * Helper functions
  */	
 require( dirname(__FILE__) . '/helpers.php' );
-
-
-/**
- * Adds the Customize page to the WordPress admin area
- */
-add_action( 'admin_menu', 'thsp_cbp_customizer_menu' );
-function thsp_cbp_customizer_menu() {
-
-    add_theme_page(
-    	thsp_cbp_menu_link_text(),
-    	thsp_cbp_menu_link_text(),
-    	thsp_cbp_capability(),
-    	'customize.php'
-    );
-    
-}
-
 
 /**
  * Adds Customizer Sections, Settings and Controls

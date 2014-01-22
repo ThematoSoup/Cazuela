@@ -1,9 +1,5 @@
 .image-radio {
-	opacity: 0;
-	width: 0;
-	height: 0;
-	display: block;
-	float: left;
+	display: none !important;
 }
 .image-radio + label {
 	display: block;
@@ -18,7 +14,7 @@
 	border-color: #333;
 	opacity: 1;
 	
-	-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.75);
-	box-shadow: 0 0 3px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.75);
+	box-shadow: 0 0 5px rgba(0,0,0,0.75);
 }

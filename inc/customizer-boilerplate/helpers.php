@@ -72,10 +72,10 @@ function thsp_cbp_get_options_values() {
 	$option_defaults = thsp_cbp_get_options_defaults();
 	
 	// Parse the stored options with the defaults
-	$thsp_cazuela_options = wp_parse_args( get_option( thsp_cbp_option(), array() ), $option_defaults );
+	$thsp_cbp_options = wp_parse_args( get_option( thsp_cbp_option(), array() ), $option_defaults );
 	
 	// Return the parsed array
-	return $thsp_cazuela_options;
+	return $thsp_cbp_options;
 	
 }
 
